@@ -141,7 +141,7 @@
   function stakeAvatar(name) {
     if (!document.body.classList.contains('l2-body')) return '';
     var hit = STAKE_IMAGES[name];
-    if (hit) return '<span class="stake-avatar stake-avatar--' + hit[1] + '"><img src="/assets/' + hit[0] + '" alt=""></span>';
+    if (hit) return '<span class="stake-avatar stake-avatar--' + hit[1] + '"><img src="assets/' + hit[0] + '" alt=""></span>';
     var isOrg = /council|institute|authority|association|australia|department|alliance|group|foundation|union|party|centre|center|agency|energy|scientific|organisation|society|network|federation|school|university|commission|office|bank|company|corporation|limited|pty|ltd|parliament|forum|chamber|industry|committee|board|trust/i.test(name);
     var initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase();
     return '<span class="stake-avatar stake-avatar--' + (isOrg ? 'org' : 'person') + ' stake-avatar--initials">' + esc(initials) + '</span>';

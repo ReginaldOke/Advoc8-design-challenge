@@ -22,7 +22,7 @@
   function showSignIn() {
     var s = openScreen('ob-signin',
       '<div class="ob-card" role="dialog" aria-modal="true" aria-labelledby="obTitle">' +
-        '<div class="ob-head"><img class="ob-logo" src="/assets/logo-circle-dark.svg?v=2" alt=""><div><h1 id="obTitle">Welcome to Advoc8</h1><p class="ob-sub">A few quick details to set up your account.</p></div></div>' +
+        '<div class="ob-head"><img class="ob-logo" src="assets/logo-circle-dark.svg?v=2" alt=""><div><h1 id="obTitle">Welcome to Advoc8</h1><p class="ob-sub">A few quick details to set up your account.</p></div></div>' +
         '<form class="ob-form" novalidate autocomplete="off">' +
           '<div class="ob-row"><label>First name<input type="text" value="Reg" autocomplete="off"></label><label>Last name<input type="text" value="Oke" autocomplete="off"></label></div>' +
           '<label>Job title<input type="text" value="Product Designer" autocomplete="off"></label>' +
@@ -46,7 +46,7 @@
     picked = null;
     var body = GROUPS.map(function (g) {
       return '<section class="ob-group"><h2>' + esc(g.name) + '</h2><div class="ob-grid">' + g.topics.map(function (t) {
-        var img = IMG[t[0]] ? '<img class="ob-topic__img" src="/assets/emoji3d/' + IMG[t[0]] + '" alt="" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'), {className: \'ob-topic__emoji\', textContent: \'' + t[0] + '\'}))">' : '<span class="ob-topic__emoji">' + t[0] + '</span>';
+        var img = IMG[t[0]] ? '<img class="ob-topic__img" src="assets/emoji3d/' + IMG[t[0]] + '" alt="" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'), {className: \'ob-topic__emoji\', textContent: \'' + t[0] + '\'}))">' : '<span class="ob-topic__emoji">' + t[0] + '</span>';
         return '<button type="button" class="ob-topic" data-name="' + esc(t[1]) + '">' + img + '<span class="ob-topic__name">' + esc(t[1]) + '</span><i class="fas fa-circle-check ob-topic__tick"></i></button>';
       }).join('') + '</div></section>';
     }).join('');
@@ -96,7 +96,7 @@
       var tn = null; for (var i = 0; i < lab.childNodes.length; i++) if (lab.childNodes[i].nodeType === 3 && lab.childNodes[i].textContent.trim()) { tn = lab.childNodes[i]; break; }
       if (!tn) return; var txt = tn.textContent; var hit = EMO.filter(function (e) { return txt.trimStart().indexOf(e) === 0; })[0]; if (!hit) return;
       lab.dataset.topicImg = '1';
-      var img = document.createElement('img'); img.className = 'topic-img'; img.alt = ''; img.src = '/assets/emoji3d/' + IMG[hit];
+      var img = document.createElement('img'); img.className = 'topic-img'; img.alt = ''; img.src = 'assets/emoji3d/' + IMG[hit];
       tn.textContent = txt.trimStart().slice(hit.length).replace(/^\s+/, ' ');
       lab.insertBefore(img, tn);
     });

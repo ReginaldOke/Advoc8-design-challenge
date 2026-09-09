@@ -4,7 +4,7 @@ var TABLER_ICONS = true;
 (function () {
   if (!TABLER_ICONS || !document.body.classList.contains('l2-body')) return;
   var LC = document.documentElement.classList.contains('lc'); /* option B keeps the original Font Awesome icons, except inside the prototype panel */
-  var SPRITE = '/assets/tabler-sprite-nostroke.svg#tabler-';
+  var SPRITE = 'assets/tabler-sprite-nostroke.svg#tabler-';
   var MAP = {
     'plus': 'plus', 'sitemap': 'sitemap', 'pen-to-square': 'edit', 'regular-list-circle-plus': 'list-details', 'user-plus': 'user-plus',
     'ellipsis-h': 'dots', 'ellipsis': 'dots', 'chevron-down': 'chevron-down', 'chevron-right': 'chevron-right', 'chevron-up': 'chevron-up', 'chevron-left': 'chevron-left',

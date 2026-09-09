@@ -86,8 +86,8 @@
   function syncRailLook() {
     var t = themePref(), navy = (t === 'navy' && !root.classList.contains('panel-collapsed')) || t === 'dark';
     root.classList.toggle('rail-navy', navy);
-    var logo = document.querySelector('.l3rail__logo img'); if (logo) logo.src = navy ? '/assets/logo-mark-light.svg?v=2' : '/assets/logo-circle-dark.svg?v=2';
-    var b = document.querySelector('.l2nav__brand img'); if (b) b.src = t === 'dark' ? '/assets/logo-mark-light.svg?v=2' : '/assets/logo-circle-dark.svg?v=2'; /* side nav logo follows the theme */
+    var logo = document.querySelector('.l3rail__logo img'); if (logo) logo.src = navy ? 'assets/logo-mark-light.svg?v=2' : 'assets/logo-circle-dark.svg?v=2';
+    var b = document.querySelector('.l2nav__brand img'); if (b) b.src = t === 'dark' ? 'assets/logo-mark-light.svg?v=2' : 'assets/logo-circle-dark.svg?v=2'; /* side nav logo follows the theme */
   }
   function setTheme(t, persist) {
     if (persist !== false) { try { localStorage.setItem('advoc8-theme', t); } catch (err) {} store('advoc8-rail-navy', t === 'white' ? false : true); }
@@ -131,7 +131,7 @@
     var nav = document.getElementById('l2nav'); if (!nav) return;
     var rail = document.createElement('nav'); rail.className = 'l3rail'; rail.setAttribute('aria-label', 'Main');
     var brand = nav.querySelector('.l2nav__brand');
-    var html = '<a class="l3rail__logo" href="' + (brand ? brand.getAttribute('href') : 'search2.html') + '" aria-label="Advoc8 Home"><img src="/assets/logo-circle-dark.svg?v=2" alt=""></a><div class="l3rail__nav">';
+    var html = '<a class="l3rail__logo" href="' + (brand ? brand.getAttribute('href') : 'search2.html') + '" aria-label="Advoc8 Home"><img src="assets/logo-circle-dark.svg?v=2" alt=""></a><div class="l3rail__nav">';
     nav.querySelectorAll('.l2nav__group').forEach(function (g) {
       var a = g.querySelector('.l2nav__item'), ico = a.querySelector('i.ico'), label = a.querySelector('span').textContent;
       html += '<a class="l3rail__item' + (g.classList.contains('active') ? ' active' : '') + '" href="' + a.getAttribute('href') + '"><i class="' + (ico ? ico.className.replace('ico', '').replace(/\bfar\b/, 'fal').trim() : '') + '"></i><span>' + label + '</span></a>';
@@ -172,7 +172,7 @@
   (function () {
     if (root.classList.contains('lc')) return;
     var bar = document.createElement('div'); bar.className = 'l2-mbar';
-    bar.innerHTML = '<button type="button" class="l2-mbar__menu" aria-label="Menu"><i class="far fa-bars"></i></button><a class="l2-mbar__logo" href="search2.html"><img src="/assets/logo-circle-dark.svg?v=2" alt="">Advoc8</a><div class="avatar avatar-sm l2-mbar__avatar"><span class="avatar-title rounded-circle ob-initials">RO</span></div>';
+    bar.innerHTML = '<button type="button" class="l2-mbar__menu" aria-label="Menu"><i class="far fa-bars"></i></button><a class="l2-mbar__logo" href="search2.html"><img src="assets/logo-circle-dark.svg?v=2" alt="">Advoc8</a><div class="avatar avatar-sm l2-mbar__avatar"><span class="avatar-title rounded-circle ob-initials">RO</span></div>';
     var scrim = document.createElement('div'); scrim.className = 'l2-mscrim';
     document.body.appendChild(bar); document.body.appendChild(scrim);
     function mobile() { return window.matchMedia('(max-width: 991.98px)').matches; }

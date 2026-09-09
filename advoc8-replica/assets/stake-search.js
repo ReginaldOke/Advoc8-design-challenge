@@ -35,7 +35,7 @@
     pal.querySelector('.spal__title').textContent = q ? (shown.length ? 'Stakeholders' : 'No matches') : 'Recently viewed';
     sel = 0;
     list.innerHTML = shown.map(function (it, i) {
-      var av = it.img ? '<img src="/assets/' + it.img + '" alt="">' : '<span class="spal__ini">' + esc(initials(it.n)) + '</span>';
+      var av = it.img ? '<img src="assets/' + it.img + '" alt="">' : '<span class="spal__ini">' + esc(initials(it.n)) + '</span>';
       return '<a class="spal__item' + (i === sel ? ' is-sel' : '') + '" role="option" href="' + it.href + '" data-i="' + i + '"><span class="spal__av spal__av--' + it.t + '">' + av + '</span><span class="spal__txt"><span class="spal__name">' + esc(it.n) + '</span><span class="spal__sub">' + esc(it.s) + '</span></span><i class="fal ' + (it.t === 'org' ? 'fa-sitemap' : 'fa-user') + ' spal__type"></i></a>';
     }).join('') || '<div class="spal__empty">Try a person, organisation or department name.</div>';
   }

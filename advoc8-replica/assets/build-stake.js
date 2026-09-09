@@ -25,7 +25,7 @@
   function initials(n) { return n.split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase(); }
   function chosen() { return [].slice.call(rows.querySelectorAll('.stakeholder-row .font-weight-bold')).map(function (e) { return e.textContent.trim(); }); }
   function avatar(it, cls) {
-    if (it.img) return '<img class="' + cls + '" src="/assets/' + it.img + '" alt="">';
+    if (it.img) return '<img class="' + cls + '" src="assets/' + it.img + '" alt="">';
     return '<span class="' + cls + ' bsp__ini">' + esc(initials(it.n)) + '</span>';
   }
 
