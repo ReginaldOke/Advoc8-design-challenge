@@ -47,6 +47,8 @@
   }
   var KIND = { media: 'Media Release', parliament: 'Parliament', social: 'Social Media', other: 'Document' };
   var MONTHS = 'January February March April May June July August September October November December'.split(' ');
+  /* photos and logos on file, by name */
+  var PHOTOS = { 'amber-jade-sanderson': 'avatars/amber-jade-sanderson.jpg', 'andrew-barr': 'avatars/andrew-barr.png', 'angus-taylor': 'avatars/angus-taylor.jpg', 'anthony-albanese': 'avatars/anthony-albanese.jpg', 'ben-carroll': 'avatars/ben-carroll.webp', 'bob-katter': 'avatars/bob-katter.jpg', 'chris-bowen': 'avatars/chris-bowen.jpg', 'chris-minns': 'avatars/chris-minns.jpg', 'climate-change-authority': 'logos/climate-change-authority.png', 'darren-chester': 'avatars/darren-chester.jpg', 'david-crisafulli': 'avatars/david-crisafulli.jpg', 'don-farrell': 'avatars/don-farrell.jpg', 'institute-of-public-affairs': 'logos/institute-of-public-affairs.png', 'jane-hume': 'avatars/jane-hume.jpg', 'jason-clare': 'avatars/jason-clare.jpg', 'jeremy-rockliff': 'avatars/jeremy-rockliff.png', 'jim-chalmers': 'avatars/jim-chalmers.jpg', 'josh-wilson': 'avatars/josh-wilson.jpg', 'katy-gallagher': 'avatars/katy-gallagher.jpg', 'kellie-sloane': 'avatars/kellie-sloane.jpg', 'kyam-maher': 'avatars/kyam-maher.jpg', 'lia-finocchiaro': 'avatars/lia-finocchiaro.png', 'malcolm-roberts': 'avatars/malcolm-roberts.jpg', 'mark-butler': 'avatars/mark-butler.jpg', 'pauline-hanson': 'avatars/pauline-hanson.jpg', 'penny-wong': 'avatars/penny-wong.jpg', 'peter-malinauskas': 'avatars/peter-malinauskas.jpg', 'richard-marles': 'avatars/richard-marles.jpg', 'roger-cook': 'avatars/roger-cook.jpg', 'smart-energy-council': 'logos/smart-energy-council.png', 'solar-citizens': 'logos/solar-citizens.png', 'steven-miles': 'avatars/steven-miles.jpg', 'tim-ayres': 'avatars/tim-ayres.jpg', 'tim-wilson': 'avatars/tim-wilson.jpg', 'tony-burke': 'avatars/tony-burke.jpg' };
   function slug(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   function initials(n) { return n.split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase(); }
   function domainFor(name, isOrg) { if (isOrg) return slug(name).replace(/-/g, '') + '.gov.au'; var p = name.split(/\s+/); return (p.length > 1 ? (p[0] + p[p.length - 1]) : p[0]).toLowerCase().replace(/[^a-z0-9]/g, '') + '.com.au'; }
@@ -84,7 +86,8 @@
       '<p>Anyone with questions about what this means for them can contact the office directly. Further updates will be posted as they come to hand, and the full text of any related documents will be linked from this page.</p>';
     var side = '';
     if (who) {
-      var av = who.org ? '<span class="rd__ini">' + esc(initials(who.name)) + '</span>' : '<img class="rd__avimg" src="assets/avatars/' + slug(who.name) + '.jpg" alt="" onerror="this.hidden=true;this.nextSibling.hidden=false"><span class="rd__ini" hidden>' + esc(initials(who.name)) + '</span>';
+      var photo = PHOTOS[slug(who.name)];
+      var av = photo ? '<img class="rd__avimg' + (who.org ? ' rd__avimg--logo' : '') + '" src="assets/' + photo + '" alt="" onerror="this.hidden=true;this.nextSibling.hidden=false"><span class="rd__ini" hidden>' + esc(initials(who.name)) + '</span>' : '<span class="rd__ini">' + esc(initials(who.name)) + '</span>';
       side = '<a class="rd__who" href="' + (who.org ? '#' : 'person2.html') + '"><span class="rd__av">' + av + '</span><span class="rd__whotxt"><span class="rd__whoname">' + esc(who.name) +
         who.badges.map(function (b) { return '<span class="badge ' + (b.party ? 'party' : 'bg-secondary-soft text-dark') + '"' + (b.style ? ' style="' + esc(b.style) + '"' : '') + '>' + esc(b.text) + '</span>'; }).join('') + '</span>' +
         (who.role ? '<span class="rd__whorole">' + esc(who.role) + '</span>' : '') + '</span></a>';
@@ -98,11 +101,12 @@
           '<div class="rd__docbody">' +
             (bullets.length ? '<div class="rd__ai"><div class="rd__ailbl"><i class="fas fa-sparkles"></i>AI Summary</div><ul>' + bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul></div>' : '') +
             '<div class="rd__content">' + body + '</div>' +
-            (tags.length ? '<div class="rd__tags">' + tags.map(function (t) { return '<span class="badge badge-soft-primary">' + esc(t) + '</span>'; }).join('') + '</div>' : '') +
+
           '</div>' +
         '</article>' +
         '<aside class="rd__side">' +
           '<div class="rd__acts"><button type="button" class="btn btn-white"><i class="far fa-share-from-square fa-fw"></i>Share</button><button type="button" class="btn btn-white js-save-btn"><i class="fa-regular fa-bookmark fa-fw"></i>Save</button><button type="button" class="btn btn-white rd__find"><i class="far fa-search fa-fw"></i>Find</button></div>' +
+          (tags.length ? '<div class="rd__kw"><h3 class="rd__kwlbl">Keywords</h3><div class="rd__kwlist">' + tags.map(function (t) { return '<span class="rd__kwchip">' + esc(t) + '</span>'; }).join('') + '</div></div>' : '') +
           side +
         '</aside>' +
       '</div></div></div>';

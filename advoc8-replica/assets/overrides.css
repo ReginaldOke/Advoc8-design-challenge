@@ -2974,3 +2974,10 @@ html.lc #topbar { z-index: 1060; }
 .rd__whorole { font-size: 15px; }
 .rd__acts .btn { font-size: 14px; height: 42px; }
 .rd__kind { font-size: 16px; }
+
+/* reader side column: keywords between the actions and the author */
+.rd__kw { display: flex; flex-direction: column; gap: 10px; }
+.rd__kwlbl { font-size: 17px; font-weight: 700; color: #12263f; margin: 4px 0 0; }
+.rd__kwlist { display: flex; flex-wrap: wrap; gap: 8px; }
+.rd__kwchip { display: inline-flex; align-items: center; padding: 6px 11px; border-radius: 8px; background: var(--l2-accent-soft); color: var(--l2-accent); font-size: 14px; font-weight: 500; line-height: 1.2; }
+.rd__avimg--logo { object-fit: contain; padding: 6px; background: #fff; }
