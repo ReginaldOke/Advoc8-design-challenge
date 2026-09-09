@@ -52,7 +52,7 @@
       }
     }
     var sb = document.getElementById('sidebar'), head = sb && sb.querySelector(':scope > .m-3');
-    if (head && !head.querySelector('.l3panel__toggle')) { var pb = mkBtn('l3panel__toggle', 'fa-sidebar', 'Collapse panel'); pb.innerHTML = PANEL_SVG; pb.onclick = function () { setPanelCollapsed(true); }; head.appendChild(pb); }
+    if (head && !head.querySelector('.l3panel__toggle')) { var pb = mkBtn('l3panel__toggle', 'fa-sidebar', 'Collapse panel'); pb.innerHTML = PANEL_SVG; pb.removeAttribute('data-tooltip'); /* the rail and panel shows no tooltip on its collapse control */ pb.onclick = function () { setPanelCollapsed(true); }; head.appendChild(pb); }
     var logo = document.querySelector('.l3rail__logo');
     if (logo && !logo.querySelector('.l3rail__logo-expand')) {
       var lx = document.createElement('span'); lx.className = 'l3rail__logo-expand'; lx.innerHTML = PANEL_SVG; logo.appendChild(lx);
@@ -62,7 +62,7 @@
   }
   function syncCollapseTooltips() {
     var brand = document.querySelector('.l2nav__brand'); if (brand) { if (root.classList.contains('nav-collapsed')) brand.setAttribute('data-tooltip', 'Expand sidebar'); else brand.removeAttribute('data-tooltip'); }
-    var logo = document.querySelector('.l3rail__logo'); if (logo) { if (root.classList.contains('panel-collapsed')) logo.setAttribute('data-tooltip', 'Expand panel'); else logo.removeAttribute('data-tooltip'); }
+    var logo = document.querySelector('.l3rail__logo'); if (logo) logo.removeAttribute('data-tooltip'); /* no tooltip on the rail logo either */
   }
   document.addEventListener('keydown', function (e) {
     if (e.key !== '[' || e.metaKey || e.ctrlKey || e.altKey) return;
