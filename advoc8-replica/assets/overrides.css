@@ -2963,3 +2963,14 @@ html.lc #topbar { z-index: 1060; }
 /* sentiment card: the header grows to fit its two lines, so the divider and chart start below them */
 .sent-card .card-header { height: auto !important; min-height: 0; padding: 18px 24px 16px !important; }
 .sent-card .sent-chart { padding-top: 20px; }
+
+/* reader: more room under the title bar, and slightly smaller type throughout */
+.rd__grid { padding-top: 36px; }
+.rd__title { font-size: 26px; }
+.rd__meta { font-size: 15px; }
+.rd__ai li, .rd__content { font-size: 15.5px; }
+.rd__ailbl { font-size: 14px; }
+.rd__whoname { font-size: 18px; }
+.rd__whorole { font-size: 15px; }
+.rd__acts .btn { font-size: 14px; height: 42px; }
+.rd__kind { font-size: 16px; }
