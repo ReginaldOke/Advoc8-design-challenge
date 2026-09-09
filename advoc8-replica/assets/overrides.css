@@ -2904,3 +2904,8 @@ html.l2-enter .l3rail, html.l2-enter .l2nav, html.l2-enter .l2-wrap #sidebar { t
 /* option B profile: the back button sits on the avatar's centre line */
 html.lc .l2-backcol { align-self: center !important; }
 html.lc .l2-wrap .header-body > .row > .col-auto.l2-backcol { align-self: center !important; }
+
+/* option A: the change logs hold one plain line, not a numbered list */
+body:not(.l2-body) .proto__list { list-style: none; padding-left: 0; margin-left: 0; }
+body:not(.l2-body) .proto__list li { padding-left: 0; }
+body:not(.l2-body) .proto__list li::before { display: none; }

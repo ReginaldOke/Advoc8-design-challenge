@@ -92,6 +92,7 @@
 
   ['public-servants', 'councillors', 'all-people', 'local-councils', 'interest-groups', 'all-orgs', 'orgs'].forEach(function (k) { LOGS[k] = LOGS['people']; });
   var log = LOGS[base] || { name: 'This page', items: [] };
+  if (V === '1') { var NONE = 'No changes. The existing site was cloned with Claude.'; log = { name: log.name, items: [NONE] }; GLOBAL = [NONE]; } /* option A is the app as it is */
 
   var collapsed = false; try { collapsed = localStorage.getItem('advoc8-proto-collapsed') === '1'; } catch (e) {}
 
