@@ -2821,3 +2821,20 @@ html:not(.nav-collapsed) .l2nav__brand > span:not(.l2nav__brand-expand) { margin
 }
 /* collapsed side nav: square icon tiles */
 html.nav-collapsed .l2nav__item { height: 44px; }
+/* collapsed side nav (option C): the logo shows; hovering it swaps in the expand control */
+html.nav-collapsed .l2nav__brand img { display: block !important; width: 30px; height: 30px; }
+html.nav-collapsed .l2nav__brand-expand { display: none !important; }
+html.nav-collapsed .l2nav__brand:hover img, html.nav-collapsed .l2nav__brand:focus-visible img { display: none !important; }
+html.nav-collapsed .l2nav__brand:hover .l2nav__brand-expand, html.nav-collapsed .l2nav__brand:focus-visible .l2nav__brand-expand { display: grid !important; }
+
+/* option D panel: narrower and more compact. Width hugs the longest label (Departments & Agencies); the collapse control lines up over the + buttons */
+html.l3 #wrap.l2-wrap { grid-template-columns: 88px auto 1fr; }
+html.l3 .l2-wrap #sidebar { width: 218px !important; min-width: 218px; padding: 8px 8px 12px; }
+html.l3.panel-collapsed .l2-wrap #sidebar { width: 0 !important; min-width: 0 !important; padding-left: 0; padding-right: 0; }
+html.l3 .l2-wrap #sidebar > .m-3 { margin: 4px 0 10px 6px !important; min-height: 34px; }
+html.l3 .l2-wrap #sidebar .navbar-nav .nav-link { padding: 6px 6px 6px 6px; margin: 1px 0; }
+html.l3 .l2-wrap #sidebar .stake-links .nav-link, html.l3 .l2-wrap #sidebar .saved-labels .nav-link { padding-left: 6px; }
+html.l3 .l2-wrap #sidebar .nav-group-heading { margin: 12px 0 2px !important; }
+html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding: 2px 6px; }
+html.l3 .l2-wrap #sidebar .nav-group-heading .nav-group-action { width: 30px; height: 28px; }
+html.l3 .l2-wrap #sidebar .nav-divider { margin: 8px 2px; }
