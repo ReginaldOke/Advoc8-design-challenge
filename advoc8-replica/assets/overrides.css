@@ -2861,3 +2861,14 @@ html.l3.panel-collapsed .l3rail__logo-expand { display: grid !important; positio
 html.l3.panel-collapsed .l3rail__logo:hover img, html.l3.panel-collapsed .l3rail__logo:focus-visible img { display: block !important; opacity: 0; transform: scale(.82); }
 html.l3.panel-collapsed .l3rail__logo:hover .l3rail__logo-expand, html.l3.panel-collapsed .l3rail__logo:focus-visible .l3rail__logo-expand { display: grid !important; opacity: 1; transform: scale(1); }
 @media (prefers-reduced-motion: reduce) { html.l3.panel-collapsed .l3rail__logo, html.l3.panel-collapsed .l3rail__logo img, html.l3.panel-collapsed .l3rail__logo-expand { transition: none; } }
+
+/* option C panel: content sits a little closer to the rail */
+html.l3 .l2-wrap #sidebar { padding-left: 6px; padding-right: 6px; }
+html.l3.panel-collapsed .l2-wrap #sidebar { padding-left: 0; padding-right: 0; }
+html.l3 .l2-wrap #sidebar > .m-3 { margin-left: 4px !important; }
+html.l3 .l2-wrap #sidebar .navbar-nav .nav-link { padding-left: 4px; }
+html.l3 .l2-wrap #sidebar .stake-links .nav-link, html.l3 .l2-wrap #sidebar .saved-labels .nav-link { padding-left: 4px; }
+html.l3 .l2-wrap #sidebar .stake-links .nav-link .stake-ico { margin-left: 0; }
+html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding-left: 4px; }
+html.l3 .l2-wrap #sidebar .navbar-nav .nav-link, html.l3 .l2-wrap #sidebar .stake-links .nav-link, html.l3 .l2-wrap #sidebar .saved-labels .nav-link { padding-left: 4px !important; padding-right: 6px !important; }
+html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding-left: 4px !important; }
