@@ -106,8 +106,17 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
-    var t = e.target; if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
-    if (e.key === 'r' || e.key === 'R') { e.preventDefault(); if (screen) closeScreen(); else showSignIn(); }
+    var t = e.target, a = document.activeElement;
+    function typing(el) { return !!el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable); }
+    if (typing(t) || typing(a)) return;
+    if (e.key === 'r' || e.key === 'R') {
+      /* R is a page shortcut only: not while anything in a search bar, a window or a panel has focus */
+      if (e.repeat || e.isComposing) return;
+      if (t && t !== document.body && t !== document.documentElement && t.closest('.l2-search, #l2SearchWrap, .l2-searchwrap, .index-search-box, .tsq, .rd, .l2-modal, .np, .modal, .bsp, .spal, .l2-pop, .keyword-input, form')) return;
+      if (a && a !== document.body && a.closest && a.closest('.l2-search, #l2SearchWrap, .l2-searchwrap, .index-search-box, .tsq, .rd, .l2-modal, .np, .modal, .bsp, .spal, .l2-pop, .keyword-input, form')) return;
+      if (document.querySelector('.rd, .l2-modal, .np, .tsq.is-open, .modal.show')) return;
+      e.preventDefault(); if (screen) closeScreen(); else showSignIn();
+    }
     else if (e.key === 'Escape' && screen) closeScreen();
   });
 
