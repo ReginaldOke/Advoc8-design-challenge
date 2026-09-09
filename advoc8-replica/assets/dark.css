@@ -336,3 +336,12 @@ html.theme-dark .l2nav__count { background: var(--d-surface-3); color: var(--d-m
 html.theme-dark .l2nav__subitem.active .l2nav__count { background: rgba(106,164,245,.2); color: var(--l2-accent); }
 html.theme-dark .l2nav__subchev { color: var(--d-muted); }
 html.theme-dark .l2nav__subchev:hover { background: rgba(255,255,255,.1); color: var(--d-text); }
+
+/* reader window */
+html.theme-dark .rd__bar, html.theme-dark .rd__doc, html.theme-dark .rd__who { background: var(--d-surface); border-color: var(--d-border); }
+html.theme-dark .rd__kind, html.theme-dark .rd__whoname { color: var(--d-text); }
+html.theme-dark .rd__dochead { border-color: var(--d-border); }
+html.theme-dark .rd__meta, html.theme-dark .rd__whorole, html.theme-dark .rd__ailbl { color: var(--d-muted); }
+html.theme-dark .rd__ai { background: var(--d-surface-2); }
+html.theme-dark .rd__ai li { color: var(--d-text); }
+html.theme-dark .rd__acts .btn { background: var(--d-surface-2); border-color: var(--d-border); color: var(--d-text); }

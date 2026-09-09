@@ -45,37 +45,72 @@
     };
     return P[topic].map(function (x) { return '<p>' + x + '</p>'; }).join('');
   }
+  var KIND = { media: 'Media Release', parliament: 'Parliament', social: 'Social Media', other: 'Document' };
+  var MONTHS = 'January February March April May June July August September October November December'.split(' ');
+  function slug(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function initials(n) { return n.split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase(); }
+  function domainFor(name, isOrg) { if (isOrg) return slug(name).replace(/-/g, '') + '.gov.au'; var p = name.split(/\s+/); return (p.length > 1 ? (p[0] + p[p.length - 1]) : p[0]).toLowerCase().replace(/[^a-z0-9]/g, '') + '.com.au'; }
+  function opener(kind, title, who) {
+    if (kind === 'parliament') return 'The following is drawn from the official record of proceedings. Members spoke to the matter at length, and the exchange below has been lightly condensed for readability.';
+    if (kind === 'social') return 'Posted this morning and already doing the rounds. The full thread, with replies from constituents and colleagues, is summarised here.';
+    return 'Big news today. ' + (who ? who + ' has ' : 'The office has ') + 'released the following statement, reproduced here in full with the key points summarised above.';
+  }
   function open(card) {
     close();
     lastFocus = document.activeElement;
-    var body = card.querySelector('.card-body') || card, pre = card.querySelector('.card-text.small, .small.card-text'), title = card.querySelector('.card-title, h3, .rd-title'), badges = card.querySelectorAll('.badge-soft-primary, .badge.badge-light, .badge-light');
-    var kind = card.closest('[data-card-type]') ? card.closest('[data-card-type]').getAttribute('data-card-type') : '';
-    var meta = card.querySelector('.text-muted.small, .small.text-muted, .card-body .text-muted'), author = card.querySelector('.text-gray-800.mb-2, .d-flex.align-items-center.flex-gap-2, .rd-author');
-    var contentEl = [].slice.call(card.querySelectorAll('.card-body')).slice(-1)[0];
-    var content = '';
-    if (contentEl) { var clone = contentEl.cloneNode(true); clone.querySelectorAll('.hover-reveal__hidden, .badge-soft-primary, .btn, .dropdown').forEach(function (x) { x.remove(); }); content = clone.innerHTML; }
-    /* posts without a headline use the author or organisation name as the title */
-    var titleText, nameEl = null;
-    if (title) titleText = title.textContent.trim();
-    else { nameEl = card.querySelector('.text-gray-800 a, .text-gray-800 .font-weight-bold, .font-weight-bold'); if (nameEl) { var nc = nameEl.cloneNode(true); nc.querySelectorAll('.badge').forEach(function (x) { x.remove(); }); titleText = nc.textContent.replace(/\s+/g, ' ').trim(); } else titleText = 'Post'; }
-    var head = ''; var top = card.querySelector('.border-bottom.card-body');
-    if (top) {
-      var hc = top.cloneNode(true); hc.querySelectorAll('.hover-reveal__hidden, .card-title, h3, .stretched-link').forEach(function (x) { x.remove(); });
-      if (nameEl) hc.querySelectorAll('a, .font-weight-bold').forEach(function (x) { var xc = x.cloneNode(true); xc.querySelectorAll('.badge').forEach(function (b) { b.remove(); }); if (xc.textContent.replace(/\s+/g, ' ').trim() === titleText) { var frag = document.createDocumentFragment(); x.querySelectorAll('.badge').forEach(function (b) { frag.appendChild(b); }); x.replaceWith(frag); } });
-      head = hc.innerHTML;
+    var kindKey = card.closest('[data-card-type]') ? card.closest('[data-card-type]').getAttribute('data-card-type') : 'media';
+    var pre = card.querySelector('.card-text.small, .small.card-text'), title = card.querySelector('.card-title, h3, .rd-title');
+    var metaEl = card.querySelector('.border-bottom.card-body > p.small.card-text.mb-0') || card.querySelector('.card-body .text-muted.small');
+    var metaText = metaEl ? metaEl.textContent.replace(/\s+/g, ' ').trim() : '';
+    var kindLabel = KIND[kindKey] || 'Document', dateText = '';
+    var mm = metaText.match(/^(.*?)\s*[•·]\s*(.*)$/); if (mm) { if (mm[1] && !KIND[kindKey]) kindLabel = mm[1]; dateText = mm[2]; } else if (pre) dateText = pre.textContent.trim();
+    if (dateText && !/\d{4}/.test(dateText)) dateText += ' ' + new Date().getFullYear();
+    if (!dateText) { var d = new Date(); dateText = d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear(); }
+    /* who it is from: the first author (name, party, jurisdiction, role) or the organisation */
+    var who = null, nameEl = card.querySelector('.text-gray-800 h4.font-weight-bold, .text-gray-800 .font-weight-bold, .rd-author .font-weight-bold') || [].filter.call(card.querySelectorAll('.font-weight-bold'), function (x) { return !x.classList.contains('card-title') && !x.closest('.card-title, .feed-body'); })[0];
+    if (nameEl) {
+      var nc = nameEl.cloneNode(true); var badges = [].map.call(nc.querySelectorAll('.badge'), function (b) { return { text: b.textContent.trim(), party: b.classList.contains('party'), style: b.getAttribute('style') || '' }; });
+      nc.querySelectorAll('.badge').forEach(function (x) { x.remove(); });
+      var roleEl = nameEl.parentElement && nameEl.parentElement.querySelector('h5, .text-muted');
+      who = { name: nc.textContent.replace(/\s+/g, ' ').trim(), badges: badges, role: roleEl ? roleEl.textContent.trim() : '', org: !badges.some(function (b) { return b.party; }) };
+    }
+    /* the card's bullets become the summary; the body is the full piece */
+    var bullets = [].map.call(card.querySelectorAll('.feed-body li'), function (li) { return li.textContent.trim(); }).filter(Boolean).slice(0, 4);
+    var text = card.querySelector('.feed-body'); var social = (!bullets.length && text) ? text.textContent.trim() : '';
+    var titleText = title ? title.textContent.trim() : (who ? who.name : 'Post');
+    if (!bullets.length && social) bullets = social.split(/(?<=[.!?])\s+/).slice(0, 3);
+    var tags = [].map.call(card.querySelectorAll('.badge-soft-primary'), function (b) { return b.textContent.trim(); });
+    var body = '<p>' + esc(opener(kindKey, titleText, who && !who.org ? who.name : '')) + '</p>' + (social ? '<p>' + esc(social) + '</p>' : '') + continuation(kindKey, titleText) + continuation('general', '') +
+      '<p>Anyone with questions about what this means for them can contact the office directly. Further updates will be posted as they come to hand, and the full text of any related documents will be linked from this page.</p>';
+    var side = '';
+    if (who) {
+      var av = who.org ? '<span class="rd__ini">' + esc(initials(who.name)) + '</span>' : '<img class="rd__avimg" src="assets/avatars/' + slug(who.name) + '.jpg" alt="" onerror="this.hidden=true;this.nextSibling.hidden=false"><span class="rd__ini" hidden>' + esc(initials(who.name)) + '</span>';
+      side = '<a class="rd__who" href="' + (who.org ? '#' : 'person2.html') + '"><span class="rd__av">' + av + '</span><span class="rd__whotxt"><span class="rd__whoname">' + esc(who.name) +
+        who.badges.map(function (b) { return '<span class="badge ' + (b.party ? 'party' : 'bg-secondary-soft text-dark') + '"' + (b.style ? ' style="' + esc(b.style) + '"' : '') + '>' + esc(b.text) + '</span>'; }).join('') + '</span>' +
+        (who.role ? '<span class="rd__whorole">' + esc(who.role) + '</span>' : '') + '</span></a>';
     }
     view = document.createElement('div'); view.className = 'rd'; view.setAttribute('role', 'dialog'); view.setAttribute('aria-modal', 'true'); view.setAttribute('aria-label', titleText);
-    view.innerHTML = '<div class="rd__scrim"></div><div class="rd__scroll"><article class="rd__panel">' +
-      '<header class="rd__bar"><button type="button" class="rd__back"><i class="far fa-arrow-left fa-fw"></i>Back</button><div class="rd__acts"><button type="button" class="btn btn-white btn-sm"><i class="far fa-share-from-square fa-fw mr-1"></i>Share</button><button type="button" class="btn btn-white btn-sm js-save-btn"><i class="fa-regular fa-bookmark fa-fw mr-1"></i> Save</button><button type="button" class="rd__close" aria-label="Close">&#215;</button></div></header>' +
-      '<div class="rd__body">' + (pre ? '<p class="rd__pre">' + esc(pre.textContent.trim()) + '</p>' : '') + '<h1 class="rd__title">' + esc(titleText) + '</h1>' +
-      '<div class="rd__head">' + head + '</div>' +
-      '<div class="rd__content">' + content + continuation(kind, titleText) + '</div>' +
-      (badges.length ? '<div class="rd__tags">' + [].map.call(badges, function (b) { return '<span class="badge badge-soft-primary">' + esc(b.textContent.trim()) + '</span>'; }).join('') + '</div>' : '') +
-      '<div class="rd__foot"><button type="button" class="btn btn-white rd__done"><i class="far fa-arrow-left fa-fw mr-2"></i>Back to results</button></div>' +
-      '</div></article></div>';
+    view.innerHTML = '<div class="rd__scrim"></div><div class="rd__panel">' +
+      '<header class="rd__bar"><span class="rd__kind">' + esc(kindLabel) + '</span><button type="button" class="rd__close" aria-label="Close">&#215;</button></header>' +
+      '<div class="rd__scroll"><div class="rd__grid">' +
+        '<article class="rd__doc">' +
+          '<div class="rd__dochead"><h1 class="rd__title">' + esc(titleText) + '</h1><p class="rd__meta">' + esc(dateText) + ' <span class="rd__dot">•</span> via <a class="rd__src" href="#">' + esc(domainFor(who ? who.name : titleText, who && who.org)) + '<i class="far fa-arrow-up-right-from-square"></i></a></p></div>' +
+          '<div class="rd__docbody">' +
+            (bullets.length ? '<div class="rd__ai"><div class="rd__ailbl"><i class="fas fa-sparkles"></i>AI Summary</div><ul>' + bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul></div>' : '') +
+            '<div class="rd__content">' + body + '</div>' +
+            (tags.length ? '<div class="rd__tags">' + tags.map(function (t) { return '<span class="badge badge-soft-primary">' + esc(t) + '</span>'; }).join('') + '</div>' : '') +
+          '</div>' +
+        '</article>' +
+        '<aside class="rd__side">' +
+          '<div class="rd__acts"><button type="button" class="btn btn-white"><i class="far fa-share-from-square fa-fw"></i>Share</button><button type="button" class="btn btn-white js-save-btn"><i class="fa-regular fa-bookmark fa-fw"></i>Save</button><button type="button" class="btn btn-white rd__find"><i class="far fa-search fa-fw"></i>Find</button></div>' +
+          side +
+        '</aside>' +
+      '</div></div></div>';
     document.body.appendChild(view); document.body.classList.add('rd-open');
+    if (window.applyTablerIcons) window.applyTablerIcons(view);
     requestAnimationFrame(function () { view.classList.add('show'); });
-    view.querySelectorAll('.rd__back, .rd__close, .rd__done, .rd__scrim').forEach(function (b) { b.addEventListener('click', close); });
+    view.querySelectorAll('.rd__close, .rd__scrim').forEach(function (b) { b.addEventListener('click', close); });
+    var find = view.querySelector('.rd__find'); if (find) find.addEventListener('click', function () { try { window.find(''); } catch (e) {} var first = view.querySelector('.rd__content'); if (first) { var sel = window.getSelection(); var r = document.createRange(); r.selectNodeContents(first); r.collapse(true); sel.removeAllRanges(); sel.addRange(r); } });
     document.addEventListener('keydown', onKey);
     setTimeout(function () { var c = view && view.querySelector('.rd__close'); if (c) c.focus(); }, 260);
   }
