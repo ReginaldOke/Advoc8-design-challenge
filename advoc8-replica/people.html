@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Members of Parliament</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Feeds</a></li>
+          <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="people.html">Stakeholders</a></li>
+          <li class="nav-item"><a class="nav-link" href="posts.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Maps</a></li>
+        </ul>
+      </div>
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i><span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#"><i class="far fa-message-lines fa-fw mr-3"></i>Log Activity</a>
+            <a class="dropdown-item" href="#"><i class="far fa-calendar-check fa-fw mr-3"></i>Schedule Activity</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"><i class="far fa-user fa-fw mr-3"></i>Person</a>
+            <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-3"></i>Organisation</a>
+            <a class="dropdown-item" href="#"><i class="far fa-flag fa-fw mr-3"></i>Campaign</a>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#"><i class="far fa-book fa-fw mr-1"></i> View the Help Centre</a>
+              <a class="dropdown-item" href="#"><i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Stakeholders</h1>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-landmark-dome fa-fw mr-1"></i>
+          <span class="stake-heading">PARLIAMENT</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link active" href="people.html">Members of Parliament</a>
+        <a class="nav-link" href="people.html?segment=advisers">Advisers</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-building fa-fw mr-1"></i>
+          <span class="stake-heading">PUBLIC SERVICE</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="orgs.html">Departments &amp; Agencies</a>
+        <a class="nav-link" href="#">Public Servants</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-map-location-dot fa-fw mr-1"></i>
+          <span class="stake-heading">LOCAL GOVERNMENT</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="#">Local Councils</a>
+        <a class="nav-link" href="#">Councillors &amp; Staff</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-flag fa-fw mr-1"></i>
+          <span class="stake-heading">INTEREST GROUPS</span>
+        </a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-id-badge fa-fw mr-1"></i>
+          <span class="stake-heading">ALL STAKEHOLDERS</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="#">All People</a>
+        <a class="nav-link" href="#">All Organisations</a>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container"><div id="toasts"></div></div>
+      <div class="container-fluid">
+        <div class="mx-auto" style="max-width: 1680px;">
+          <div class="header mt-3">
+            <div class="header-body border-0 mb-n4">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="header-pretitle"></h6>
+                  <h1 class="header-title font-weight-bold" id="pageTitle">Members of Parliament</h1>
+                </div>
+                <div class="col-auto mt-lg-0 align-self-top">
+                  <div class="d-none d-md-flex flex-gap-2">
+                    <a class="btn btn-white" href="#"><i class="far fa-plus fa-fw mr-2"></i>New Person</a>
+                    <div class="dropdown">
+                      <button class="btn btn-white" type="button" data-toggle="dropdown"><i class="far fa-ellipsis fa-fw"></i></button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="far fa-file-import fa-fw mr-2"></i> Import People</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-top mb-3 mt-5">
+            <div class="d-none d-lg-inline-block mr-2">
+              <a class="btn btn-white rounded-pill filter-button-stake" id="filtersToggle" role="button" href="#">
+                <i class="fas fa-sliders-v mx-1"></i>
+                <span class="d-none d-md-inline">Filters</span>
+              </a>
+            </div>
+            <div class="index-search-box">
+              <div class="form-group input-group input-group-merge input-group-rounded mb-0">
+                <input class="form-control form-control-prepended" type="search" placeholder="Search">
+                <div class="input-group-prepend"><div class="input-group-text"><span class="far fa-search"></span></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="filter_panel" class="col-auto d-none pr-0">
+              <div id="facets_pane" class="mt-5" style="width: 250px;">
+  <h5 class="facet-heading text-muted text-uppercase">Jurisdiction</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Federal</div>
+        <div class="ml-auto badge badge-pill badge-light">470</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">NSW</div>
+        <div class="ml-auto badge badge-pill badge-light">187</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">WA</div>
+        <div class="ml-auto badge badge-pill badge-light">185</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">VIC</div>
+        <div class="ml-auto badge badge-pill badge-light">155</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">QLD</div>
+        <div class="ml-auto badge badge-pill badge-light">135</div>
+      </button>
+    </li>
+  </ul>
+  <div class="small mb-4 mt-n3 px-2"><a href="#" class="text-muted">view all <i class="far fa-chevron-right fa-xs ml-1"></i></a></div>
+  <h5 class="facet-heading text-muted text-uppercase">Party</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled"><i class="fas fa-circle mr-3" style="color: #eb1e1e"></i>Australian Labor Party</div>
+        <div class="ml-auto badge badge-pill badge-light">891</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled"><i class="fas fa-circle mr-3" style="color: #1947ab"></i>Liberal Party</div>
+        <div class="ml-auto badge badge-pill badge-light">194</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled"><i class="fas fa-circle mr-3" style="color: #1947ab"></i>Liberal National Party</div>
+        <div class="ml-auto badge badge-pill badge-light">141</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled"><i class="fas fa-circle mr-3" style="color: #888888"></i>Independent</div>
+        <div class="ml-auto badge badge-pill badge-light">47</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled"><i class="fas fa-circle mr-3" style="color: #24a343"></i>The Greens</div>
+        <div class="ml-auto badge badge-pill badge-light">46</div>
+      </button>
+    </li>
+  </ul>
+  <div class="small mb-4 mt-n3 px-2"><a href="#" class="text-muted">view all <i class="far fa-chevron-right fa-xs ml-1"></i></a></div>
+  <h5 class="facet-heading text-muted text-uppercase">Party Status</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Government</div>
+        <div class="ml-auto badge badge-pill badge-light">1061</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Opposition</div>
+        <div class="ml-auto badge badge-pill badge-light">230</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Crossbench</div>
+        <div class="ml-auto badge badge-pill badge-light">124</div>
+      </button>
+    </li>
+  </ul>
+              </div>
+            </div>
+            <div class="col overflow-auto">
+<div class="action-bar mb-1">
+  <div class="row align-items-center h-100">
+    <div class="col">
+      <div class="text-muted small">Displaying people <b>1 - 25 - 25</b> of <b>846</b> in total
+        <a class="ml-4 js-select-all" href="#">select all</a>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="action-bar__content">
+        <div class="d-none d-md-inline-flex flex-gap-2">
+          <a class="btn btn-sm btn-white" href="#"><i class="far fa-file-export mr-2"></i>Export CSV</a>
+          <div class="btn-group btn-group-sm">
+            <a class="btn btn-sm btn-white active js-view-toggle" href="#"><i class="far fa-list mr-2"></i>List</a>
+            <a class="btn btn-sm btn-white js-view-toggle" href="#"><i class="far fa-table mr-2"></i>Table</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="action-bar__selected-content d-none" id="selectedBar">
+    <div class="py-1 px-2 bg-warning-soft rounded shadow-sm overflow-auto">
+      <div class="d-flex flex-gap-2 align-items-center">
+        <small class="font-weight-bold px-2 mr-4"><span id="selectedCount">0</span> selected</small>
+        <button class="btn btn-sm btn-primary" type="button"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-1"></i>Add to List</button>
+        <div class="dropdown">
+          <button class="btn btn-sm btn-white dropdown-toggle" type="button" data-toggle="dropdown"><i class="far fa-layer-group mr-1"></i>More Actions</button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><button class="dropdown-item" type="button"><i class="far fa-file-export fa-fw mr-3"></i>Export</button></li>
+            <li><button class="dropdown-item" type="button"><i class="far fa-copy fa-fw mr-3"></i>Copy Emails to Clipboard</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              <ul class="list-group list-group-flush" id="peopleList">
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="person.html"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/anthony-albanese.jpg" alt="Anthony Albanese">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="person.html">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Anthony Albanese</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Prime Minister</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="person.html">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Chair, Expenditure Review Committee • Chair, National Security Committee • Chair, Priority and Delivery Committee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Grayndler (NSW)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Prime Minister and Cabinet</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/david-crisafulli.jpg" alt="David Crisafulli">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">David Crisafulli</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #1947ab; color: white;">LNP</span>
+                        <span class="badge bg-secondary-soft text-dark">QLD</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Premier</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Leader of the Liberal National Party</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Broadwater</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Premier and Cabinet</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/jane-hume.jpg" alt="Jane Hume">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Jane Hume</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #1947ab; color: white;">LP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Deputy Leader of the Opposition</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Deputy Leader of the Federal Parliamentary Liberal Party • Chair, Senate Standing Committee of Privileges</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Senator for Victoria (VIC)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Committee</div>
+          <div class="col">Privileges</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/angus-taylor.jpg" alt="Angus Taylor">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Angus Taylor</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #1947ab; color: white;">LP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Leader of the Opposition</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Leader of the Federal Parliamentary Liberal Party • Secretary of the Coalition Employment Policy Committee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Hume (NSW)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Career Experience</div>
+          <div class="col">Partner • Director</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/darren-chester.jpg" alt="Darren Chester">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Darren Chester</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #248000; color: white;">NAT</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Deputy Leader of the Nationals</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Deputy Leader of the Federal Parliamentary Nationals • Leader of the Nationals in the House</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Gippsland (VIC)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Committee</div>
+          <div class="col">Nuclear Energy • Parliamentary Standards</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/penny-wong.jpg" alt="Penny Wong">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Penny Wong</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Minister for Foreign Affairs</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Leader of the Government in the Senate • Deputy Chair, Parliamentary Business Committee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Senator for South Australia (SA)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Foreign Affairs and Trade</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/tony-burke.jpg" alt="Tony Burke">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Tony Burke</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Minister for the Arts</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Leader of the House • Chair, Parliamentary Business Committee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Watson (NSW)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Home Affairs • Defence • Infrastructure, Transport, Regional Development, Communications, Sport &amp; Arts</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/jim-chalmers.jpg" alt="Jim Chalmers">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Jim Chalmers</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Treasurer</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Deputy Chair, Expenditure Review Committee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Rankin (QLD)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Treasury</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/katy-gallagher.jpg" alt="Katy Gallagher">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Katy Gallagher</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Minister for Finance</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Manager of Government Business in the Senate • Chair, Government Communications Committee • Chair, National Security Investment Subcommittee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Senator for Australian Capital Territory (ACT)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Finance • Prime Minister and Cabinet</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+<li class="list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom">
+  <div class="row">
+    <div class="col-auto pl-2 d-none d-md-block position-relative">
+      <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+    </div>
+    <div class="col">
+      <div class="row justify-content-between">
+        <div class="col">
+          <div class="row">
+            <div class="col-auto mr-n3">
+              <a class="text-reset stretched-link" href="#"><div class="avatar avatar-sm"><img class="avatar-img rounded" src="/assets/avatars/richard-marles.jpg" alt="Richard Marles">
+      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+    </div></a>
+            </div>
+            <div class="col">
+              <a class="text-reset stretched-link" href="#">
+                <h4 class="mb-0">
+                  <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                    <span style="white-space:nowrap;">Richard Marles</span>
+                    <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                  </div>
+                </h4>
+                <h5 class="text-muted font-weight-normal mb-0 mt-2">Minister for Defence</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto mt-0">
+          <div class="d-flex flex-gap-1">
+            <a class="btn btn-white btn-sm d-none d-md-inline z-2 position-relative" href="#"><i class="far fa-plus fa-fw mr-1"></i>Add to Campaign</a>
+            <div class="dropdown z-2 position-relative">
+              <button class="btn btn-sm btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-ellipsis-h fa-fw"></i><span class="sr-only">More Actions</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-2"></i>Add to Organisation</a>
+                <a class="dropdown-item" href="#"><i class="far fa-user-plus fa-fw mr-2"></i>Add Key Contact</a>
+                <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i>Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="text-reset" href="#">
+        <div class="w-100 py-3"></div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Position</div>
+          <div class="col">Deputy Chair, National Security Committee • Deputy Chair, National Security Investment Subcommittee</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Seat</div>
+          <div class="col">Member for Corio (VIC)</div>
+        </div>
+        <div class="row small mt-1">
+          <div class="col-12 col-lg-auto font-weight-bold" style="width: 10rem;">Department</div>
+          <div class="col">Defence</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script>
+    window.MOP_ROWS = "<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"person.html\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">AA</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"person.html\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Anthony Albanese</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #eb1e1e; color: white;\">ALP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Prime Minister</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"person.html\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Chair, Expenditure Review Committee \u2022 Chair, National Security Committee \u2022 Chair, Priority and Delivery Committee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Grayndler (NSW)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Prime Minister and Cabinet</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">DC</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">David Crisafulli</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #1947ab; color: white;\">LNP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">QLD</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Premier</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Leader of the Liberal National Party</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Broadwater</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Premier and Cabinet</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">JH</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Jane Hume</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #1947ab; color: white;\">LP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Deputy Leader of the Opposition</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Deputy Leader of the Federal Parliamentary Liberal Party \u2022 Chair, Senate Standing Committee of Privileges</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Senator for Victoria (VIC)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Committee</div>\n          <div class=\"col\">Privileges</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">AT</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Angus Taylor</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #1947ab; color: white;\">LP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Leader of the Opposition</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Leader of the Federal Parliamentary Liberal Party \u2022 Secretary of the Coalition Employment Policy Committee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Hume (NSW)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Career Experience</div>\n          <div class=\"col\">Partner \u2022 Director</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">DC</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Darren Chester</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #248000; color: white;\">NAT</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Deputy Leader of the Nationals</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Deputy Leader of the Federal Parliamentary Nationals \u2022 Leader of the Nationals in the House</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Gippsland (VIC)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Committee</div>\n          <div class=\"col\">Nuclear Energy \u2022 Parliamentary Standards</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">PW</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Penny Wong</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #eb1e1e; color: white;\">ALP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Minister for Foreign Affairs</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Leader of the Government in the Senate \u2022 Deputy Chair, Parliamentary Business Committee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Senator for South Australia (SA)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Foreign Affairs and Trade</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">TB</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Tony Burke</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #eb1e1e; color: white;\">ALP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Minister for the Arts</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Leader of the House \u2022 Chair, Parliamentary Business Committee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Watson (NSW)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Home Affairs \u2022 Defence \u2022 Infrastructure, Transport, Regional Development, Communications, Sport &amp; Arts</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">JC</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Jim Chalmers</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #eb1e1e; color: white;\">ALP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Treasurer</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Deputy Chair, Expenditure Review Committee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Rankin (QLD)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Treasury</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">KG</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Katy Gallagher</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #eb1e1e; color: white;\">ALP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Minister for Finance</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Manager of Government Business in the Senate \u2022 Chair, Government Communications Committee \u2022 Chair, National Security Investment Subcommittee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Senator for Australian Capital Territory (ACT)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Finance \u2022 Prime Minister and Cabinet</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">RM</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Richard Marles</span>\n                    <div class=\"d-inline-flex flex-gap-1 small\">\n                        <span class=\"badge party\" style=\"background-color: #eb1e1e; color: white;\">ALP</span>\n                        <span class=\"badge bg-secondary-soft text-dark\">Federal</span>\n                      </div>\n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Minister for Defence</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Position</div>\n          <div class=\"col\">Deputy Chair, National Security Committee \u2022 Deputy Chair, National Security Investment Subcommittee</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Seat</div>\n          <div class=\"col\">Member for Corio (VIC)</div>\n        </div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Department</div>\n          <div class=\"col\">Defence</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>";
+    window.ADV_ROWS = "<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">TG</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Tim Gartrell</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Anthony Albanese</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">tim.gartrell@pm.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">RF</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Richard Ferrett</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to David Crisafulli</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">Richard.Ferrett@ministerial.qld.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">A</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Anna Oldmeadow</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Penny Wong</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">Anna.Oldmeadow@dfat.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">D</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Darryl Watkins</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Tony Burke</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">Darryl.Watkins@homeaffairs.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">FW</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Fiona Ward</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Anthony Carbines</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">fiona.ward@minstaff.vic.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">N</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Ned Whitehouse</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Jeremy Rockliff</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">Ned.Whitehouse@dpac.tas.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">D</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Daniel Smith</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Roger Cook</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">Daniel.Smith@dpc.wa.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>\n<li class=\"list-group-item list-group-item-action px-3 px-md-4 pb-4 border-bottom\">\n  <div class=\"row\">\n    <div class=\"col-auto pl-2 d-none d-md-block position-relative\">\n      <input type=\"checkbox\" class=\"stretched-link js-row-check\" style=\"height: 1rem; margin-top: .75rem;\">\n    </div>\n    <div class=\"col\">\n      <div class=\"row justify-content-between\">\n        <div class=\"col\">\n          <div class=\"row\">\n            <div class=\"col-auto mr-n3\">\n              <a class=\"text-reset stretched-link\" href=\"#\"><div class=\"avatar avatar-sm\">\n      <span class=\"avatar-title rounded person-avatar-initials\">C</span>\n      <div class=\"avatar-indicators\"><span class=\"bg-info text-white\"><i class=\"fa-kit fa-advoc8 fa-fw\"></i></span></div>\n    </div></a>\n            </div>\n            <div class=\"col\">\n              <a class=\"text-reset stretched-link\" href=\"#\">\n                <h4 class=\"mb-0\">\n                  <div class=\"d-flex align-items-center flex-wrap flex-gap-2\">\n                    <span style=\"white-space:nowrap;\">Courtney Thompson</span>\n                    \n                  </div>\n                </h4>\n                <h5 class=\"text-muted font-weight-normal mb-0 mt-2\">Chief of Staff to Steven Miles</h5>\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"col-auto mt-0\">\n          <div class=\"d-flex flex-gap-1\">\n            <a class=\"btn btn-white btn-sm d-none d-md-inline z-2 position-relative\" href=\"#\"><i class=\"far fa-plus fa-fw mr-1\"></i>Add to Campaign</a>\n            <div class=\"dropdown z-2 position-relative\">\n              <button class=\"btn btn-sm btn-white\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"far fa-ellipsis-h fa-fw\"></i><span class=\"sr-only\">More Actions</span>\n              </button>\n              <div class=\"dropdown-menu dropdown-menu-right\">\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"fa-kit fa-regular-list-circle-plus fa-fw mr-2\"></i>Add to List</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-sitemap fa-fw mr-2\"></i>Add to Organisation</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-user-plus fa-fw mr-2\"></i>Add Key Contact</a>\n                <a class=\"dropdown-item\" href=\"#\"><i class=\"far fa-pen-to-square fa-fw mr-2\"></i>Edit Profile</a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <a class=\"text-reset\" href=\"#\">\n        <div class=\"w-100 py-3\"></div>\n        <div class=\"row small mt-1\">\n          <div class=\"col-12 col-lg-auto font-weight-bold\" style=\"width: 10rem;\">Email</div>\n          <div class=\"col\">Courtney.Thompson@qld.gov.au</div>\n        </div>\n      </a>\n    </div>\n  </div>\n</li>";
+    document.addEventListener('DOMContentLoaded', function () {
+      var params = new URLSearchParams(location.search);
+      var segment = params.get('segment');
+      if (segment === 'advisers') {
+        document.getElementById('pageTitle').textContent = 'Advisers';
+        document.title = 'Advisers';
+        document.getElementById('peopleList').innerHTML = window.ADV_ROWS;
+        document.querySelector('.action-bar .text-muted').innerHTML =
+          'Displaying people <b>1 - 25</b> of <b>1414</b> in total <a class="ml-4 js-select-all" href="#">select all</a>';
+        document.getElementById('filter_panel').classList.remove('d-none');
+        document.getElementById('filtersToggle').classList.add('active');
+        document.querySelectorAll('#sidebar .stake-links .nav-link').forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === 'people.html?segment=advisers');
+        });
+      }
+      document.getElementById('filtersToggle').addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('filter_panel').classList.toggle('d-none');
+        this.classList.toggle('active');
+      });
+      function updateSelected() {
+        var n = document.querySelectorAll('.js-row-check:checked').length;
+        document.getElementById('selectedCount').textContent = n;
+        document.getElementById('selectedBar').classList.toggle('d-none', n === 0);
+      }
+      document.addEventListener('change', function (e) {
+        if (e.target.classList.contains('js-row-check')) updateSelected();
+      });
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('.js-select-all')) {
+          e.preventDefault();
+          document.querySelectorAll('.js-row-check').forEach(function (c) { c.checked = true; });
+          updateSelected();
+        }
+        var vt = e.target.closest('.js-view-toggle');
+        if (vt) {
+          e.preventDefault();
+          document.querySelectorAll('.js-view-toggle').forEach(function (t) { t.classList.toggle('active', t === vt); });
+        }
+      });
+    });
+  </script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>

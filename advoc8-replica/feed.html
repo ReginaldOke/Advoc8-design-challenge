@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar panels</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Feeds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agenda.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="people.html">Stakeholders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Maps</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i>
+            <span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="fabDropdownButton">
+            <a class="dropdown-item" href="#">
+              <i class="far fa-message-lines fa-fw mr-3"></i>
+              Log Activity
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-calendar-check fa-fw mr-3"></i>
+              Schedule Activity
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-user fa-fw mr-3"></i>
+              Person
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-sitemap fa-fw mr-3"></i>
+              Organisation
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-flag fa-fw mr-3"></i>
+              Campaign
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <a class="nav-link d-xl-none" href="#">
+            <i class="fas fa-fw fa-magnifying-glass"></i>
+          </a>
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="help_dropdown">
+              <a class="dropdown-item" href="#">
+                <i class="far fa-book fa-fw mr-1"></i> View the Help Centre
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topbar_user_dropdown">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item d-md-none" href="#">Help Centre</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Feeds</h1>
+        <a class="d-md-none h1 mb-0 text-reset" href="#">
+          <i class="fal fa-times"></i>
+        </a>
+      </div>
+      <div class="navbar-nav ">
+        <a class="nav-link" href="index.html">
+          <i class="fal fa-search fa-fw"></i> Search
+        </a>
+        <a class="nav-link" href="feeds.html">
+          <i class="fal fa-layer-group fa-fw"></i> Your Feeds
+        </a>
+        <a class="nav-link" href="saved.html">
+          <i class="fal fa-bookmark fa-fw"></i> Saved Items
+        </a>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="navbar-nav">
+        <div class="nav-group-heading">
+          <a class="nav-link" role="button" aria-controls="feeds_sidebar_collapse" href="#feeds_sidebar_collapse" aria-expanded="true">
+            <i class="fas fa-caret-down fa-fw fa-xs"></i>
+            <i class="fas fa-caret-right fa-fw fa-xs"></i>
+            Feeds
+          </a>
+          <a class="nav-link nav-group-action" data-tooltip="New Feed" href="#">
+            <i class="fal fa-plus fa-fw"></i>
+          </a>
+        </div>
+        <div class="collapsible-nav-group navbar-nav" id="feeds_sidebar_collapse">
+          <a class="nav-link" href="#">
+            <span class="mx-2 flex-noshrink">🤖</span>
+            <span class="text-nowrap">data centers</span>
+          </a>
+          <a class="nav-link active" href="feed.html">
+            <span class="mx-2 flex-noshrink">🌞</span>
+            <span class="text-nowrap">Solar panels</span>
+          </a>
+          <a class="nav-link" href="#">
+            <span class="mx-2 flex-noshrink">🐑</span>
+            <span class="text-nowrap">Agriculture</span>
+          </a>
+          <a class="nav-link text-primary mt-2" href="#">
+            <i class="far fa-fw"></i>
+            <small>View all Feeds &nbsp; →</small>
+          </a>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container" class="">
+        <div id="toasts"></div>
+      </div>
+
+      <div class="mainopShadow"></div>
+      <div class="floating-action-button dropup">
+        <div class="mainop" role="button" data-toggle="dropdown" id="fabDropdownButtonMobile" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-fw far fa-plus"></i>
+          <span class="sr-only">New Item</span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">
+            <i class="far fa-flag fa-fw mr-3"></i>
+            Campaign
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-sitemap fa-fw mr-3"></i>
+            Organisation
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-user fa-fw mr-3"></i>
+            Person
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-message-lines fa-fw mr-3"></i>
+            Log Activity
+          </a>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="mt-md-5 mx-auto" style="max-width: 1024px;">
+          <div class="header mt-3">
+            <div class="header-body border-0 mb-n4">
+              <div class="row align-items-start">
+                <div class="col">
+                  <h6 class="header-pretitle"></h6>
+                  <h1 class="header-title font-weight-bold">
+                    <span class="feed-emoji mr-2">🌞</span>
+                    Solar panels
+                  </h1>
+                  <div class="header-subtitle pb-0 mt-3">
+                    <div class="d-flex align-items-baseline flex-gap-2">
+                      <div class="flex-0">
+                        <i class="far fa-message-lines fa-fw mx-2"></i>
+                      </div>
+                      <div class="flex-1">
+                        <a class="text-reset" href="#">Environment</a>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-baseline flex-gap-2">
+                      <div class="flex-0">
+                        <i class="fas fa-quote-left fa-fw mx-2"></i>
+                      </div>
+                      <div class="flex-1">
+                        <a class="text-reset" href="#">Mentions of Solar panels, Renewable Energy Scheme</a>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-baseline flex-gap-2">
+                      <div class="flex-0">
+                        <i class="fas fa-user fa-fw mx-2"></i>
+                      </div>
+                      <div class="flex-1">
+                        Following Anthony Albanese, Pauline Hanson, Chris Minns and 1 other
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-baseline flex-gap-2 mb-1">
+                      <i class="fas fa-bell-on text-warning fa-fw mx-2"></i>
+                      <a class="text-reset" href="#">
+                        Notifications are <span class="font-weight-bold">ON</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto mt-lg-0 align-self-top">
+                  <div class="d-flex flex-gap-2 justify-content-end">
+                    <a class="btn btn-white" href="#">
+                      <i class="fa-kit fa-regular-bell-gear fa-fw mr-2"></i>
+                      Notification Settings
+                    </a>
+                    <div class="dropdown">
+                      <button class="btn btn-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-ellipsis fa-fw"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">
+                          <i class="far fa-pen-to-square fa-fw mr-2"></i> Rename
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          <i class="far fa-cog fa-fw mr-2"></i> Edit Filters
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          <i class="far fa-folder-plus fa-fw mr-2"></i> Add to Group
+                        </a>
+                        <a class="dropdown-item text-danger" href="#">
+                          <i class="far fa-bell-slash fa-fw mr-2"></i> Unsubscribe
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#">
+                          <i class="far fa-trash-alt fa-fw mr-2"></i> Delete Feed
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / .row -->
+            </div>
+          </div>
+          <!-- / .header -->
+
+          <form id="search_form_feed" class="d-flex flex-gap-2 align-items-center mb-3" action="#" accept-charset="UTF-8" method="get" onsubmit="return false;">
+            <div class="index-search-box">
+              <div class="form-group mb-0 d-flex">
+                <div class="input-group input-group-merge input-group-rounded">
+                  <input placeholder="Search within Feed" autocomplete="off" class="form-control form-control-prepended" type="search" name="search[terms]">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <span class="far fa-search"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a class="btn btn-white rounded-pill filter-button" role="button" href="#">
+                <i class="fas fa-sliders-v mx-1"></i>
+                <span class="d-none d-md-inline">Filters</span>
+              </a>
+              <div class="modal fade" tabindex="-1" role="dialog" id="filterModal">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                      <h4 class="modal-title">Filter</h4>
+                      <button type="button" class="close">
+                        <span>×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="accordion">
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="jurisdictions-header">
+                            <div>
+                              <i class="far fa-landmark-dome fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Jurisdictions</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#jurisdictions" aria-expanded="false" aria-controls="jurisdictions"></button>
+                          </div>
+                          <div id="jurisdictions" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+                              <div class="d-table">
+                                <div class="d-table-row">
+                                  <div class="d-table-cell py-1 px-2">
+                                    <input class="btn-check btn-check--with-icon" id="jurisdiction_1" type="checkbox" value="1" name="search[jurisdiction_ids][]">
+                                    <label class="btn btn-sm btn-white mb-0" for="jurisdiction_1">Federal</label>
+                                  </div>
+                                </div>
+                                <div class="d-table-row">
+                                  <div class="d-table-cell py-1 px-2">
+                                    <input type="checkbox" id="select_all_States" class="btn-check btn-check--with-icon">
+                                    <label class="btn btn-sm btn-white mb-0 text-nowrap" for="select_all_States">States</label>
+                                  </div>
+                                  <div class="d-table-cell py-1 px-2 border-left">
+                                    <div class="d-flex flex-wrap flex-gap-2">
+                                      <input class="btn-check" id="jurisdiction_5" type="checkbox" value="5" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_5">ACT</label>
+                                      <input class="btn-check" id="jurisdiction_3" type="checkbox" value="3" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_3">NSW</label>
+                                      <input class="btn-check" id="jurisdiction_8" type="checkbox" value="8" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_8">NT</label>
+                                      <input class="btn-check" id="jurisdiction_4" type="checkbox" value="4" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_4">QLD</label>
+                                      <input class="btn-check" id="jurisdiction_6" type="checkbox" value="6" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_6">SA</label>
+                                      <input class="btn-check" id="jurisdiction_7" type="checkbox" value="7" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_7">TAS</label>
+                                      <input class="btn-check" id="jurisdiction_2" type="checkbox" value="2" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_2">VIC</label>
+                                      <input class="btn-check" id="jurisdiction_9" type="checkbox" value="9" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_9">WA</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-table-row">
+                                  <div class="d-table-cell py-1 px-2">
+                                    <input type="checkbox" id="select_all_Councils" class="btn-check btn-check--with-icon">
+                                    <label class="btn btn-sm btn-white mb-0 text-nowrap" for="select_all_Councils">Councils</label>
+                                  </div>
+                                  <div class="d-table-cell py-1 px-2 border-left">
+                                    <div class="d-flex flex-wrap flex-gap-2">
+                                      <input class="btn-check" id="jurisdiction_12" type="checkbox" value="12" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_12">NSW LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_13" type="checkbox" value="13" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_13">NT LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_14" type="checkbox" value="14" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_14">QLD LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_15" type="checkbox" value="15" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_15">SA LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_16" type="checkbox" value="16" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_16">TAS LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_17" type="checkbox" value="17" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_17">VIC LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_18" type="checkbox" value="18" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_18">WA LGAs</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="stakeholders-header">
+                            <div>
+                              <i class="far fa-users fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Stakeholders</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#stakeholders" aria-expanded="false" aria-controls="stakeholders"></button>
+                          </div>
+                          <div id="stakeholders" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+                              <div class="form-group mb-0">
+                                <label>Select specific Stakeholders</label>
+                                <span class="select2 select2-container select2-container--default" style="width: 100%;">
+                                  <span class="selection">
+                                    <span class="select2-selection select2-selection--multiple">
+                                      <ul class="select2-selection__rendered">
+                                        <li class="select2-search select2-search--inline">
+                                          <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" role="searchbox" placeholder="">
+                                        </li>
+                                      </ul>
+                                    </span>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="time-frame-header">
+                            <div>
+                              <i class="far fa-calendar fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Time Frame</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#time-frame" aria-expanded="false" aria-controls="time-frame"></button>
+                          </div>
+                          <div id="time-frame" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+                              <ul class="list-unstyled mb-0">
+                                <li>
+                                  <input id="search_relative_range_Last 24 hours" type="radio" value="" name="search[relative_range]">
+                                  <label for="search_relative_range_Last 24 hours" class="ml-2">Last 24 hours</label>
+                                </li>
+                                <li>
+                                  <input id="search_relative_range_Last 7 days" type="radio" value="" name="search[relative_range]">
+                                  <label for="search_relative_range_Last 7 days" class="ml-2">Last 7 days</label>
+                                </li>
+                                <li>
+                                  <input id="search_relative_range_Last 30 days" type="radio" value="" name="search[relative_range]">
+                                  <label for="search_relative_range_Last 30 days" class="ml-2">Last 30 days</label>
+                                </li>
+                                <li>
+                                  <input id="search_relative_range_Last 6 months" type="radio" value="" name="search[relative_range]">
+                                  <label for="search_relative_range_Last 6 months" class="ml-2">Last 6 months</label>
+                                </li>
+                                <li>
+                                  <input id="search_relative_range_Last 12 months" type="radio" value="" name="search[relative_range]">
+                                  <label for="search_relative_range_Last 12 months" class="ml-2">Last 12 months</label>
+                                </li>
+                                <li>
+                                  <input id="search_relative_range_All Time" type="radio" value="All Time" checked="checked" name="search[relative_range]">
+                                  <label for="search_relative_range_All Time" class="ml-2">All Time</label>
+                                </li>
+                                <li>
+                                  <input id="search_relative_range_exact" type="radio" value="Exact Dates" name="search[relative_range]">
+                                  <label for="search_relative_range_exact" class="ml-2">Exact Dates</label>
+                                </li>
+                                <li class="d-none js-exact-dates">
+                                  <div class="form-group mb-4">
+                                    <div class="row">
+                                      <div class="col-6">
+                                        <label class="mb-1" for="search_from">From</label>
+                                        <input class="form-control" type="date" name="search[from]" id="search_from">
+                                      </div>
+                                      <div class="col-6">
+                                        <label class="mb-1" for="search_to">To</label>
+                                        <input class="form-control" type="date" name="search[to]" id="search_to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer border-top-0">
+                      <div class="w-100 d-flex justify-content-between flex-gap-2">
+                        <a class="btn btn-white js-clear-all" href="#">Clear All</a>
+                        <input type="submit" name="commit" value="Show Results" class="btn btn-primary js-show-results">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div>
+            <form id="content_type_filter_form" action="#" onsubmit="return false;">
+              <ul class="nav nav-pills nav-overflow filter-pills">
+                <li class="nav-item mr-1">
+                  <label class="rounded-pill border text-reset nav-link mb-0" style="cursor: pointer;">
+                    <input type="checkbox" class="d-none" id="search_content_types_">
+                    <i class="far fa-newspaper fa-fw"></i>
+                    <span class="mx-2">Media Releases</span>
+                    <span class="badge text-secondary bg-secondary-soft badge-pill">29</span>
+                  </label>
+                </li>
+                <li class="nav-item mx-1">
+                  <a class="rounded-pill border text-reset nav-link" href="#">
+                    <span class="ml-2">
+                      <i class="far fa-landmark-flag fa-fw mr-2"></i>Parliament
+                      <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">15</span>
+                    </span>
+                    <i class="fas fa-chevron-down ml-3"></i>
+                  </a>
+                  <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                    <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                      <div style="min-width: 220px;">
+                        <div class="d-flex align-items-center text-muted small mb-2">
+                          <input id="parliamentary_records_select_all" type="checkbox" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0" for="parliamentary_records_select_all">Select all</label>
+                        </div>
+                        <div class="d-flex align-items-center mb-1">
+                          <input type="checkbox" id="content_type_feedsv2-hansardcontribution" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-hansardcontribution">
+                            <span>Chamber Hansard</span>
+                            <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">15</span>
+                          </label>
+                        </div>
+                        <div class="d-flex align-items-center mb-1">
+                          <input type="checkbox" id="content_type_feedsv2-committeedocument" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-committeedocument">
+                            <span>Committee Documents</span>
+                            <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">0</span>
+                          </label>
+                        </div>
+                        <div class="d-flex align-items-center mb-1">
+                          <input type="checkbox" id="content_type_feedsv2-dailyprogram" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-dailyprogram">
+                            <span>Daily Programs</span>
+                            <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">0</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="d-flex justify-content-between">
+                        <button name="button" type="button" class="btn btn-primary">Apply</button>
+                        <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item mx-1">
+                  <a class="rounded-pill border text-reset nav-link" href="#">
+                    <span class="ml-2">
+                      <i class="fas fa-hashtag fa-fw mr-2"></i>Social Media
+                      <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">15</span>
+                    </span>
+                    <i class="fas fa-chevron-down ml-3"></i>
+                  </a>
+                  <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                    <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                      <div style="min-width: 220px;">
+                        <div class="d-flex align-items-center text-muted small mb-2">
+                          <input id="social_media_select_all" type="checkbox" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0" for="social_media_select_all">Select all</label>
+                        </div>
+                        <div class="d-flex align-items-center mb-1">
+                          <input type="checkbox" id="content_type_feedsv2-facebookpost" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-facebookpost">
+                            <span>Facebook</span>
+                            <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">9</span>
+                          </label>
+                        </div>
+                        <div class="d-flex align-items-center mb-1">
+                          <input type="checkbox" id="content_type_feedsv2-tweet" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-tweet">
+                            <span>X (Twitter)</span>
+                            <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">4</span>
+                          </label>
+                        </div>
+                        <div class="d-flex align-items-center mb-1">
+                          <input type="checkbox" id="content_type_feedsv2-linkedinpost" class="form-check-input position-static m-0">
+                          <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-linkedinpost">
+                            <span>LinkedIn</span>
+                            <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">2</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="d-flex justify-content-between">
+                        <button name="button" type="button" class="btn btn-primary">Apply</button>
+                        <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
+
+          <div class="mx-auto mt-5" style="max-width: 800px;">
+            <div class="mx-auto">
+              <ul class="nav nav-tabs mb-4 justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    <i class="far fa-rectangle-list mr-2"></i> Timeline
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="far fa-chart-simple mr-2"></i> Analysis
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div id="timeline-cards"></div>
+            <div id="analysis-empty" class="d-none">
+              <div class="card card-inactive mx-auto mt-6" style="max-width: 500px;">
+                <div class="card-body text-muted">
+                  <div class="row">
+                    <div class="col-auto">
+                      <i class="fa-fw fa-xl fas fa-chart-simple"></i>
+                    </div>
+                    <div class="col">
+                      <h3 class="card-text">Keyword Analysis</h3>
+                      <p class="card-text">Enter Keywords or choose a topic to view charts and breakdowns by party and stakeholder.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none">
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item d-none d-md-block"><a class="page-link" href="#">Next ›</a></li>
+                  <li class="page-item d-md-none"><a class="page-link" href="#">Next</a></li>
+                  <li class="page-item d-none d-md-block"><a class="page-link" href="#">Last »</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>

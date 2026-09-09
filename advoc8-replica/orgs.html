@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Departments &amp; Agencies</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Feeds</a></li>
+          <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="people.html">Stakeholders</a></li>
+          <li class="nav-item"><a class="nav-link" href="posts.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Maps</a></li>
+        </ul>
+      </div>
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i><span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#"><i class="far fa-message-lines fa-fw mr-3"></i>Log Activity</a>
+            <a class="dropdown-item" href="#"><i class="far fa-calendar-check fa-fw mr-3"></i>Schedule Activity</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"><i class="far fa-user fa-fw mr-3"></i>Person</a>
+            <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-3"></i>Organisation</a>
+            <a class="dropdown-item" href="#"><i class="far fa-flag fa-fw mr-3"></i>Campaign</a>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#"><i class="far fa-book fa-fw mr-1"></i> View the Help Centre</a>
+              <a class="dropdown-item" href="#"><i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Stakeholders</h1>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-landmark-dome fa-fw mr-1"></i>
+          <span class="stake-heading">PARLIAMENT</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="people.html">Members of Parliament</a>
+        <a class="nav-link" href="people.html?segment=advisers">Advisers</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-building fa-fw mr-1"></i>
+          <span class="stake-heading">PUBLIC SERVICE</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link active" href="orgs.html">Departments &amp; Agencies</a>
+        <a class="nav-link" href="#">Public Servants</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-map-location-dot fa-fw mr-1"></i>
+          <span class="stake-heading">LOCAL GOVERNMENT</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="#">Local Councils</a>
+        <a class="nav-link" href="#">Councillors &amp; Staff</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-flag fa-fw mr-1"></i>
+          <span class="stake-heading">INTEREST GROUPS</span>
+        </a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#">
+          <i class="far fa-id-badge fa-fw mr-1"></i>
+          <span class="stake-heading">ALL STAKEHOLDERS</span>
+        </a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="#">All People</a>
+        <a class="nav-link" href="#">All Organisations</a>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container"><div id="toasts"></div></div>
+      <div class="container-fluid">
+        <div class="mx-auto" style="max-width: 1680px;">
+          <div class="header mt-3">
+            <div class="header-body border-0 mb-n4">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="header-pretitle"></h6>
+                  <h1 class="header-title font-weight-bold">Departments &amp; Agencies</h1>
+                </div>
+                <div class="col-auto mt-lg-0 align-self-top">
+                  <div class="d-none d-md-flex flex-gap-2">
+                    <a class="btn btn-white" href="#"><i class="far fa-plus fa-fw mr-2"></i>New Organisation</a>
+                    <div class="dropdown">
+                      <button class="btn btn-white" type="button" data-toggle="dropdown"><i class="far fa-ellipsis fa-fw"></i></button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="far fa-file-import fa-fw mr-2"></i> Import Organisations</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-top mb-3 mt-5">
+            <div class="d-none d-lg-inline-block mr-2">
+              <a class="btn btn-white rounded-pill active" id="filtersToggle" role="button" href="#">
+                <i class="fas fa-sliders-v mx-1"></i>
+                <span class="d-none d-md-inline">Filters</span>
+              </a>
+            </div>
+            <div class="index-search-box">
+              <div class="form-group input-group input-group-merge input-group-rounded mb-0">
+                <input class="form-control form-control-prepended" type="search" placeholder="Search">
+                <div class="input-group-prepend"><div class="input-group-text"><span class="far fa-search"></span></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="filter_panel" class="col-auto pr-0">
+              <div id="facets_pane" class="mt-5" style="width: 250px;">
+  <h5 class="facet-heading text-muted text-uppercase">Type</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Agency</div>
+        <div class="ml-auto badge badge-pill badge-light">374</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Department</div>
+        <div class="ml-auto badge badge-pill badge-light">131</div>
+      </button>
+    </li>
+  </ul>
+  <h5 class="facet-heading text-muted text-uppercase">Jurisdiction</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">Federal</div>
+        <div class="ml-auto badge badge-pill badge-light">182</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">NSW</div>
+        <div class="ml-auto badge badge-pill badge-light">98</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">WA</div>
+        <div class="ml-auto badge badge-pill badge-light">58</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">QLD</div>
+        <div class="ml-auto badge badge-pill badge-light">34</div>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">TAS</div>
+        <div class="ml-auto badge badge-pill badge-light">31</div>
+      </button>
+    </li>
+  </ul>
+  <div class="small mb-4 mt-n3 px-2"><a href="#" class="text-muted">view all <i class="far fa-chevron-right fa-xs ml-1"></i></a></div>
+  <h5 class="facet-heading text-muted text-uppercase">Managed</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item">
+      <button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button">
+        <div class="show-when-enabled">By Advoc8</div>
+        <div class="ml-auto badge badge-pill badge-light">505</div>
+      </button>
+    </li>
+  </ul>
+  <h5 class="facet-heading text-muted text-uppercase">More Filters</h5>
+  <ul class="nav flex-column mb-4">
+    <li class="nav-item"><button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button"><div class="show-when-enabled"><i class="far fa-square-plus mr-3"></i>Recent Activity</div></button></li>
+    <li class="nav-item"><button class="btn btn-sm btn-link btn-block facet-btn nav-link" type="button"><div class="show-when-enabled"><i class="far fa-square-plus mr-3"></i>Key Contact&hellip;</div></button></li>
+  </ul>
+  <div class="small mb-4 mt-n3 px-2"><a href="#" class="text-muted">view all <i class="far fa-chevron-right fa-xs ml-1"></i></a></div>
+              </div>
+            </div>
+            <div class="col overflow-auto">
+              <div class="action-bar mb-1">
+                <div class="row align-items-center h-100">
+                  <div class="col">
+                    <div class="text-muted small">Displaying organisations <b>1 - 25</b> of <b>505</b> in total
+                      <a class="ml-4 js-select-all" href="#">select all</a>
+                    </div>
+                  </div>
+                  <div class="col-auto"></div>
+                </div>
+              </div>
+              <table class="table table-hover card-table" id="orgsTable">
+                <thead>
+                  <tr>
+                    <th><a class="text-muted js-sort" href="#">Name <i class="fas fa-sort ml-1"></i></a></th>
+                    <th class="d-none d-md-table-cell"><a class="text-muted js-sort" href="#">Type <i class="fas fa-sort ml-1"></i></a></th>
+                    <th class="d-none d-md-table-cell">Contacts</th>
+                    <th class="d-none d-md-table-cell">Last Activity</th>
+                    <th class="d-none d-md-table-cell"># of Activities</th>
+                    <th class="d-none d-md-table-cell text-right">Last Updated</th>
+                  </tr>
+                </thead>
+                <tbody>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Health, Disability and Ageing</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      <h5 class="text-muted font-weight-normal mb-0 mt-1">DHDA</h5>
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">10 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Education</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">8 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of the Treasury</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">8 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Infrastructure, Transport, Regional Development, Communications, Sport and the Arts</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      <h5 class="text-muted font-weight-normal mb-0 mt-1">DITRDCSA</h5>
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">8 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Veterans&#x27; Affairs</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">5 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of the Senate</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">6 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Employment and Workplace Relations</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      <h5 class="text-muted font-weight-normal mb-0 mt-1">DEWR</h5>
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">6 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Social Services</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      <h5 class="text-muted font-weight-normal mb-0 mt-1">DSS</h5>
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">6 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of the House of Representatives</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">6 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <div class="position-relative align-self-stretch">
+                    <input type="checkbox" class="stretched-link js-row-check" style="height: 1rem; margin-top: .75rem;">
+                  </div>
+                  <a class="ml-4 mr-3" href="#">
+                    <div class="avatar avatar-sm rounded person-avatar-initials">
+                      <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                    </div>
+                  </a>
+                  <a class="text-reset" href="#">
+                    <div>
+                      <h4 class="mb-0">
+                        <span class="pr-2 org-name">Department of Home Affairs</span>
+                        <small><span class="badge bg-secondary-soft text-dark">Federal</span></small>
+                      </h4>
+                      
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="d-none d-md-table-cell">Department</td>
+              <td class="d-none d-md-table-cell"><span class="badge badge-soft-primary">6 members</span></td>
+              <td class="d-none d-md-table-cell">Never</td>
+              <td class="d-none d-md-table-cell">0 activities</td>
+              <td class="d-none d-md-table-cell text-right">
+                <div>8 Sep 2026</div>
+                <div class="text-muted small">8 hours ago</div>
+              </td>
+            </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('#filtersToggle')) {
+        e.preventDefault();
+        document.getElementById('filter_panel').classList.toggle('d-none');
+        e.target.closest('#filtersToggle').classList.toggle('active');
+      }
+      var sortLink = e.target.closest('.js-sort');
+      if (sortLink) {
+        e.preventDefault();
+        var tbody = document.querySelector('#orgsTable tbody');
+        var rows = [...tbody.children];
+        var asc = sortLink.dataset.asc !== 'true';
+        sortLink.dataset.asc = asc;
+        rows.sort(function (a, b) {
+          var av = a.querySelector('.org-name').textContent.trim();
+          var bv = b.querySelector('.org-name').textContent.trim();
+          return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+        });
+        rows.forEach(function (r) { tbody.appendChild(r); });
+      }
+      if (e.target.closest('.js-select-all')) {
+        e.preventDefault();
+        document.querySelectorAll('.js-row-check').forEach(function (c) { c.checked = true; });
+      }
+    });
+  </script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>

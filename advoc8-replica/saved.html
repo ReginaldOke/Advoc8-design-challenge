@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saved Items</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Feeds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agenda.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="people.html">Stakeholders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Maps</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i>
+            <span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="fabDropdownButton">
+            <a class="dropdown-item" href="#">
+              <i class="far fa-message-lines fa-fw mr-3"></i>
+              Log Activity
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-calendar-check fa-fw mr-3"></i>
+              Schedule Activity
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-user fa-fw mr-3"></i>
+              Person
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-sitemap fa-fw mr-3"></i>
+              Organisation
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-flag fa-fw mr-3"></i>
+              Campaign
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <a class="nav-link d-xl-none" href="#">
+            <i class="fas fa-fw fa-magnifying-glass"></i>
+          </a>
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="help_dropdown">
+              <a class="dropdown-item" href="#">
+                <i class="far fa-book fa-fw mr-1"></i> View the Help Centre
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topbar_user_dropdown">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item d-md-none" href="#">Help Centre</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Feeds</h1>
+        <a class="d-md-none h1 mb-0 text-reset" href="#">
+          <i class="fal fa-times"></i>
+        </a>
+      </div>
+      <div class="navbar-nav ">
+        <a class="nav-link" href="index.html">
+          <i class="fal fa-search fa-fw"></i> Search
+        </a>
+        <a class="nav-link" href="feeds.html">
+          <i class="fal fa-layer-group fa-fw"></i> Your Feeds
+        </a>
+        <a class="nav-link active" href="saved.html">
+          <i class="fal fa-bookmark fa-fw"></i> Saved Items
+        </a>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="navbar-nav">
+        <div class="nav-group-heading">
+          <a class="nav-link" role="button" aria-controls="feeds_sidebar_collapse" href="#feeds_sidebar_collapse" aria-expanded="true">
+            <i class="fas fa-caret-down fa-fw fa-xs"></i>
+            <i class="fas fa-caret-right fa-fw fa-xs"></i>
+            Feeds
+          </a>
+          <a class="nav-link nav-group-action" data-tooltip="New Feed" href="#">
+            <i class="fal fa-plus fa-fw"></i>
+          </a>
+        </div>
+        <div class="collapsible-nav-group navbar-nav" id="feeds_sidebar_collapse">
+          <a class="nav-link" href="#">
+            <span class="mx-2 flex-noshrink">🤖</span>
+            <span class="text-nowrap">data centers</span>
+          </a>
+          <a class="nav-link" href="feed.html">
+            <span class="mx-2 flex-noshrink">🌞</span>
+            <span class="text-nowrap">Solar panels</span>
+          </a>
+          <a class="nav-link" href="#">
+            <span class="mx-2 flex-noshrink">🐑</span>
+            <span class="text-nowrap">Agriculture</span>
+          </a>
+          <a class="nav-link text-primary mt-2" href="#">
+            <i class="far fa-fw"></i>
+            <small>View all Feeds &nbsp; →</small>
+          </a>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container" class="">
+        <div id="toasts"></div>
+      </div>
+
+      <div class="mainopShadow"></div>
+      <div class="floating-action-button dropup">
+        <div class="mainop" role="button" data-toggle="dropdown" id="fabDropdownButtonMobile" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-fw far fa-plus"></i>
+          <span class="sr-only">New Item</span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">
+            <i class="far fa-flag fa-fw mr-3"></i>
+            Campaign
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-sitemap fa-fw mr-3"></i>
+            Organisation
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-user fa-fw mr-3"></i>
+            Person
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-message-lines fa-fw mr-3"></i>
+            Log Activity
+          </a>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="mt-md-5 mx-auto" style="max-width: 1280px;">
+          <div class="header mt-3">
+            <div class="header-body border-0 mb-n4">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="header-pretitle"></h6>
+                  <h1 class="header-title font-weight-bold">Saved Items</h1>
+                </div>
+                <div class="col-auto mt-lg-0 align-self-top"></div>
+              </div>
+            </div>
+          </div>
+
+          <form class="d-flex flex-gap-2 align-items-center mb-3 mt-4" action="#" onsubmit="return false;">
+            <div class="index-search-box">
+              <div class="form-group mb-0 d-flex">
+                <div class="input-group input-group-merge input-group-rounded">
+                  <input placeholder="Keyword Search" autocomplete="off" class="form-control form-control-prepended" type="search" id="savedSearch">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><span class="far fa-search"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <a class="btn btn-white rounded-pill filter-button" role="button" href="#">
+                <i class="fas fa-sliders-v mx-1"></i>
+                <span class="d-none d-md-inline">Filters</span>
+              </a>
+            </div>
+          </form>
+
+          <div class="my-3 d-flex nav-overflow">
+            <div class="w-fit">
+              <ul class="nav nav-pills nav-overflow filter-pills">
+                <li class="nav-item mr-1">
+                  <a class="rounded-pill border text-reset nav-link" href="#" onclick="return false;">
+                    <i class="far fa-newspaper fa-fw"></i>
+                    <span class="mx-2">Media Releases</span>
+                    <span class="badge text-secondary bg-secondary-soft badge-pill">1</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="border-right mr-3 pl-3"></div>
+            <div class="w-fit">
+              <ul class="nav nav-pills nav-overflow">
+                <li class="nav-item mx-1 js-labelled">
+                  <a class="rounded-pill border text-reset nav-link" href="#">
+                    <span class="ml-2">Labelled: <span id="labelledRange">Any Time</span></span>
+                    <i class="fas fa-chevron-down ml-3"></i>
+                  </a>
+                  <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                    <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                      <ul class="list-unstyled mb-0" style="min-width: 200px;">
+                        <li><input id="lr_any" type="radio" value="Any Time" checked name="labelled_range"><label for="lr_any" class="ml-2">Any Time</label></li>
+                        <li><input id="lr_24" type="radio" value="Last 24 hours" name="labelled_range"><label for="lr_24" class="ml-2">Last 24 hours</label></li>
+                        <li><input id="lr_7" type="radio" value="Last 7 days" name="labelled_range"><label for="lr_7" class="ml-2">Last 7 days</label></li>
+                        <li><input id="lr_30" type="radio" value="Last 30 days" name="labelled_range"><label for="lr_30" class="ml-2">Last 30 days</label></li>
+                        <li><input id="lr_6m" type="radio" value="Last 6 months" name="labelled_range"><label for="lr_6m" class="ml-2">Last 6 months</label></li>
+                      </ul>
+                    </div>
+                    <div class="card-footer">
+                      <div class="d-flex justify-content-between">
+                        <button name="button" type="button" class="btn btn-primary">Apply</button>
+                        <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <!-- Labels facet panel -->
+            <div class="col-auto pr-0" style="width: 250px;">
+              <div>
+                <h5 class="facet-heading text-muted text-uppercase">Labels</h5>
+                <ul class="nav flex-column mb-4">
+                  <li class="nav-item">
+                    <a class="btn btn-sm btn-link btn-block nav-link facet-btn" href="#" onclick="return false;">
+                      <i class="fas fa-circle mr-3 text-light"></i>solar panels
+                      <div class="ml-auto badge badge-pill badge-light">1</div>
+                    </a>
+                  </li>
+                  <li class="nav-item mt-2">
+                    <a class="btn btn-sm btn-link btn-block nav-link facet-btn text-secondary" href="#" onclick="return false;">
+                      <i class="far fa-fw mr-3"></i>view all
+                      <span class="badge ml-auto"><i class="far fa-chevron-right"></i></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Saved items -->
+            <div class="col">
+              <div class="mx-auto" style="max-width: 760px;">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div class="small text-muted" id="savedCount">1 item</div>
+                  <div class="dropdown">
+                    <button class="btn btn-sm btn-white dropdown-toggle" type="button" id="labelledItemsShareDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="far fa-share-from-square fa-fw mr-1"></i> Share All
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" style="min-width: 280px;">
+                      <a class="dropdown-item" href="#">
+                        <i class="fa-regular fa-paper-plane fa-fw mr-2"></i> Create Email Report
+                        <div class="text-muted small ml-4">Email all items to one or more contacts with custom commentary.</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3" id="savedItem">
+                  <div class="card card-sm hover-gray-bg hover-reveal mb-2">
+                    <div class="z-3 position-absolute top-0 right-0 mt-3 mr-3 hover-reveal__hidden">
+                      <div class="d-flex flex-gap-2">
+                        <div class="dropdown">
+                          <button class="btn btn-white btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="far fa-share-from-square fa-fw mr-1"></i> Share
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="fa-regular fa-paper-plane mr-3"></i>Email</a>
+                            <a class="dropdown-item" href="#"><i class="fa-regular fa-copy mr-3"></i>Copy Link</a>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="btn btn-white btn-sm" type="button" id="unsaveBtn">
+                            <i class="fa-solid fa-bookmark fa-fw mr-1"></i> Saved
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="border-bottom card-body">
+                      <a class="stretched-link text-reset" href="#">
+                        <h3 class="card-title font-weight-bold mb-2">Press conference - Castle Hill, Sydney</h3>
+                      </a>
+                      <div class="text-gray-800 mb-2 z-2 position-relative">
+                        <a class="text-reset" href="#">
+                          <div class="d-md-flex flex-gap-2 align-items-baseline my-1">
+                            <h4 class="font-weight-bold small mb-md-0 mb-1" style="width: fit-content;">
+                              <div class="d-flex align-items-center flex-gap-2">
+                                <span style="white-space:nowrap;">Anthony Albanese</span>
+                                <div class="d-inline-flex flex-gap-1 small">
+                                  <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                                  <span class="badge bg-secondary-soft text-dark">Federal</span>
+                                </div>
+                              </div>
+                            </h4>
+                            <h5 class="text-muted font-weight-normal mb-0 small text-truncate">Prime Minister</h5>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="d-flex align-items-center flex-gap-1 text-gray-700">
+                        <i class="fal fa-handshake fa-fw mr-1 z-3"></i>
+                        <div style="min-width: 0;">
+                          <a class="text-reset" href="#">
+                            <div class="d-md-flex flex-gap-2 align-items-baseline my-1">
+                              <h4 class="font-weight-bold small mb-md-0 mb-1" style="width: fit-content;">
+                                <div class="d-flex align-items-center flex-gap-2">
+                                  <span style="white-space:nowrap;">Chris Bowen</span>
+                                  <div class="d-inline-flex flex-gap-1 small">
+                                    <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                                    <span class="badge bg-secondary-soft text-dark">Federal</span>
+                                  </div>
+                                </div>
+                              </h4>
+                              <h5 class="text-muted font-weight-normal mb-0 small text-truncate">Minister for Climate Change and Energy</h5>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <p class="small card-text mb-0 text-gray-700">
+                        <i class="fas fa-newspaper fa-fw mr-1" style="color: #f49e00;"></i>Media Release • 14 August
+                      </p>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-text text-gray-800 feed-body">
+                        <div><div class="forDumbOutlooks"><ul class="m-0 px-4">
+                          <li class="pb-1">Over 500,000 home batteries installed in Australia, significantly reducing power bills and emissions.</li>
+                          <li class="pb-1">The Cheaper Home Batteries Program is particularly popular in outer suburbs and regions, driving economic activity and job creation.</li>
+                          <li class="pb-1">Support for the program is high, with three in four Australians backing it, enhancing energy independence and stability.</li>
+                        </ul></div></div>
+                      </div>
+                    </div>
+                    <div class="card-footer py-2">
+                      <div class="d-flex flex-wrap flex-gap-2 align-items-center">
+                        <span class="badge border bg-white"><i class="fal fa-tag text-muted mr-1"></i>solar panels</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card card-inactive d-none" id="savedEmpty">
+                  <div class="card-body text-muted text-center py-5">No saved items.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      /* Labelled pill dropdown */
+      var pill = e.target.closest('.js-labelled > a.nav-link');
+      if (pill) {
+        e.preventDefault();
+        var card = pill.parentElement.querySelector('.dropdown-card');
+        card.classList.toggle('d-none');
+        return;
+      }
+      var apply = e.target.closest('.js-labelled .dropdown-card .btn-primary');
+      if (apply) {
+        var dc = apply.closest('.dropdown-card');
+        var checked = dc.querySelector('input[type=radio]:checked');
+        document.getElementById('labelledRange').textContent = checked ? checked.value : 'Any Time';
+        var pillLink = dc.parentElement.querySelector('a.nav-link');
+        pillLink.classList.toggle('active', checked && checked.value !== 'Any Time');
+        dc.classList.add('d-none');
+        return;
+      }
+      var clear = e.target.closest('.js-labelled .dropdown-card .btn-link');
+      if (clear) {
+        e.preventDefault();
+        var dc2 = clear.closest('.dropdown-card');
+        dc2.querySelector('#lr_any').checked = true;
+        document.getElementById('labelledRange').textContent = 'Any Time';
+        dc2.parentElement.querySelector('a.nav-link').classList.remove('active');
+        dc2.classList.add('d-none');
+        return;
+      }
+      /* Unsave removes the item */
+      if (e.target.closest('#unsaveBtn')) {
+        var item = document.getElementById('savedItem');
+        item.style.transition = 'opacity 0.2s';
+        item.style.opacity = '0';
+        setTimeout(function () {
+          item.remove();
+          document.getElementById('savedCount').textContent = '0 items';
+          document.getElementById('savedEmpty').classList.remove('d-none');
+          var mrBadge = document.querySelector('.filter-pills .badge');
+          if (mrBadge) mrBadge.textContent = '0';
+          var lblBadge = document.querySelector('.facet-btn .badge-light');
+          if (lblBadge) lblBadge.textContent = '0';
+        }, 200);
+      }
+    });
+    /* Keyword search filters the item */
+    document.getElementById('savedSearch').addEventListener('input', function () {
+      var q = this.value.trim().toLowerCase();
+      var item = document.getElementById('savedItem');
+      if (!item) return;
+      var match = !q || item.textContent.toLowerCase().indexOf(q) !== -1;
+      item.classList.toggle('d-none', !match);
+      document.getElementById('savedCount').textContent = match ? '1 item' : '0 items';
+    });
+  </script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>

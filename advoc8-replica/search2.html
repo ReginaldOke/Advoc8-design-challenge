@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search (Layout 2)</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+  <link rel="stylesheet" href="/assets/dark.css?v=32">
+  <script>try{var c=document.documentElement.classList,L=localStorage.getItem("advoc8-layout")||"4";if(L==="2"){c.add("lc")}else{if(L!=="3")c.add("l3");if(localStorage.getItem("advoc8-nav-collapsed")==="1")c.add("nav-collapsed");if(localStorage.getItem("advoc8-panel-collapsed")==="1")c.add("panel-collapsed");var th=localStorage.getItem("advoc8-theme")||(localStorage.getItem("advoc8-rail-navy")==="0"?"white":"navy");if(L==="3"&&th==="navy")th="white";if(th==="dark"){c.add("theme-dark","rail-navy")}else if(th==="navy"){c.add("theme-navy");if(localStorage.getItem("advoc8-panel-collapsed")!=="1")c.add("rail-navy")}}}catch(e){}</script>
+</head>
+<body class="l2-body">
+  <div id="wrap" class="l2-wrap">
+    <nav class="l2nav" id="l2nav">
+      <a class="l2nav__brand" href="search2.html"><img src="/assets/logo-circle-dark.svg?v=2" alt=""><span>Advoc8</span></a>
+      <div class="l2nav__scroll">
+        <div class="l2nav__caption">Navigation</div>
+        <div class="l2nav__group active open"><a class="l2nav__item" href="search2.html"><i class="ico far fa-layer-group"></i><span>Feeds</span><i class="fas fa-chevron-down l2nav__chev"></i></a>
+          <div class="l2nav__sub">
+            <a class="l2nav__subitem" href="search2.html"><i class="fal fa-search sub-ico"></i>Search</a>
+            <a class="l2nav__subitem" href="feeds2.html"><i class="fal fa-layer-group sub-ico"></i>Your Feeds</a>
+            <a class="l2nav__subitem" href="saved2.html"><i class="fal fa-bookmark sub-ico"></i>Saved Items</a>
+            <div class="l2nav__subcaption">Feeds<a href="#" aria-label="New"><i class="far fa-plus"></i></a></div>
+            <a class="l2nav__subitem" href="feed2.html"><span class="emoji">🌞</span>Solar panels</a>
+            <a class="l2nav__subitem" href="feed-datacenters2.html"><span class="emoji">🤖</span>data centers</a>
+            <a class="l2nav__subitem" href="feed-agriculture2.html"><span class="emoji">🌾</span>Agriculture</a>
+            <a class="l2nav__subitem l2nav__subitem--link" href="feeds2.html"><span class="dot" style="visibility:hidden"></span>View all Feeds →</a>
+          </div>
+        </div>
+        <div class="l2nav__group"><a class="l2nav__item" href="agenda2.html"><i class="ico far fa-calendar-alt"></i><span>Agenda</span><i class="fas fa-chevron-down l2nav__chev"></i></a>
+          <div class="l2nav__sub">
+            <a class="l2nav__subitem" href="agenda2.html"><i class="fal fa-calendar-alt sub-ico"></i>This Week</a>
+            <a class="l2nav__subitem" href="#"><i class="fal fa-newspaper sub-ico"></i>New Items</a>
+            <a class="l2nav__subitem" href="#"><i class="fal fa-bookmark sub-ico"></i>Saved Items</a>
+            <a class="l2nav__subitem" href="#"><i class="fal fa-gear sub-ico"></i>Agenda Preferences</a>
+            <div class="l2nav__subcaption">Browse</div>
+            <a class="l2nav__subitem" href="#"><i class="fal fa-landmark-dome sub-ico"></i>Parliamentary Inquiries</a>
+            <a class="l2nav__subitem" href="#"><i class="fal fa-messages-question sub-ico"></i>Consultations</a>
+          </div>
+        </div>
+        <div class="l2nav__group"><a class="l2nav__item" href="people2.html"><i class="ico far fa-users"></i><span>Stakeholders</span><i class="fas fa-chevron-down l2nav__chev"></i></a>
+          <div class="l2nav__sub">
+            <div class="l2nav__subcaption">Parliament</div>
+            <a class="l2nav__subitem" href="people2.html"><i class="fal fa-landmark sub-ico"></i>Members of Parliament</a>
+            <a class="l2nav__subitem" href="people2.html?segment=advisers"><i class="fal fa-user-tie sub-ico"></i>Advisers</a>
+            <div class="l2nav__subcaption">Public Service</div>
+            <a class="l2nav__subitem" href="orgs2.html"><i class="fal fa-building-columns sub-ico"></i>Departments &amp; Agencies</a>
+            <a class="l2nav__subitem" href="public-servants2.html"><i class="fal fa-id-badge sub-ico"></i>Public Servants</a>
+            <div class="l2nav__subcaption">Local Government</div>
+            <a class="l2nav__subitem" href="local-councils2.html"><i class="fal fa-city sub-ico"></i>Local Councils</a>
+            <a class="l2nav__subitem" href="councillors2.html"><i class="fal fa-people-group sub-ico"></i>Councillors &amp; Staff</a>
+            <div class="l2nav__subcaption">Interest Groups</div>
+            <a class="l2nav__subitem" href="interest-groups2.html"><i class="fal fa-handshake sub-ico"></i>Interest Groups</a>
+            <div class="l2nav__subcaption">All Stakeholders</div>
+            <a class="l2nav__subitem" href="all-people2.html"><i class="fal fa-users sub-ico"></i>All People</a>
+            <a class="l2nav__subitem" href="all-orgs2.html"><i class="fal fa-sitemap sub-ico"></i>All Organisations</a>
+          </div>
+        </div>
+        <div class="l2nav__group"><a class="l2nav__item" href="posts2.html"><i class="ico far fa-message-lines"></i><span>Activities</span><i class="fas fa-chevron-down l2nav__chev"></i></a>
+          <div class="l2nav__sub">
+            <a class="l2nav__subitem" href="#"><i class="fal fa-calendar-check sub-ico"></i>Upcoming Activity</a>
+            <a class="l2nav__subitem" href="posts2.html"><i class="fal fa-history sub-ico"></i>Past Activity</a>
+            <div class="l2nav__subcaption">Campaigns<a href="#" aria-label="New"><i class="far fa-plus"></i></a></div>
+            <a class="l2nav__subitem" href="#"><i class="fal fa-flag sub-ico"></i>test</a>
+            <a class="l2nav__subitem l2nav__subitem--link" href="#"><span class="dot" style="visibility:hidden"></span>View all Campaigns →</a>
+          </div>
+        </div>
+      </div>
+      <div class="l2nav__footer">
+        <div class="avatar avatar-sm"><span class="avatar-title rounded-circle ob-initials">RO</span></div>
+        <div class="l2nav__user"><div class="name">Reginald Oke</div><div class="role">Administrator</div></div>
+        <a href="#" aria-label="Help"><i class="far fa-question-circle"></i></a>
+      </div>
+    </nav>
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="search2.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="search2.html">Feeds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agenda2.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="people2.html">Stakeholders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts2.html">Activities</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <a class="nav-link d-xl-none" href="#">
+            <i class="fas fa-fw fa-magnifying-glass"></i>
+          </a>
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="help_dropdown">
+              <a class="dropdown-item" href="#">
+                <i class="far fa-book fa-fw mr-1"></i> View the Help Centre
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topbar_user_dropdown">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item d-md-none" href="#">Help Centre</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Feeds</h1>
+        <a class="d-md-none h1 mb-0 text-reset" href="#">
+          <i class="fal fa-times"></i>
+        </a>
+      </div>
+      <div class="navbar-nav ">
+        <a class="nav-link active" href="search2.html">
+          <i class="fal fa-search fa-fw"></i> Search
+        </a>
+        <a class="nav-link" href="feeds2.html">
+          <i class="fal fa-layer-group fa-fw"></i> Your Feeds
+        </a>
+        <a class="nav-link" href="saved2.html">
+          <i class="fal fa-bookmark fa-fw"></i> Saved Items<span class="badge badge-pill badge-light saved-total ml-auto">13</span><i class="fal fa-chevron-down saved-caret"></i>
+        </a>
+        <div class="navbar-nav saved-labels" id="saved_labels">
+          <a class="nav-link" href="saved2.html?label=solar%20panels">solar panels<span class="badge badge-pill badge-light ml-auto">3</span></a>
+          <a class="nav-link" href="saved2.html?label=AI">AI<span class="badge badge-pill badge-light ml-auto">2</span></a>
+          <a class="nav-link" href="saved2.html?label=biosecurity">biosecurity<span class="badge badge-pill badge-light ml-auto">1</span></a>
+          <a class="nav-link" href="saved2.html?label=agriculture">agriculture<span class="badge badge-pill badge-light ml-auto">4</span></a>
+          <a class="nav-link" href="saved2.html?label=water">water<span class="badge badge-pill badge-light ml-auto">2</span></a>
+          <a class="nav-link" href="saved2.html?label=housing">housing<span class="badge badge-pill badge-light ml-auto">1</span></a>
+        </div>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="navbar-nav">
+        <div class="nav-group-heading">
+          <a class="nav-link" role="button" aria-controls="feeds_sidebar_collapse" href="#feeds_sidebar_collapse" aria-expanded="true">
+            <i class="fas fa-caret-down fa-fw fa-xs"></i>
+            <i class="fas fa-caret-right fa-fw fa-xs"></i>
+            Feeds
+          </a>
+          <a class="nav-link nav-group-action" data-tooltip="New Feed" href="build2.html">
+            <i class="fal fa-plus fa-fw"></i>
+          </a>
+        </div>
+        <div class="collapsible-nav-group navbar-nav" id="feeds_sidebar_collapse">
+          <a class="nav-link" href="feed2.html">
+            <span class="mx-2 flex-noshrink">🌞</span>
+            <span class="text-nowrap">Solar panels</span>
+          </a>
+          <a class="nav-link" href="feed-datacenters2.html">
+            <span class="mx-2 flex-noshrink">🤖</span>
+            <span class="text-nowrap">data centers</span>
+          </a>
+          <a class="nav-link" href="feed-agriculture2.html">
+            
+            <span class="mx-2 flex-noshrink">🌾</span>
+            
+            <span class="text-nowrap">Agriculture</span>
+          </a>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container" class="">
+        <div id="toasts"></div>
+      </div>
+
+      <div class="mainopShadow"></div>
+      <div class="floating-action-button dropup">
+        <div class="mainop" role="button" data-toggle="dropdown" id="fabDropdownButtonMobile" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-fw far fa-plus"></i>
+          <span class="sr-only">New Item</span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">
+            <i class="far fa-flag fa-fw mr-3"></i>
+            Campaign
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-sitemap fa-fw mr-3"></i>
+            Organisation
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-user fa-fw mr-3"></i>
+            Person
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-message-lines fa-fw mr-3"></i>
+            Log Activity
+          </a>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="mx-auto" style="max-width: 1600px;">
+          <div class="l2-head">
+            <h1 class="header-title font-weight-bold">Search</h1>
+            <span class="l2-count" id="l2Count"></span>
+            <div class="l2-actions">
+              <a class="btn btn-white" href="#" onclick="return false;"><i class="far fa-file-word mr-2"></i>Generate report</a>
+              <a class="btn btn-primary" href="#" id="l2SaveFeed"><i class="far fa-bell-on mr-2"></i>Save as feed</a>
+            </div>
+          </div>
+          <!-- / .header -->
+
+          <form id="feeds_v2_index" class="l2-searchrow" action="#" accept-charset="UTF-8" method="get" onsubmit="return false;">
+            <div class="l2-searchwrap" id="l2SearchWrap">
+              <div class="l2-search" id="l2Search">
+                <i class="far fa-search mag"></i>
+                <span id="l2Chips" style="display: contents;"></span>
+                <input placeholder="Try &quot;solar panels&quot;" autocomplete="off" id="feeds_v2-search_keyword_input" type="search" name="search[terms]" aria-label="Search terms">
+                <button class="l2-adv" id="l2AdvBtn" type="button" aria-expanded="false" aria-controls="l2Panel">
+                  <i class="far fa-sliders-h"></i><span id="l2AdvLabel">Advanced</span><i class="fas fa-chevron-down caret"></i>
+                </button>
+              </div>
+              <div class="l2-panel mode-builder" id="l2Panel" role="region" aria-label="Advanced search">
+                <div class="l2-panel-head">
+                  <div class="l2-seg" role="group" aria-label="Query mode">
+                    <button type="button" id="l2ModeKw" aria-pressed="true">Keywords</button>
+                    <button type="button" id="l2ModeBool" aria-pressed="false">Boolean query</button>
+                  </div>
+                </div>
+                <div class="l2-builder">
+                  <div class="l2-rows" id="l2Rows"></div>
+                  <button type="button" class="l2-add" id="l2AddRow">+ Add another term</button>
+                  <div class="l2-tips l2-tips--collapsible" id="l2KwTips">
+                    <button type="button" class="l2-tips__head" aria-expanded="false" aria-controls="l2KwTipsBody"><i class="far fa-circle-info info"></i><strong>Keyword tips</strong><i class="fas fa-chevron-down"></i></button>
+                    <div class="l2-tips__body collapse-anim" id="l2KwTipsBody"><div class="l2-tips__inner">Plurals and standard variations of single words are included automatically, so <code>vote</code> also matches <code>votes</code>, <code>voting</code> and <code>voted</code>. Use quotes for exact matches.</div></div>
+                  </div>
+                </div>
+                <div class="l2-rawwrap">
+                  <textarea class="l2-raw" id="l2Raw" spellcheck="false" aria-label="Boolean query" placeholder="e.g. Noise NEAR (Aircraft OR Airport OR Plane OR Takeoff OR Runway)"></textarea>
+                  <div class="l2-tips l2-tips--collapsible mt-3" id="l2BoolTips">
+                    <button type="button" class="l2-tips__head" aria-expanded="false" aria-controls="l2BoolTipsBody"><i class="far fa-circle-info info"></i><strong>Boolean basics</strong><i class="fas fa-chevron-down"></i></button>
+                    <div class="l2-tips__body collapse-anim" id="l2BoolTipsBody"><div class="l2-tips__inner">
+                      <p>Combine terms with <code>AND</code>, <code>OR</code>, <code>NOT</code> and <code>NEAR</code></p>
+                      <p>Use parentheses to group terms e.g <code>(cat OR dog) AND NOT mouse</code></p>
+                      <p>Use quotes to search for an exact phrase e.g <code>"Housing Affordability"</code></p>
+                      <p>Use <code>*</code> to search for partial words e.g <code>school*</code></p>
+                      <strong class="l2-tips__sub">Proximity searches</strong>
+                      <p>By default <code>NEAR</code> will match content where the terms are within 4 words of each other. You can change this by adding a number after <code>NEAR</code> e.g. <code>NEAR/10</code> will match content where the terms are within 10 words.</p>
+                      <p class="mb-0">e.g <code>school NEAR/2 funding</code> will match "funding of schools", "school funding", "school sports funding" etc.</p>
+                    </div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="l2-hint" id="l2Hint">Looks like a boolean query. <button type="button" id="l2HintOpen">Open it in advanced</button></div>
+            </div>
+
+            <div class="l2-fchip l2-fchip--filters">
+              <a class="filter-button" role="button" href="#">
+                <i class="fas fa-sliders-v"></i>
+                <span>Filters</span><span class="badge text-secondary bg-secondary-soft badge-pill n" id="l2FiltersCount"></span>
+              </a>
+              <div class="modal fade" tabindex="-1" role="dialog" id="filterModal">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header border-bottom-0">
+                      <h4 class="modal-title">Filter</h4>
+                      <button type="button" class="close">
+                        <span>×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="accordion">
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="topics-header">
+                            <div>
+                              <i class="far fa-message-lines fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Topics</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#topics" aria-expanded="false" aria-controls="topics"></button>
+                          </div>
+                          <div id="topics" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;" id="topics-list"></div>
+                          </div>
+                        </div>
+
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="jurisdictions-header">
+                            <div>
+                              <i class="far fa-landmark-dome fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Jurisdictions</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#jurisdictions" aria-expanded="false" aria-controls="jurisdictions"></button>
+                          </div>
+                          <div id="jurisdictions" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+                              <div class="d-table">
+                                <div class="d-table-row">
+                                  <div class="d-table-cell py-1 px-2">
+                                    <input class="btn-check btn-check--with-icon" id="jurisdiction_1" type="checkbox" value="1" name="search[jurisdiction_ids][]">
+                                    <label class="btn btn-sm btn-white mb-0" for="jurisdiction_1">Federal</label>
+                                  </div>
+                                </div>
+                                <div class="d-table-row">
+                                  <div class="d-table-cell py-1 px-2">
+                                    <input type="checkbox" id="select_all_States" class="btn-check btn-check--with-icon">
+                                    <label class="btn btn-sm btn-white mb-0 text-nowrap" for="select_all_States">States</label>
+                                  </div>
+                                  <div class="d-table-cell py-1 px-2 border-left">
+                                    <div class="d-flex flex-wrap flex-gap-2">
+                                      <input class="btn-check" id="jurisdiction_5" type="checkbox" value="5" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_5">ACT</label>
+                                      <input class="btn-check" id="jurisdiction_3" type="checkbox" value="3" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_3">NSW</label>
+                                      <input class="btn-check" id="jurisdiction_8" type="checkbox" value="8" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_8">NT</label>
+                                      <input class="btn-check" id="jurisdiction_4" type="checkbox" value="4" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_4">QLD</label>
+                                      <input class="btn-check" id="jurisdiction_6" type="checkbox" value="6" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_6">SA</label>
+                                      <input class="btn-check" id="jurisdiction_7" type="checkbox" value="7" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_7">TAS</label>
+                                      <input class="btn-check" id="jurisdiction_2" type="checkbox" value="2" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_2">VIC</label>
+                                      <input class="btn-check" id="jurisdiction_9" type="checkbox" value="9" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_9">WA</label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="d-table-row">
+                                  <div class="d-table-cell py-1 px-2">
+                                    <input type="checkbox" id="select_all_Councils" class="btn-check btn-check--with-icon">
+                                    <label class="btn btn-sm btn-white mb-0 text-nowrap" for="select_all_Councils">Councils</label>
+                                  </div>
+                                  <div class="d-table-cell py-1 px-2 border-left">
+                                    <div class="d-flex flex-wrap flex-gap-2">
+                                      <input class="btn-check" id="jurisdiction_12" type="checkbox" value="12" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_12">NSW LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_13" type="checkbox" value="13" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_13">NT LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_14" type="checkbox" value="14" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_14">QLD LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_15" type="checkbox" value="15" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_15">SA LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_16" type="checkbox" value="16" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_16">TAS LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_17" type="checkbox" value="17" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_17">VIC LGAs</label>
+                                      <input class="btn-check" id="jurisdiction_18" type="checkbox" value="18" name="search[jurisdiction_ids][]">
+                                      <label class="btn btn-sm btn-white mb-0" for="jurisdiction_18">WA LGAs</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="parties-header">
+                            <div>
+                              <i class="far fa-flag fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Parties</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#parties" aria-expanded="false" aria-controls="parties"></button>
+                          </div>
+                          <div id="parties" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+                              <div class="form-group mb-0">
+                                <label>Select parties</label>
+                                <span class="select2 select2-container select2-container--default" style="width: 100%;">
+                                  <span class="selection">
+                                    <span class="select2-selection select2-selection--multiple">
+                                      <ul class="select2-selection__rendered">
+                                        <li class="select2-search select2-search--inline">
+                                          <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" role="searchbox" placeholder="">
+                                        </li>
+                                      </ul>
+                                    </span>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card rounded-0 mb-0">
+                          <div class="card-header position-relative d-flex justify-content-between align-items-center" id="stakeholders-header">
+                            <div>
+                              <i class="far fa-users fa-fw mr-2"></i>
+                              <span class="font-weight-bold">Stakeholders</span>
+                            </div>
+                            <i class="far fa-chevron-right accordion-chevron"></i>
+                            <button type="button" class="stretched-link position-absolute w-100 h-100 border-0 p-0 m-0 bg-transparent collapsed" data-toggle="collapse" data-target="#stakeholders" aria-expanded="false" aria-controls="stakeholders"></button>
+                          </div>
+                          <div id="stakeholders" class="collapse">
+                            <div class="card-body" style="max-height: 60vh; overflow-y: auto;">
+                              <div class="form-group mb-0">
+                                <label>Select specific Stakeholders</label>
+                                <span class="select2 select2-container select2-container--default" style="width: 100%;">
+                                  <span class="selection">
+                                    <span class="select2-selection select2-selection--multiple">
+                                      <ul class="select2-selection__rendered">
+                                        <li class="select2-search select2-search--inline">
+                                          <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" role="searchbox" placeholder="">
+                                        </li>
+                                      </ul>
+                                    </span>
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer border-top-0">
+                      <div class="w-100 d-flex justify-content-between flex-gap-2">
+                        <a class="btn btn-white js-clear-all" href="#">Clear All</a>
+                        <input type="submit" name="commit" value="Show Results" class="btn btn-primary js-show-results">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="l2-fchip" id="l2SrcChip" data-default="All sources">
+              <button type="button" class="l2-fbtn" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-layer-group"></i><span class="val" data-ghost="Media Releases"><span>All sources</span></span><span class="badge text-secondary bg-secondary-soft badge-pill n" id="l2SrcTotal"></span><i class="fas fa-chevron-down caret"></i>
+              </button>
+              <button type="button" class="clear" aria-label="Clear sources">&#215;</button>
+              <div class="l2-pop" role="menu" style="min-width: 300px;">
+                <label class="opt"><input type="checkbox" value="media" checked><i class="far fa-newspaper"></i>Media Releases<span class="n" data-k="0"></span></label>
+                <label class="opt"><input type="checkbox" value="parliament" checked><i class="far fa-landmark-flag"></i>Parliament<span class="n" data-k="1"></span></label>
+                <div class="sub"><label class="opt"><input type="checkbox" value="Chamber Hansard" data-parent="parliament" checked>Chamber Hansard<span class="n"></span></label><label class="opt"><input type="checkbox" value="Committee Documents" data-parent="parliament" checked>Committee Documents<span class="n"></span></label><label class="opt"><input type="checkbox" value="Daily Programs" data-parent="parliament" checked>Daily Programs<span class="n"></span></label></div>
+                <label class="opt"><input type="checkbox" value="social" checked><i class="far fa-hashtag"></i>Social Media<span class="n" data-k="2"></span></label>
+                <div class="sub"><label class="opt"><input type="checkbox" value="Facebook" data-parent="social" checked>Facebook<span class="n"></span></label><label class="opt"><input type="checkbox" value="X (Twitter)" data-parent="social" checked>X (Twitter)<span class="n"></span></label><label class="opt"><input type="checkbox" value="LinkedIn" data-parent="social" checked>LinkedIn<span class="n"></span></label></div>
+                <label class="opt"><input type="checkbox" value="other" checked><i class="far fa-file-lines"></i>Other<span class="n" data-k="3"></span></label>
+                <div class="sub"><label class="opt"><input type="checkbox" value="Gazettes" data-parent="other" checked>Gazettes<span class="n"></span></label></div>
+                <div class="rule"></div>
+                <div class="pfoot"><span id="l2SrcCount">4 of 4 selected</span><button type="button" id="l2SrcAll">Select all</button></div>
+              </div>
+            </div>
+
+            <div class="l2-fchip" id="l2DateChip" data-default="Last 6 months">
+              <button type="button" class="l2-fbtn" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-calendar"></i><span class="val" data-ghost="Last 12 months"><span>Last 6 months</span></span><span class="badge text-secondary bg-secondary-soft badge-pill n" id="l2DateCount"></span><i class="fas fa-chevron-down caret"></i>
+              </button>
+              <button type="button" class="clear" aria-label="Reset time frame">&#215;</button>
+              <div class="l2-pop" role="menu">
+                <button type="button" class="opt" data-v="Last 24 hours">Last 24 hours</button>
+                <button type="button" class="opt" data-v="Last 7 days">Last 7 days</button>
+                <button type="button" class="opt" data-v="Last 30 days">Last 30 days</button>
+                <button type="button" class="opt selected" data-v="Last 6 months">Last 6 months</button>
+                <button type="button" class="opt" data-v="Last 12 months">Last 12 months</button>
+                <button type="button" class="opt" data-v="All Time">All Time</button>
+                <div class="rule"></div>
+                <div class="range"><input type="date" aria-label="From"><input type="date" aria-label="To"></div>
+              </div>
+            </div>
+
+            <div class="l2-fchip l2-sort l2-iconbtn" id="l2SortChip" data-tooltip="Sort: Relevance">
+              <button type="button" class="l2-fbtn" aria-haspopup="true" aria-expanded="false" aria-label="Sort">
+                <i class="far fa-arrow-up-arrow-down"></i>
+              </button>
+              <div class="l2-pop right" role="menu" style="min-width: 190px;">
+                <button type="button" class="opt selected" data-v="Relevance">Relevance</button>
+                <button type="button" class="opt" data-v="Most Recent">Most Recent</button>
+              </div>
+            </div>
+
+            <div class="l2-fchip l2-iconbtn" id="l2ExpandChip" data-tooltip="Expand analysis">
+              <button type="button" class="l2-fbtn l2-expand" aria-label="Expand analysis to full width" aria-pressed="false">
+                <i class="far fa-arrows-maximize"></i>
+              </button>
+            </div>
+          </form>
+
+
+          <div class="my-3 d-flex nav-overflow l2-hidden">
+            <div class="w-fit">
+              <form id="content_type_filter_form" action="#" onsubmit="return false;">
+                <ul class="nav nav-pills nav-overflow filter-pills">
+                  <li class="nav-item mr-1">
+                    <label class="rounded-pill border text-reset nav-link mb-0" style="cursor: pointer;">
+                      <input type="checkbox" class="d-none" id="search_content_types_">
+                      <i class="far fa-newspaper fa-fw"></i>
+                      <span class="mx-2">Media Releases</span>
+                      <span class="badge text-secondary bg-secondary-soft badge-pill">42K</span>
+                    </label>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a class="rounded-pill border text-reset nav-link" href="#">
+                      <span class="ml-2">
+                        <i class="far fa-landmark-flag fa-fw mr-2"></i>Parliament
+                        <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">46K</span>
+                      </span>
+                      <i class="fas fa-chevron-down ml-3"></i>
+                    </a>
+                    <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                      <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                        <div style="min-width: 220px;">
+                          <div class="d-flex align-items-center text-muted small mb-2">
+                            <input id="parliamentary_records_select_all" type="checkbox" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0" for="parliamentary_records_select_all">Select all</label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-hansardcontribution" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-hansardcontribution">
+                              <span>Chamber Hansard</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">43K</span>
+                            </label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-committeedocument" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-committeedocument">
+                              <span>Committee Documents</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">2,467</span>
+                            </label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-dailyprogram" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-dailyprogram">
+                              <span>Daily Programs</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">111</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                          <button name="button" type="button" class="btn btn-primary">Apply</button>
+                          <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a class="rounded-pill border text-reset nav-link" href="#">
+                      <span class="ml-2">
+                        <i class="fas fa-hashtag fa-fw mr-2"></i>Social Media
+                        <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">470K</span>
+                      </span>
+                      <i class="fas fa-chevron-down ml-3"></i>
+                    </a>
+                    <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                      <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                        <div style="min-width: 220px;">
+                          <div class="d-flex align-items-center text-muted small mb-2">
+                            <input id="social_media_select_all" type="checkbox" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0" for="social_media_select_all">Select all</label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-facebookpost" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-facebookpost">
+                              <span>Facebook</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">391K</span>
+                            </label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-tweet" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-tweet">
+                              <span>X (Twitter)</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">3,833</span>
+                            </label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-linkedinpost" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-linkedinpost">
+                              <span>LinkedIn</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">75K</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                          <button name="button" type="button" class="btn btn-primary">Apply</button>
+                          <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a class="rounded-pill border text-reset nav-link" href="#">
+                      <span class="ml-2">
+                        <i class="far fa-file fa-fw mr-2"></i>Other
+                        <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">547</span>
+                      </span>
+                      <i class="fas fa-chevron-down ml-3"></i>
+                    </a>
+                    <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                      <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                        <div style="min-width: 220px;">
+                          <div class="d-flex align-items-center text-muted small mb-2">
+                            <input id="other_select_all" type="checkbox" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0" for="other_select_all">Select all</label>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <input type="checkbox" id="content_type_feedsv2-gazette" class="form-check-input position-static m-0">
+                            <label class="ml-2 mb-0 d-flex align-items-center w-100" for="content_type_feedsv2-gazette">
+                              <span>Gazettes</span>
+                              <span class="badge text-secondary badge-pill bg-secondary-soft ml-auto">547</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <div class="d-flex justify-content-between">
+                          <button name="button" type="button" class="btn btn-primary">Apply</button>
+                          <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+            </div>
+            <div class="border-right mr-3 pl-3"></div>
+            <div class="w-fit">
+              <ul class="nav nav-pills nav-overflow">
+                <li class="nav-item mx-1 js-timeframe">
+                  <a class="rounded-pill border text-reset nav-link active" href="#">
+                    <span class="ml-2">Last 6 months</span>
+                    <i class="fas fa-chevron-down ml-3"></i>
+                  </a>
+                  <div class="card card-sm dropdown-card position-absolute mt-2 shadow-lg d-none" style="z-index: 5; min-width: 200px; max-width: 400px;">
+                    <div class="card-body overflow-auto truncate" style="max-height: 300px">
+                      <ul class="list-unstyled mb-0" style="min-width: 200px;">
+                        <li>
+                          <input id="search_relative_range_Last_24_hours" type="radio" value="" name="search[relative_range]">
+                          <label for="search_relative_range_Last_24_hours" class="ml-2">Last 24 hours</label>
+                        </li>
+                        <li>
+                          <input id="search_relative_range_Last_7_days" type="radio" value="" name="search[relative_range]">
+                          <label for="search_relative_range_Last_7_days" class="ml-2">Last 7 days</label>
+                        </li>
+                        <li>
+                          <input id="search_relative_range_Last_30_days" type="radio" value="" name="search[relative_range]">
+                          <label for="search_relative_range_Last_30_days" class="ml-2">Last 30 days</label>
+                        </li>
+                        <li>
+                          <input id="search_relative_range_Last_6_months" type="radio" value="Last 6 months" checked="checked" name="search[relative_range]">
+                          <label for="search_relative_range_Last_6_months" class="ml-2">Last 6 months</label>
+                        </li>
+                        <li>
+                          <input id="search_relative_range_Last_12_months" type="radio" value="" name="search[relative_range]">
+                          <label for="search_relative_range_Last_12_months" class="ml-2">Last 12 months</label>
+                        </li>
+                        <li>
+                          <input id="search_relative_range_All_Time" type="radio" value="All Time" name="search[relative_range]">
+                          <label for="search_relative_range_All_Time" class="ml-2">All Time</label>
+                        </li>
+                        <li>
+                          <input id="search_relative_range_Exact_Dates" type="radio" value="Exact Dates" name="search[relative_range]">
+                          <label for="search_relative_range_Exact_Dates" class="ml-2">Exact Dates</label>
+                        </li>
+                        <li class="d-none js-exact-dates">
+                          <div class="form-group mb-4">
+                            <div class="mb-2">
+                              <label class="mb-1" for="search_from">From</label>
+                              <input class="form-control" type="date" name="search[from]" id="search_from">
+                            </div>
+                            <div>
+                              <label class="mb-1" for="search_to">To</label>
+                              <input class="form-control" type="date" name="search[to]" id="search_to">
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-footer">
+                      <div class="d-flex justify-content-between">
+                        <button name="button" type="button" class="btn btn-primary">Apply</button>
+                        <a class="btn btn-link text-secondary" href="#">Clear Filter</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mb-3 filter-chips d-none" id="filterChips"></div>
+
+          <div class="h2 mt-3 mb-0"></div>
+
+          <div class="row" id="l2Cols">
+            <div class="col-md-7 col-xxl-6 l2-results-col">
+              <div class="mx-auto">
+                <div class="row align-items-center justify-content-between my-3 l2-hidden">
+                  <div class="col-auto">
+                    <span class="ml-2 small text-muted" id="results-count" data-default="560,522 results">
+                      560,522 results
+                    </span>
+                  </div>
+                  <div class="col-auto d-none" id="sortWrap">
+                    <div class="dropdown">
+                      <button id="tag_scope_dropdown_btn" class="btn btn-white dropdown-toggle btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-arrow-up-arrow-down mr-2"></i><span id="sortLabel">Relevance</span>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right shadow-sm">
+                        <a class="dropdown-item sort-opt" href="#">Relevance</a>
+                        <a class="dropdown-item sort-opt" href="#">Most Recent</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="search-results"></div>
+              </div>
+            </div>
+            <div class="col-5 col-xxl-6 d-none d-md-block l2-analysis-col">
+              <div id="analysis-idle">
+                <div class="card card-inactive mx-auto mt-6" style="max-width: 500px;">
+                  <div class="card-body text-muted">
+                    <div class="row">
+                      <div class="col-auto">
+                        <i class="fa-fw fa-xl fas fa-chart-simple"></i>
+                      </div>
+                      <div class="col">
+                        <h3 class="card-text">Keyword Analysis</h3>
+                        <p class="card-text">Enter Keywords or choose a topic to view charts and breakdowns by party and stakeholder.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="analysis-results" class="d-none">
+                <div class="mx-auto l2-charts">
+                  <div class="card card-sm">
+                    <div class="card-header">
+                      <h4 class="card-header-title">Last 6 months</h4>
+                      <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
+                        <li class="nav-item"><a class="nav-link histo-tab" href="#">Day</a></li>
+                        <li class="nav-item"><a class="nav-link active histo-tab" href="#">Week</a></li>
+                        <li class="nav-item"><a class="nav-link histo-tab" href="#">Month</a></li>
+                        <li class="nav-item"><a class="nav-link histo-tab" href="#">Year</a></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <div class="histo" id="histoBars"></div>
+                      <div class="histo-labels" id="histoLabels"></div>
+                    </div>
+                  </div>
+                  <div class="card card-sm">
+                    <div class="card-header">
+                      <h4 class="card-header-title">Party Breakdown</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="treemap" id="partyTreemap"></div>
+                    </div>
+                  </div>
+                  <div class="card card-sm">
+                    <div class="card-header">
+                      <h4 class="card-header-title">Top Stakeholders</h4>
+                      <ul class="nav nav-tabs nav-tabs-sm card-header-tabs">
+                        <li class="nav-item"><a class="nav-link active stake-tab" href="#" data-mode="count"><i class="fas fa-list-ol mr-1"></i> Count</a></li>
+                        <li class="nav-item"><a class="nav-link stake-tab" href="#" data-mode="proportion"><i class="fas fa-percent mr-1"></i> Proportion</a></li>
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <div class="top-stakeholders-chart" id="stakeChart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* Topics tree for the search filter modal (captured from the live app) */
+    window.SEARCH_TOPICS = [
+      ['🐑', 'Agriculture', ['Agricultural Industry', 'Agricultural Science', 'Biosecurity', 'Crops', 'Fisheries', 'Forestry', 'Livestock', 'Sustainable Agriculture', 'Water Management']],
+      ['🎨', 'Arts and Culture', []],
+      ['🔍', 'Consumer Affairs', ['Consumer Rights', 'Pricing', 'Product Safety', 'Scams']],
+      ['👔', 'Corporate Affairs', ['Business Regulation', 'Small Business']],
+      ['🪖', 'Defence', ['Defence Contracting', 'Defence Forces', 'Defence Policy', 'Security Alliances']],
+      ['📈', 'Economics', ['Budget', 'Economy']],
+      ['🎓', 'Education', ['Early Education', 'Primary Education', 'Schools and Teaching', 'Secondary Education', 'Tertiary Education']],
+      ['🚨', 'Emergency Management', ['Emergency Services', 'Natural Disasters']],
+      ['⚡', 'Energy and Mining', ['Electricity Market', 'Energy Efficiency', 'Energy Emissions', 'Energy Industry', 'Gas', 'Mining', 'Nuclear', 'Petroleum', 'Renewables']],
+      ['🌳', 'Environment', ['Climate Change', 'Conservation', 'Landcare', 'Waste and Pollution', 'Water']],
+      ['💳', 'Finance', ['Banking', 'Financial Services Sector', 'Insurance', 'Investment', 'Payments', 'Superannuation']],
+      ['🥤', 'Food and Beverage', ['Beverages', 'Food Regulation', 'Food and Grocery']],
+      ['🤝', 'Foreign Affairs and Trade', ['Foreign Aid and Development', 'Free Trade Agreements', 'International Relations', 'Regional Architecture', 'Trade and Investment']],
+      ['💶', 'Government Grants', []],
+      ['⚕️', 'Health', ['Aged Care', 'Bioethics', 'Cancer', 'Communicable Diseases', 'Diabetes', 'Disability', 'Drug Addiction', 'Eye Disease', 'Health Funding', 'Health Sector', 'Heart Disease', 'Kidney Disease', 'Medical Devices', 'Medicines', 'Mental Health', 'Neurological Conditions', 'Obesity', 'Primary Healthcare', 'Secondary Healthcare', 'Tobacco']],
+      ['🛂', 'Home Affairs', ['Immigration and Citizenship', 'Multicultural Affairs', 'National Security']],
+      ['🌏', 'Indigenous Affairs', ['Indigenous Affairs - General', 'Indigenous Employment', 'Indigenous Health and Wellbeing', 'Native Title', 'Reconciliation and Recognition']],
+      ['🌐', 'Industry, Science and Innovation', ['Industry', 'Innovation', 'Science']],
+      ['⚖️', 'Legal Affairs', ['Consumer Data Right', 'Defamation', 'Freedom of Information', 'Intellectual Property', 'Privacy']],
+      ['📰', 'Media and Communications', ['Advertising', 'Broadcasting', 'Content Regulation', 'Telecommunications']],
+      ['📋', 'Planning and Development', ['Construction', 'Heritage', 'Infrastructure', 'Planning', 'Property', 'Regional Development']],
+      ['🏛️', 'Social Services', ['Child Care', 'Child Protection', 'Disability Services', 'Domestic Violence', 'Housing & Homelessness', 'LGBTQIIA+', 'Pensioners', 'Social Services Sector', 'Veterans Affairs', 'Young People']],
+      ['🏉', 'Sport and Recreation', []],
+      ['💸', 'Taxation', ['Charities and NFPs', 'Company Tax', 'Income Tax', 'Property Tax']],
+      ['🖥️', 'Technology', ['Cybersecurity', 'Data', 'Digital Technologies', 'Gaming']],
+      ['🏖️', 'Tourism and Hospitality', ['Accommodation', 'Cruise Industry', 'Events', 'Gambling', 'Hospitality', 'Liquor', 'Overseas Travel']],
+      ['🚘', 'Transport', ['Aviation', 'Freight and Logistics', 'Maritime', 'Private Transport - Bikes', 'Private Transport - Cars', 'Private Transport - Motorcycles', 'Private Transport - e-Bikes and PMDs', 'Public Transport - Buses', 'Public Transport - Rail', 'Public Transport - Taxis and Ridesharing', 'Roads - Infrastructure and Investment', 'Roads - Safety', 'Roads - Traffic Management']],
+      ['💼', 'Workplace Relations', ['Enterprise Bargaining', 'Fair Work', 'Industrial Activities', 'Labour Market']]
+    ];
+    document.addEventListener('DOMContentLoaded', function () {
+      var list = document.getElementById('topics-list');
+      if (!list) return;
+      list.innerHTML = window.SEARCH_TOPICS.map(function (t, i) {
+        var subs = t[2].map(function (s, j) {
+          return '<div class="ml-3 form-check">' +
+                   '<input id="feeds_v2_topic_' + i + '_' + j + '" type="checkbox" class="form-check-input js-topic-sub">' +
+                   '<label class="form-check-label ml-2 d-block" for="feeds_v2_topic_' + i + '_' + j + '">' + s + '</label>' +
+                 '</div>';
+        }).join('');
+        return '<div class="card mb-0 topic-group">' +
+                 '<div class="card-header topic-group-header">' +
+                   '<div class="form-check d-flex align-items-center h4 mb-0">' +
+                     '<input id="feeds_v2_topic_group_' + i + '" type="checkbox" class="form-check-input z-2 js-topic-group-cb">' +
+                     '<label class="form-check-label ml-3 mt-1 d-block w-100" for="feeds_v2_topic_group_' + i + '">' + t[0] + ' &nbsp; ' + t[1] + '</label>' +
+                   '</div>' +
+                   (subs ? '<i class="far fa-chevron-right fa-xs topic-chevron"></i>' : '') +
+                 '</div>' +
+                 (subs ? '<div class="js-topic-group-body collapse-anim"><div class="card-body">' + subs + '</div></div>' : '') +
+               '</div>';
+      }).join('');
+
+      function groupBody(group) { return group.querySelector('.js-topic-group-body'); }
+      function setExpanded(group, open) {
+        var body = groupBody(group);
+        if (!body) return;
+        var isOpen = body.classList.contains('show');
+        if (isOpen === open) return;
+        window.replicaSlide(body, open); group.classList.toggle('is-open', open);
+        var chev = group.querySelector('.topic-chevron');
+        if (chev) chev.classList.toggle('rot90', open);
+      }
+
+      list.addEventListener('click', function (e) {
+        var header = e.target.closest('.topic-group-header');
+        if (header && !e.target.closest('input, label')) {
+          var group = header.closest('.topic-group');
+          var body = groupBody(group);
+          if (body) setExpanded(group, !body.classList.contains('show'));
+        }
+      });
+      list.addEventListener('change', function (e) {
+        var group = e.target.closest('.topic-group');
+        if (!group) return;
+        if (e.target.classList.contains('js-topic-group-cb')) {
+          group.querySelectorAll('.js-topic-sub').forEach(function (c) { c.checked = e.target.checked; });
+          if (e.target.checked) setExpanded(group, true);
+        } else if (e.target.classList.contains('js-topic-sub')) {
+          var subs = [].slice.call(group.querySelectorAll('.js-topic-sub'));
+          var cb = group.querySelector('.js-topic-group-cb');
+          cb.checked = subs.every(function (c) { return c.checked; });
+          cb.indeterminate = !cb.checked && subs.some(function (c) { return c.checked; });
+        }
+        var gcb = group.querySelector('.js-topic-group-cb'); group.classList.toggle('is-on', gcb.checked); group.classList.toggle('is-part', !gcb.checked && gcb.indeterminate);
+      });
+    });
+  </script>
+  <script src="/assets/replica.js?v=7"></script>
+  <script src="/assets/try-phrase.js?v=1"></script>
+  <script src="/assets/search-data.js?v=3"></script>
+  <script src="/assets/feed-data.js?v=1"></script>
+  <script src="/assets/search-flow.js?v=20"></script>
+
+  <script>
+  /* Layout 2: one-line search + Advanced panel + filter chips (drives the existing search-flow hooks) */
+  (function () {
+    var $ = function (s) { return document.querySelector(s); };
+    var input = $('#feeds_v2-search_keyword_input'), search = $('#l2Search'), panel = $('#l2Panel');
+    var chipsEl = $('#l2Chips'), advBtn = $('#l2AdvBtn'), advLabel = $('#l2AdvLabel'), rowsEl = $('#l2Rows');
+    var raw = $('#l2Raw'), hint = $('#l2Hint'), preview = $('#l2Preview');
+    var terms = [], match = 'any', mode = 'builder', rawQuery = '';
+
+    var guessType = function (t) { return /\s/.test(t.trim()) ? 'phrase' : 'word'; };
+    var isBoolean = function (t) { return /\b(AND|OR|NOT)\b|[()"]/.test(t); };
+    var fmt = function (t) { return t.type === 'phrase' ? '"' + t.text + '"' : t.text; };
+    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var el = function (tag, cls) { var e = document.createElement(tag); e.className = cls; return e; };
+    function compileTerms(list) {
+      var op = match === 'any' ? ' OR ' : ' AND ';
+      var pos = list.filter(function (t) { return !t.neg; }), neg = list.filter(function (t) { return t.neg; });
+      var q = pos.map(fmt).join(op);
+      if (neg.length && pos.length > 1 && match === 'any') q = '(' + q + ')';
+      neg.forEach(function (t) { q += (q ? ' NOT ' : 'NOT ') + fmt(t); });
+      return q;
+    }
+    function compile(list) {
+      if (mode === 'raw') return (rawQuery || raw.value).trim();
+      return compileTerms(list || terms);
+    }
+
+    /* run the real search (search-flow listens for Enter on this input) */
+    function runSearch(q) {
+      input.value = q;
+      var ev = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
+      ev._l2 = true;
+      input.dispatchEvent(ev);
+      input.value = '';
+    }
+
+    /* ---- chips inside the pill ---- */
+    /* the empty-search prompt suggests a phrase from the topic chosen at sign-up */
+    function tryPhrase() { return window.l2TryPhrase ? window.l2TryPhrase() : 'Try "solar panels"'; }
+    function renderChips() {
+      chipsEl.innerHTML = '';
+      if (mode === 'raw' && rawQuery) {
+        var c = el('span', 'l2-chip');
+        c.innerHTML = '<span style="font-family: ui-monospace, Menlo, monospace; font-weight: 500; font-size: 13px;">' + esc(rawQuery) + '</span><span class="type">boolean</span><button type="button" class="x" aria-label="Remove query">&#215;</button>';
+        c.querySelector('.x').onclick = function () { rawQuery = ''; mode = 'builder'; renderChips(); runSearch(''); };
+        chipsEl.appendChild(c); input.placeholder = 'Add a term…';
+        advLabel.textContent = 'Edit';
+        return;
+      }
+      advLabel.textContent = 'Advanced';
+      terms.forEach(function (t, i) {
+        if (i > 0 || t.neg) { var j = el('button', 'l2-joiner' + (t.neg ? ' l2-joiner--not' : '')); j.type = 'button'; j.setAttribute('aria-haspopup', 'listbox'); j.title = 'Change how this term combines'; j.innerHTML = (t.neg ? 'not' : (match === 'any' ? 'or' : 'and')) + '<i class="fas fa-chevron-down"></i>'; j.onclick = function (e) { e.stopPropagation(); openJoiner(j, i); }; chipsEl.appendChild(j); }
+        var c = el('span', 'l2-chip');
+        c.innerHTML = esc(t.text) + '<span class="type">' + t.type + '</span><button type="button" class="x" aria-label="Remove ' + esc(t.text) + '">&#215;</button>';
+        c.querySelector('.x').onclick = function () { terms.splice(i, 1); renderChips(); runSearch(compile()); };
+        chipsEl.appendChild(c);
+      });
+      input.placeholder = terms.length ? 'Add another term…' : tryPhrase();
+      fitRow();
+    }
+    /* when the chips need a second line, the bar takes the whole row and the filter chips drop underneath (same as on feeds) */
+    function fitRow() {
+      var row = search.closest('.l2-searchrow'), wrap = $('#l2SearchWrap'); if (!row || !wrap) return;
+      row.classList.remove('is-wide'); wrap.classList.remove('is-wide'); wrap.style.flexBasis = '';
+      var first = chipsEl.querySelector('.l2-chip'); if (!first) return;
+      /* narrow bar stays one line; once the terms no longer fit beside the field, it widens to the full row */
+      var overflow = search.scrollWidth > search.clientWidth + 1 || input.offsetWidth < 100;
+      if (overflow) { var w = row.clientWidth; row.classList.add('is-wide'); wrap.classList.add('is-wide'); wrap.style.flexBasis = w + 'px'; }
+    }
+    window.addEventListener('resize', fitRow); window.addEventListener('load', fitRow);
+
+    /* capture-phase: hand search-flow the full compiled query, then turn the typed term into a chip */
+    input.addEventListener('keydown', function (e) {
+      if (e._l2) return;
+      if (e.key === 'Enter') {
+        var v = input.value.trim();
+        if (v && isBoolean(v)) { e.stopImmediatePropagation(); e.preventDefault(); openPanel(true); return; }
+        if (v) terms.push({ text: v, type: guessType(v) });
+        input.value = compile();
+        setTimeout(function () { input.value = ''; renderChips(); hint.classList.remove('show'); }, 0);
+      }
+      if (e.key === 'Backspace' && !input.value && terms.length) {
+        terms.pop(); renderChips(); runSearch(compile());
+      }
+    }, true);
+    input.addEventListener('input', function () { hint.classList.toggle('show', isBoolean(input.value) && !panel.classList.contains('open')); });
+    /* fallback: some input methods submit the form without a keydown 'Enter' reaching listeners */
+    var lastEnter = 0;
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') lastEnter = Date.now(); }, true);
+    document.getElementById('feeds_v2_index').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (Date.now() - lastEnter < 300) return;
+      var v = input.value.trim();
+      if (v && isBoolean(v)) { openPanel(true); return; }
+      if (v) terms.push({ text: v, type: guessType(v) });
+      renderChips(); hint.classList.remove('show');
+      runSearch(compile());
+    });
+    $('#l2HintOpen').onclick = function () { openPanel(true); };
+
+    /* ---- advanced panel ---- */
+    function draftTerms() {
+      return [].slice.call(rowsEl.querySelectorAll('.l2-row')).map(function (r) {
+        var text = r.querySelector('input').value.trim(), type = r.dataset.type || 'word', neg = false;
+        var m = text.match(/^NOT\s+(.+)$/i);
+        if (m) { neg = true; text = m[1].replace(/^"(.*)"$/, '$1'); type = type === 'boolean' ? guessType(text) : type; }
+        return { text: text, type: type, neg: neg };
+      }).filter(function (t) { return t.text; });
+    }
+    var textMode = true, joinRowPop = null;
+    function closeRowJoin() { if (joinRowPop) { joinRowPop.remove(); joinRowPop = null; } rowsEl.querySelectorAll('.l2-rowjoin.open').forEach(function (j) { j.classList.remove('open'); }); }
+    function openRowJoin(btn, row) {
+      if (joinRowPop && btn.classList.contains('open')) { closeRowJoin(); return; }
+      closeRowJoin(); btn.classList.add('open');
+      var cur = row.dataset.op || 'AND';
+      joinRowPop = el('div', 'l2-joinpop'); joinRowPop.setAttribute('role', 'listbox');
+      [['AND', 'Must also contain', 'Narrower — results contain both'], ['OR', 'Or contain', 'Broader — results contain either'], ['NOT', 'But not', 'Results must not contain this term']].forEach(function (o) {
+        var sel = cur === o[0];
+        var b = el('button', 'opt' + (sel ? ' selected' : '') + (o[0] === 'NOT' ? ' opt--not' : '')); b.type = 'button'; b.setAttribute('role', 'option'); b.setAttribute('aria-selected', sel);
+        b.innerHTML = '<span class="op">' + o[0] + '</span><span class="d">' + o[1] + '<small>' + o[2] + '</small></span><i class="fas fa-check tick"></i>';
+        b.onclick = function () { row.dataset.op = o[0]; btn.firstChild.textContent = o[0]; closeRowJoin(); updatePreview(); };
+        joinRowPop.appendChild(b);
+      });
+      rowsEl.appendChild(joinRowPop);
+      var wr = rowsEl.getBoundingClientRect(), br = btn.getBoundingClientRect();
+      joinRowPop.style.top = (br.bottom - wr.top + 6) + 'px'; joinRowPop.style.left = Math.max(0, br.left - wr.left) + 'px';
+      joinRowPop.querySelector('.opt.selected').focus();
+    }
+    document.addEventListener('mousedown', function (e) { if (joinRowPop && !e.target.closest('.l2-joinpop, .l2-rowjoin')) closeRowJoin(); });
+    function syncJoins() {
+      rowsEl.querySelectorAll('.l2-rowjoin').forEach(function (j) { j.remove(); });
+      var rows = rowsEl.querySelectorAll('.l2-row');
+      rows.forEach(function (r, i) {
+        if (!i) return;
+        var j = el('button', 'l2-joiner l2-rowjoin'); j.type = 'button'; j.setAttribute('aria-haspopup', 'listbox'); j.title = 'Change how this term combines';
+        j.innerHTML = (r.dataset.op || 'AND') + '<i class="fas fa-chevron-down"></i>';
+        if ((r.dataset.op || 'AND') === 'NOT') j.classList.add('l2-joiner--not');
+        j.onclick = function (e) { e.stopPropagation(); openRowJoin(j, r); };
+        rowsEl.insertBefore(j, r);
+      });
+    }
+    function compileBool() {
+      var q = '';
+      rowsEl.querySelectorAll('.l2-row').forEach(function (r, i) {
+        var v = r.querySelector('input').value.trim(); if (!v) return;
+        var isB = isBoolean(v), txt = (!isB && /\s/.test(v)) ? '"' + v + '"' : (isB && /\s(AND|OR|NOT)\s/.test(v) ? '(' + v + ')' : v);
+        q += (q ? ' ' + (r.dataset.op || 'AND') + ' ' : '') + txt;
+      });
+      return q;
+    }
+    function addRow(t) {
+      var r = el('div', 'l2-row');
+      r.innerHTML = '<div class="field"><input placeholder="Enter a single word, phrase or boolean query…"><span class="type" aria-live="polite"></span></div><button type="button" class="remove" aria-label="Remove term">&#215;</button>';
+      var inp = r.querySelector('input'), typeEl = r.querySelector('.type');
+      var TYPE_LABEL = { word: 'Single Word', phrase: 'Phrase', boolean: 'Boolean' };
+      function classify() { var v = inp.value.trim(); var ty = !v ? '' : (isBoolean(v) ? 'boolean' : guessType(v)); r.dataset.type = ty || 'word'; typeEl.textContent = TYPE_LABEL[ty] || ''; }
+      if (t) { inp.value = (t.neg ? 'NOT ' : '') + t.text; }
+      classify();
+      inp.addEventListener('input', function () { classify(); updatePreview(); });
+      inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); if (e.shiftKey) addRow().querySelector('input').focus(); else apply(); } });
+      r.querySelector('.remove').onclick = function () { r.remove(); if (!rowsEl.querySelector('.l2-row')) addRow(); syncJoins(); updatePreview(); };
+      rowsEl.appendChild(r); syncJoins(); updatePreview();
+      return r;
+    }
+    function openPanel(fromTyped) {
+      rowsEl.innerHTML = '';
+      var seed = terms.slice(), typed = input.value.trim();
+      if (typed) seed.push({ text: typed, type: isBoolean(typed) ? 'boolean' : guessType(typed) });
+      textMode = true;
+      seed.forEach(addRow); if (!seed.length) addRow();
+      if (mode === 'raw') raw.value = rawQuery || compileTerms(seed);
+      if (fromTyped && typed && isBoolean(typed)) { setMode('raw'); raw.value = typed; } else setMode(mode);
+      hint.classList.remove('show');
+      panel.classList.add('open'); search.classList.add('open'); advBtn.setAttribute('aria-expanded', 'true');
+      closeChips();
+      updatePreview();
+      (mode === 'raw' ? raw : rowsEl.querySelector('input')).focus();
+    }
+    function closePanel() { panel.classList.remove('open'); search.classList.remove('open'); advBtn.setAttribute('aria-expanded', 'false'); }
+    function setMode(m) { mode = m; panel.classList.toggle('mode-raw', m === 'raw'); panel.classList.toggle('mode-builder', m !== 'raw'); $('#l2ModeKw').setAttribute('aria-pressed', m !== 'raw'); $('#l2ModeBool').setAttribute('aria-pressed', m === 'raw'); updatePreview(); }
+    function updatePreview() {
+      var q = mode === 'raw' ? raw.value.trim() : compileTerms(draftTerms());
+      if (preview) preview.textContent = q || 'nothing yet';
+    }
+    function setMatch(m) { match = m; updatePreview(); }
+    advBtn.onclick = function () { panel.classList.contains('open') ? applyIfChanged() : openPanel(); };
+    $('#l2AddRow').onclick = function () { addRow().querySelector('input').focus(); };
+    /* Boolean query: one big text field, seeded with whatever is already in the search */
+    $('#l2ModeBool').onclick = function () { if (mode === 'raw') return; var q = compileTerms(draftTerms()) || compile(); setMode('raw'); if (q) raw.value = q; raw.focus(); var L = raw.value.length; try { raw.setSelectionRange(L, L); } catch (err) {} };
+    $('#l2ModeKw').onclick = function () { if (mode !== 'raw') return; setMode('builder'); if (!rowsEl.querySelector('.l2-row')) addRow(); updatePreview(); rowsEl.querySelector('input').focus(); };
+    raw.addEventListener('input', updatePreview);
+    raw.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); apply(); } });
+    /* no Apply button: changes take effect when the panel closes (click outside / Advanced); Cancel or Escape discards */
+    function applyIfChanged() {
+      var before = compile();
+      var next = mode === 'raw' ? raw.value.trim() : compileTerms(draftTerms());
+      if (next === before) { closePanel(); return; }
+      apply();
+    }
+    /* collapsible tip boxes (state remembered) */
+    document.querySelectorAll('.l2-tips--collapsible').forEach(function (box) {
+      var head = box.querySelector('.l2-tips__head'), body = box.querySelector('.l2-tips__body'), key = 'advoc8-tips-open-' + box.id; /* new key: tips open by default, earlier collapsed choices are forgotten */
+      var open = false; try { open = localStorage.getItem(key) !== '0'; } catch (err) {}
+      function set(o, animate) {
+        open = o; head.setAttribute('aria-expanded', o); box.classList.toggle('open', o);
+        if (animate && window.replicaSlide) window.replicaSlide(body, o); else body.classList.toggle('show', o);
+        try { localStorage.setItem(key, o ? '1' : '0'); } catch (err) {}
+      }
+      set(open, false);
+      head.addEventListener('click', function () { set(!open, true); });
+    });
+    function apply() {
+      closeRowJoin();
+      if (mode === 'raw') { rawQuery = raw.value.trim(); if (!rawQuery) setMode('builder'); }
+      else { terms = draftTerms(); rawQuery = ''; }
+      renderChips(); closePanel();
+      runSearch(mode === 'raw' ? rawQuery : compile());
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && panel.classList.contains('open')) { closePanel(); advBtn.focus(); } });
+    document.addEventListener('mousedown', function (e) { if (panel.classList.contains('open') && !$('#l2SearchWrap').contains(e.target)) applyIfChanged(); });
+    renderChips();
+
+    /* ---- joiner dropdown: OR (any) / AND (all) ---- */
+    var joinPop = null;
+    function closeJoiner() { if (joinPop) { joinPop.remove(); joinPop = null; } chipsEl.querySelectorAll('.l2-joiner.open').forEach(function (j) { j.classList.remove('open'); }); }
+    function openJoiner(btn, idx) {
+      if (joinPop && btn.classList.contains('open')) { closeJoiner(); return; }
+      closeJoiner(); btn.classList.add('open');
+      var term = terms[idx], isNot = !!(term && term.neg);
+      joinPop = el('div', 'l2-joinpop'); joinPop.setAttribute('role', 'listbox');
+      [['any', 'OR', 'Match any of these', 'Broader — results contain at least one term'],
+       ['all', 'AND', 'Match all of these', 'Narrower — results contain every term'],
+       ['not', 'NOT', 'Exclude this term', 'Results must not contain “' + (term ? term.text : '') + '”']].forEach(function (o) {
+        var sel = o[0] === 'not' ? isNot : (!isNot && match === o[0]);
+        var b = el('button', 'opt' + (sel ? ' selected' : '') + (o[0] === 'not' ? ' opt--not' : '')); b.type = 'button'; b.setAttribute('role', 'option'); b.setAttribute('aria-selected', sel);
+        b.innerHTML = '<span class="op">' + o[1] + '</span><span class="d">' + o[2] + '<small>' + o[3] + '</small></span><i class="fas fa-check tick"></i>';
+        b.onclick = function () {
+          if (o[0] === 'not') { if (term) term.neg = true; }
+          else { if (term) term.neg = false; setMatch(o[0]); }
+          closeJoiner(); renderChips(); runSearch(compile());
+        };
+        joinPop.appendChild(b);
+      });
+      var wrap = $('#l2SearchWrap'); wrap.appendChild(joinPop);
+      var wr = wrap.getBoundingClientRect(), br = btn.getBoundingClientRect();
+      joinPop.style.top = (br.bottom - wr.top + 8) + 'px';
+      joinPop.style.left = Math.max(0, Math.min(br.left - wr.left - 8, wr.width - 240)) + 'px';
+      joinPop.querySelector('.opt.selected').focus();
+    }
+    document.addEventListener('mousedown', function (e) { if (joinPop && !e.target.closest('.l2-joinpop, .l2-joiner')) closeJoiner(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && joinPop) closeJoiner(); });
+
+    /* ---- count pills on the chips (prod-style) ---- */
+    function fmtCount(n) { if (!isFinite(n)) return ''; return n >= 10000 ? Math.round(n / 1000) + 'K' : n.toLocaleString('en-AU'); }
+    function parseCount(t) { t = (t || '').trim().replace(/,/g, ''); var m = t.match(/^([\d.]+)\s*K$/i); return m ? Math.round(parseFloat(m[1]) * 1000) : (parseInt(t, 10) || 0); }
+    function syncChipCounts() {
+      var badges = document.querySelectorAll('#content_type_filter_form .filter-pills > li > a .badge, #content_type_filter_form .filter-pills > li > label .badge');
+      var vals = [].slice.call(badges).map(function (b) { return parseCount(b.textContent); });
+      var srcEl = document.getElementById('l2SrcChip'), on = [].slice.call(srcEl.querySelectorAll('.l2-pop > .opt input'));
+      function frac(p) { var kids = [].slice.call(srcEl.querySelectorAll('input[data-parent="' + p.value + '"]')); if (!kids.length) return p.checked ? 1 : 0; var all = 0, sel = 0; kids.forEach(function (k) { var n = k.closest('.opt').querySelector('.n'); var m = n && n.textContent.replace(/,/g, '').match(/([\d.]+)(K?)/i); var w = m ? parseFloat(m[1]) * (m[2] ? 1000 : 1) : 1; all += w; if (k.checked) sel += w; }); return all ? sel / all : (p.checked ? 1 : 0); }
+      var total = 0; on.forEach(function (p, i) { total += (vals[i] || 0) * frac(p); }); total = Math.round(total);
+      document.getElementById('l2SrcTotal').textContent = fmtCount(total);
+      var rc = (document.getElementById('results-count').textContent.match(/[\d,]+/) || [''])[0];
+      document.getElementById('l2DateCount').textContent = rc ? fmtCount(parseCount(rc)) : '';
+      var fcRow = document.getElementById('filterChips'); var nFilters = fcRow.classList.contains('d-none') ? 0 : fcRow.querySelectorAll('.chip').length;
+      document.getElementById('l2FiltersCount').textContent = nFilters ? String(nFilters) : '';
+      document.querySelector('.l2-fchip--filters').classList.toggle('active', nFilters > 0);
+    }
+    new MutationObserver(syncChipCounts).observe(document.getElementById('filterChips'), { childList: true, subtree: true, attributes: true });
+
+    /* Filters modal: search-flow reads the input's text on Show Results, so hand it the compiled query (terms live as chips here) */
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.js-show-results')) return;
+      input.value = compile();
+      setTimeout(function () { input.value = ''; }, 0);
+    }, true);
+
+    /* ---- results count mirror (search-flow writes to the hidden #results-count) ---- */
+    var rc = $('#results-count'), l2c = $('#l2Count');
+    function mirrorCount() {
+      var t = rc.textContent.trim(), m = t.match(/^([\d,]+)\s+(.*)$/);
+      l2c.innerHTML = m ? '<b>' + m[1] + '</b> ' + esc(m[2]) : esc(t);
+    }
+    new MutationObserver(function () { mirrorCount(); syncChipCounts(); }).observe(rc, { childList: true, characterData: true, subtree: true });
+    mirrorCount();
+
+    /* ---- filter chips ---- */
+    var chips = [].slice.call(document.querySelectorAll('.l2-fchip'));
+    function closeChips(except) {
+      chips.forEach(function (c) { if (c !== except) { c.classList.remove('open'); var b = c.querySelector('.l2-fbtn'); if (b) b.setAttribute('aria-expanded', 'false'); } });
+    }
+    chips.forEach(function (c) {
+      var trigger = c.querySelector(':scope > .l2-fbtn');
+      if (!trigger || !c.querySelector('.l2-pop')) return;
+      trigger.onclick = function () { var o = c.classList.toggle('open'); closeChips(c); trigger.setAttribute('aria-expanded', o); if (o) { closePanel(); if (c.id === 'l2SrcChip') syncSourceCounts(); } };
+      var clear = c.querySelector('.clear');
+      if (clear) clear.onclick = function (e) { e.stopPropagation(); resetChip(c); };
+    });
+    document.addEventListener('mousedown', function (e) { if (!e.target.closest('.l2-fchip')) closeChips(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeChips(); });
+    function setChip(c, label, active) { var v = c.querySelector('.val'); if (v) { var inner = v.querySelector('span') || v; inner.textContent = label; } c.classList.toggle('active', !!active); }
+
+    /* sources: parent/child boxes -> filters [data-card-type] cards; counts from the hidden pill badges */
+    var src = $('#l2SrcChip');
+    function syncSourceCounts() {
+      var badges = document.querySelectorAll('#content_type_filter_form .filter-pills > li > a .badge, #content_type_filter_form .filter-pills > li > label .badge');
+      src.querySelectorAll('.n[data-k]').forEach(function (n) { var b = badges[+n.getAttribute('data-k')]; n.textContent = b ? b.textContent.trim() : ''; });
+      var subCounts = {};
+      document.querySelectorAll('#content_type_filter_form .filter-pills > li .dropdown-card label').forEach(function (l) {
+        var m = l.textContent.replace(/\s+/g, ' ').trim().match(/^(.*?)\s+([\d,.]+K?)$/);
+        if (m) subCounts[m[1]] = m[2];
+      });
+      src.querySelectorAll('.sub .opt').forEach(function (o) { var name = o.textContent.trim().replace(/\s+[\d,.]+K?$/, ''); var n = o.querySelector('.n'); if (n) n.textContent = subCounts[name] || ''; });
+    }
+    function applySources() {
+      var parents = [].slice.call(src.querySelectorAll('.l2-pop > .opt input'));
+      var on = parents.filter(function (p) { return p.checked; });
+      var partial = parents.some(function (p) { return p.indeterminate; });
+      $('#l2SrcCount').textContent = on.length + ' of ' + parents.length + ' selected';
+      var label = 'All sources', active = false;
+      if (on.length === 0) { label = 'No sources'; active = true; }
+      else if (on.length < parents.length || partial) {
+        active = true;
+        var names = { media: 'Media Releases', parliament: 'Parliament', social: 'Social Media', other: 'Other' };
+        label = on.length === 1 ? names[on[0].value] : on.length + ' sources';
+      }
+      setChip(src, label, active);
+      var allowed = {}; on.forEach(function (p) { allowed[p.value] = true; });
+      var all = on.length === parents.length;
+      document.querySelectorAll('#search-results [data-card-type]').forEach(function (card) {
+        var ct = card.getAttribute('data-card-type'); card.classList.toggle('d-none', (!all && (ct in { media: 1, parliament: 1, social: 1, other: 1 }) && !allowed[ct]) || (window.l2FacetMatch && !window.l2FacetMatch(card)));
+      });      syncChipCounts(); window.l2ApplySources = applySources;
+      if (window.l2Recount) window.l2Recount();
+    }
+    src.querySelectorAll('input').forEach(function (i) {
+      i.addEventListener('change', function () {
+        if (!i.dataset.parent) src.querySelectorAll('input[data-parent="' + i.value + '"]').forEach(function (ch) { ch.checked = i.checked; });
+        else {
+          var p = src.querySelector('input[value="' + i.dataset.parent + '"]');
+          var kids = [].slice.call(src.querySelectorAll('input[data-parent="' + i.dataset.parent + '"]'));
+          p.checked = kids.some(function (k) { return k.checked; });
+          p.indeterminate = p.checked && !kids.every(function (k) { return k.checked; });
+        }
+        applySources();
+      });
+    });
+    $('#l2SrcAll').onclick = function () { src.querySelectorAll('input').forEach(function (i) { i.checked = true; i.indeterminate = false; }); applySources(); };
+    /* re-apply after search-flow re-renders the list */
+    new MutationObserver(function () { if (src.classList.contains('active')) applySources(); }).observe($('#search-results'), { childList: true });
+
+    function singleSelect(c, onPick) {
+      c.querySelectorAll('.opt[data-v]').forEach(function (o) {
+        o.onclick = function () { c.querySelectorAll('.opt').forEach(function (x) { x.classList.toggle('selected', x === o); }); onPick(o.dataset.v); closeChips(); };
+      });
+    }
+    /* time frame -> search-flow's replicaApplyTimeframe */
+    var date = $('#l2DateChip');
+    singleSelect(date, function (v) { setChip(date, v, v !== 'Last 6 months'); if (window.replicaApplyTimeframe) window.replicaApplyTimeframe(v); });
+    date.querySelectorAll('input[type=date]').forEach(function (i) {
+      i.addEventListener('change', function () {
+        var ds = [].slice.call(date.querySelectorAll('input[type=date]')).map(function (x) { return x.value; });
+        if (ds[0] || ds[1]) { date.querySelectorAll('.opt').forEach(function (x) { x.classList.remove('selected'); }); setChip(date, (ds[0] || '…') + ' to ' + (ds[1] || '…'), true); if (window.replicaApplyTimeframe) window.replicaApplyTimeframe('Exact Dates'); }
+      });
+    });
+    /* sort -> click the hidden .sort-opt so search-flow re-orders */
+    var sort = $('#l2SortChip');
+    function sortIcon(chip, v) { var i = chip.querySelector('.l2-fbtn i'); if (!i) return; var n = document.createElement('i'); n.className = 'far ' + (/recent/i.test(v) ? 'fa-arrow-down' : 'fa-arrow-up-arrow-down'); i.replaceWith(n); }
+    singleSelect(sort, function (v) {
+      sort.setAttribute('data-tooltip', 'Sort: ' + v); sortIcon(sort, v);
+      sort.classList.toggle('active', v !== 'Relevance');
+      var opt = [].slice.call(document.querySelectorAll('.sort-opt')).filter(function (o) { return o.textContent.trim() === v; })[0];
+      if (opt) opt.click();
+    });
+    function resetChip(c) {
+      if (c === src) { src.querySelectorAll('input').forEach(function (i) { i.checked = true; i.indeterminate = false; }); applySources(); }
+      else if (c === date) { date.querySelectorAll('.opt').forEach(function (o) { o.classList.toggle('selected', o.dataset.v === 'Last 6 months'); }); setChip(date, 'Last 6 months', false); if (window.replicaApplyTimeframe) window.replicaApplyTimeframe('Last 6 months'); }
+    }
+
+    syncChipCounts();
+
+    /* ---- Save as feed: carry the search and its filters across to a new feed ---- */
+    var SRC_LABELS = { media: 'Media Releases', parliament: 'Parliament', social: 'Social Media', other: 'Other' };
+    window.l2SearchState = function () {
+      var q = compile(), pending = input.value.trim(), list;
+      if (mode === 'raw') list = q ? [{ text: q, neg: false, raw: true }] : [];
+      else { list = terms.map(function (t) { return { text: t.text, neg: !!t.neg }; }); if (pending) list.push({ text: pending, neg: false }); }
+      var pos = list.filter(function (t) { return !t.neg; }).map(function (t) { return t.text; });
+      var name = pos.length ? pos.map(function (t) { return t.charAt(0).toUpperCase() + t.slice(1); }).join(', ') : 'New feed';
+      if (name.length > 60) name = name.slice(0, 57) + '…';
+      return { name: name, terms: list, match: match, query: q,
+        sources: [].slice.call(src.querySelectorAll('input[type=checkbox]:not([data-parent])')).map(function (i) { return { v: i.value, label: SRC_LABELS[i.value] || i.value, on: i.checked || i.indeterminate }; }),
+        date: date.querySelector('.val > span').textContent.trim(), sort: (sort.getAttribute('data-tooltip') || '').replace('Sort: ', '') };
+    };
+    var saveBtn = document.getElementById('l2SaveFeed');
+    function needFiltersModal() {
+      var m = document.createElement('div'); m.className = 'l2-modal';
+      m.innerHTML = '<div class="l2-modal__box" role="dialog" aria-modal="true" aria-labelledby="l2ModalTitle"><div class="l2-modal__icon"><i class="fal fa-filter"></i></div><h3 id="l2ModalTitle">Add something to search for first</h3><p>A feed needs at least one keyword or filter so it knows what to collect. Type a keyword in the search bar, or open Advanced to add topics, sources and a time frame, then save it as a feed.</p><div class="l2-modal__actions"><button type="button" class="btn btn-white" data-close>Cancel</button><button type="button" class="btn btn-primary" data-add>Add keywords</button></div></div>';
+      document.body.appendChild(m); requestAnimationFrame(function () { m.classList.add('show'); });
+      function close() { m.classList.remove('show'); setTimeout(function () { m.remove(); }, 160); document.removeEventListener('keydown', esc); }
+      function esc(e) { if (e.key === 'Escape') close(); }
+      m.addEventListener('click', function (e) { if (e.target === m || e.target.closest('[data-close]')) close(); if (e.target.closest('[data-add]')) { close(); input.focus(); } });
+      document.addEventListener('keydown', esc); m.querySelector('[data-add]').focus();
+    }
+    if (saveBtn) saveBtn.addEventListener('click', function (e) { e.preventDefault(); var st = window.l2SearchState(); if (!st.terms.length) { needFiltersModal(); return; } st.created = Date.now(); st.count = parseInt((document.getElementById('results-count').textContent.match(/[\d,]+/) || ['0'])[0].replace(/,/g, ''), 10) || 0; localStorage.setItem('advoc8-draft-feed', JSON.stringify(st)); try { localStorage.setItem('advoc8-panel-collapsed', '0'); } catch (err) {} location.href = 'feed2.html?new=1'; });
+
+    /* ---- expand analysis to full width ---- */
+    var cols = $('#l2Cols'), expandChip = $('#l2ExpandChip'), expandBtn = expandChip.querySelector('.l2-expand');
+    var analysis = $('#analysis-results');
+    function syncExpandVisibility() { expandChip.classList.toggle('l2-hidden', analysis.classList.contains('d-none')); cols.classList.toggle('l2-idle', analysis.classList.contains('d-none')); if (analysis.classList.contains('d-none') && cols.classList.contains('l2-full')) toggleFull(false); }
+    function toggleFull(on) {
+      cols.classList.toggle('l2-full', on);
+      expandBtn.setAttribute('aria-pressed', on);
+      expandChip.setAttribute('data-tooltip', on ? 'Collapse analysis' : 'Expand analysis');
+      var lbl = document.querySelector('.js-timeframe > a.nav-link .ml-2');
+      if (window.replicaApplyTimeframe) window.replicaApplyTimeframe(lbl ? lbl.textContent.trim() : 'Last 6 months');
+    }
+    expandBtn.onclick = function () { toggleFull(!cols.classList.contains('l2-full')); };
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && cols.classList.contains('l2-full')) toggleFull(false); });
+    new MutationObserver(syncExpandVisibility).observe(analysis, { attributes: true, attributeFilter: ['class'] });
+    syncExpandVisibility();
+  })();
+  </script>
+  <script>window.addEventListener('load', function () { var i = document.getElementById('feeds_v2-search_keyword_input'); if (i && !document.querySelector('.ob-shell, .ob-card')) i.focus({ preventScroll: true }); });</script>
+  <script src="/assets/onboarding.js?v=20"></script>
+  <script src="/assets/row-collapse.js?v=5"></script>
+  <script src="/assets/party-select.js?v=5"></script>
+  <script src="/assets/drag-order.js?v=4"></script>
+  <script src="/assets/chart-actions.js?v=8"></script>
+  <script src="/assets/filter-counts.js?v=1"></script>
+  <script src="/assets/reader.js?v=2"></script>
+  <script src="/assets/labels.js?v=1"></script>
+  <script src="/assets/sentiment-chart.js?v=4"></script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+  <script src="/assets/tabler-icons.js?v=13"></script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anthony Albanese</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Feeds</a></li>
+          <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="people.html">Stakeholders</a></li>
+          <li class="nav-item"><a class="nav-link" href="posts.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Maps</a></li>
+        </ul>
+      </div>
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i><span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#"><i class="far fa-message-lines fa-fw mr-3"></i>Log Activity</a>
+            <a class="dropdown-item" href="#"><i class="far fa-calendar-check fa-fw mr-3"></i>Schedule Activity</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"><i class="far fa-user fa-fw mr-3"></i>Person</a>
+            <a class="dropdown-item" href="#"><i class="far fa-sitemap fa-fw mr-3"></i>Organisation</a>
+            <a class="dropdown-item" href="#"><i class="far fa-flag fa-fw mr-3"></i>Campaign</a>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#"><i class="far fa-book fa-fw mr-1"></i> View the Help Centre</a>
+              <a class="dropdown-item" href="#"><i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Stakeholders</h1>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#"><i class="far fa-landmark-dome fa-fw mr-1"></i><span class="stake-heading">PARLIAMENT</span></a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="people.html">Members of Parliament</a>
+        <a class="nav-link" href="people.html?segment=advisers">Advisers</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#"><i class="far fa-building fa-fw mr-1"></i><span class="stake-heading">PUBLIC SERVICE</span></a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="orgs.html">Departments &amp; Agencies</a>
+        <a class="nav-link" href="#">Public Servants</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#"><i class="far fa-map-location-dot fa-fw mr-1"></i><span class="stake-heading">LOCAL GOVERNMENT</span></a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="#">Local Councils</a>
+        <a class="nav-link" href="#">Councillors &amp; Staff</a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#"><i class="far fa-flag fa-fw mr-1"></i><span class="stake-heading">INTEREST GROUPS</span></a>
+      </div>
+      <div class="nav-group-heading mt-3">
+        <a class="nav-link" href="#"><i class="far fa-id-badge fa-fw mr-1"></i><span class="stake-heading">ALL STAKEHOLDERS</span></a>
+      </div>
+      <div class="navbar-nav stake-links">
+        <a class="nav-link" href="#">All People</a>
+        <a class="nav-link" href="#">All Organisations</a>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container"><div id="toasts"></div></div>
+      <div class="container-fluid">
+        <div class="mx-auto" style="max-width: 1680px;">
+          <div class="header mt-3">
+            <div class="header-body border-0 mb-n4">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <div class="avatar avatar-lg">
+                    <img class="avatar-img rounded" src="/assets/avatars/anthony-albanese.jpg" alt="Anthony Albanese">
+                    <div class="avatar-indicators"><span class="bg-info text-white"><i class="fa-kit fa-advoc8 fa-fw"></i></span></div>
+                  </div>
+                </div>
+                <div class="col">
+                  <h6 class="header-pretitle"></h6>
+                  <h1 class="header-title font-weight-bold">
+                    <div class="d-flex align-items-center flex-wrap flex-gap-2">
+                      <span style="white-space:nowrap;">Anthony Albanese</span>
+                      <div class="d-inline-flex flex-gap-1 small">
+                        <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                        <span class="badge bg-secondary-soft text-dark">Federal</span>
+                      </div>
+                    </div>
+                  </h1>
+                  <p class="header-subtitle">Prime Minister</p>
+                </div>
+                <div class="col-auto mt-lg-0 align-self-top">
+                  <div class="d-none d-md-block">
+                    <div class="d-flex flex-gap-2 mt-2">
+                      <a class="btn btn-white" href="#"><i class="far fa-file-word fa-fw mr-2"></i><span class="d-none d-md-inline">Download Brief</span></a>
+                      <div class="dropdown">
+                        <button class="btn btn-white" type="button" data-toggle="dropdown"><i class="far fa-ellipsis fa-fw"></i></button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#"><i class="fa-kit fa-regular-list-circle-plus fa-fw mr-2"></i>Add to List</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-eye fa-fw mr-2"></i>Watch<div class="text-muted small">Turn on notifications for this person</div></a>
+                          <a class="dropdown-item" href="#"><i class="far fa-arrow-to-right fa-fw mr-2"></i>Merge with another record...</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <!-- Left column -->
+            <div class="col-12 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-header-title">Political Details</h4>
+                  <span class="badge badge-white border d-flex align-items-center mr-n3"><img class="mr-1" style="height: 9px" src="/assets/logo-light-bg.png" alt="">Managed by Advoc8</span>
+                </div>
+                <table class="table table-sm card-table">
+                  <tbody>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Jurisdiction</strong></td>
+                  <td>Federal</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Constituency</strong></td>
+                  <td>Member for Grayndler (NSW)</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Party</strong></td>
+                  <td>Australian Labor Party</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Faction</strong></td>
+                  <td>Labor Left</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Portfolios</strong></td>
+                  <td>Prime Minister</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Key Positions</strong></td>
+                  <td>Chair, Expenditure Review Committee<br>Chair, National Security Committee<br>Chair, Priority and Delivery Committee</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Committees</strong></td>
+                  <td>Cabinet: Expenditure Review<br>Cabinet: National Security<br>Cabinet: Priority and Delivery</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Department</strong></td>
+                  <td>Prime Minister and Cabinet</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Seat Margin</strong></td>
+                  <td>16.86 (very safe)</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>First Elected</strong></td>
+                  <td>1996</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Qualifications</strong></td>
+                  <td>Bachelor of Economics</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Career Experience</strong></td>
+                  <td>Bank Officer<br>Political Adviser<br>Party Official</td>
+                </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-header-title">Contact Details</h4>
+                  <span class="badge badge-white border d-flex align-items-center mr-n3"><img class="mr-1" style="height: 9px" src="/assets/logo-light-bg.png" alt="">Managed by Advoc8</span>
+                </div>
+                <table class="table table-sm card-table">
+                  <tbody>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Type</strong></td>
+                  <td>Representative</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Salutation</strong></td>
+                  <td>Prime Minister</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Full name with title</strong></td>
+                  <td>The Hon Anthony Albanese MP</td>
+                </tr>
+                <tr>
+                  <td style="width: 30%" class="align-top"><strong>Email</strong></td>
+                  <td>pminvitations.albanese@pm.gov.au</td>
+                </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-header-title">Staff</h4>
+                </div>
+                <div class="card-body py-2 border-bottom">
+                  <div class="input-group input-group-merge input-group-rounded">
+                    <input class="form-control form-control-prepended" type="search" placeholder="Search">
+                    <div class="input-group-prepend"><div class="input-group-text"><span class="far fa-search"></span></div></div>
+                  </div>
+                </div>
+                <ul class="list-group list-group-flush">
+      <li class="list-group-item px-4 hover-reveal">
+        <div class="row align-items-start">
+          <div class="col">
+            <h4 class="card-title mb-1 name"><a href="#">Tim Gartrell</a></h4>
+            <p class="card-text text-muted byline mb-1">Chief of Staff</p>
+        <p class="mb-0">
+          <i class="far fa-envelope fa-fw mr-1"></i>
+          <a class="text-reset text-secondary" href="#">tim.gartrell@pm.gov.au <i class="fa-light fa-copy hover-reveal__hidden hover-reveal__hidden-inline"></i></a>
+        </p>
+            <div class="d-flex flex-gap-2 align-items-baseline">
+              <i class="fab fa-linkedin fa-fw"></i>
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+          <div class="col-auto align-self-stretch">
+            <div class="text-right">
+              <span class="badge badge-white border d-flex align-items-center"><img class="mr-1" style="height: 9px" src="/assets/logo-light-bg.png" alt="">Managed by Advoc8</span>
+              <div class="hover-reveal__hidden"><a class="small font-weight-bold px-2 mt-1" href="#">Suggest an update</a></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item px-4 hover-reveal">
+        <div class="row align-items-start">
+          <div class="col">
+            <h4 class="card-title mb-1 name"><a href="#">Georgia Goldsworthy</a></h4>
+            <p class="card-text text-muted byline mb-1">Deputy Chief of Staff</p>
+        <p class="mb-0">
+          <i class="far fa-envelope fa-fw mr-1"></i>
+          <a class="text-reset text-secondary" href="#">Georgia.Goldsworthy@pm.gov.au <i class="fa-light fa-copy hover-reveal__hidden hover-reveal__hidden-inline"></i></a>
+        </p>
+        <p class="mb-0">
+          <i class="far fa-envelope fa-fw mr-1"></i>
+          <a class="text-reset text-secondary" href="#">Georgia.Goldsworthy@aph.gov.au <i class="fa-light fa-copy hover-reveal__hidden hover-reveal__hidden-inline"></i></a>
+        </p>
+            <div class="d-flex flex-gap-2 align-items-baseline">
+              <i class="fab fa-linkedin fa-fw"></i>
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+          <div class="col-auto align-self-stretch">
+            <div class="text-right">
+              <span class="badge badge-white border d-flex align-items-center"><img class="mr-1" style="height: 9px" src="/assets/logo-light-bg.png" alt="">Managed by Advoc8</span>
+              <div class="hover-reveal__hidden"><a class="small font-weight-bold px-2 mt-1" href="#">Suggest an update</a></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item px-4 hover-reveal">
+        <div class="row align-items-start">
+          <div class="col">
+            <h4 class="card-title mb-1 name"><a href="#">Hannah Frank</a></h4>
+            <p class="card-text text-muted byline mb-1">Senior Adviser</p>
+        <p class="mb-0">
+          <i class="far fa-envelope fa-fw mr-1"></i>
+          <a class="text-reset text-secondary" href="#">hannah.frank@pm.gov.au <i class="fa-light fa-copy hover-reveal__hidden hover-reveal__hidden-inline"></i></a>
+        </p>
+            <div class="d-flex flex-gap-2 align-items-baseline">
+              <i class="fab fa-linkedin fa-fw"></i>
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+          <div class="col-auto align-self-stretch">
+            <div class="text-right">
+              <span class="badge badge-white border d-flex align-items-center"><img class="mr-1" style="height: 9px" src="/assets/logo-light-bg.png" alt="">Managed by Advoc8</span>
+              <div class="hover-reveal__hidden"><a class="small font-weight-bold px-2 mt-1" href="#">Suggest an update</a></div>
+            </div>
+          </div>
+        </div>
+      </li>
+                </ul>
+                <div class="card-body py-3 border-top d-flex align-items-center justify-content-between">
+                  <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  </ul>
+                  <a class="small" href="#">Next <i class="far fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="card-body py-3 border-top">
+                  <a class="small" href="#"><i class="far fa-circle-question mr-1"></i> About managed staff data</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right column -->
+            <div class="col-12 col-xl-8">
+              <ul class="nav nav-tabs nav-overflow header-tabs border-bottom mb-4">
+                <li class="nav-item"><a class="nav-link active js-profile-tab" href="#">Profile</a></li>
+                <li class="nav-item"><a class="nav-link js-profile-tab" href="#">Activity</a></li>
+                <li class="nav-item"><a class="nav-link js-profile-tab" href="#">Campaigns</a></li>
+                <li class="nav-item"><a class="nav-link js-profile-tab" href="#">Files</a></li>
+              </ul>
+
+              <div id="profileTabContent">
+                <h2 class="mb-3" style="font-size: 1.125rem; font-weight: 600;">Biography</h2>
+                <div class="card">
+                  <div class="card-body">
+<p class="mb-3" style="text-align: justify;">Anthony Albanese is Australia&#x27;s 31st Prime Minister and has represented the Federal seat of Grayndler in Sydney&#x27;s inner west since 1996.</p>
+<p class="mb-3" style="text-align: justify;">Before entering Parliament he worked as a bank officer, political adviser and party official, and he served in senior infrastructure and transport portfolios before becoming Leader of the Australian Labor Party in 2019.</p>
+<p class="mb-3" style="text-align: justify;">He led Labor to victory at the May 2022 federal election and was re-elected as Prime Minister in 2025. His stated policy focus areas include cost-of-living relief, healthcare, housing and clean-energy manufacturing.</p>
+                  </div>
+                  <div class="card-footer py-2">
+                    <span class="small text-muted"><i class="fa-kit fa-advoc8 mr-1"></i> Authored by Advoc8 Staff</span>
+                  </div>
+                </div>
+
+                <h2 class="mb-3 mt-4" style="font-size: 1.125rem; font-weight: 600;">First Speech</h2>
+                <div class="card">
+                  <div class="card-body">
+                    <p class="mb-3">Delivered <strong>6 May 1996</strong></p>
+                    <p class="card-text"><span class="badge badge-light"># Infrastructure</span> <span class="badge badge-light"># Social Justice</span> <span class="badge badge-light"># Multiculturalism</span> <span class="badge badge-light"># Environmental Planning</span> <span class="badge badge-light"># Public Sector Reform</span> <span class="badge badge-light"># Superannuation</span> <span class="badge badge-light"># Indigenous Rights</span> <span class="badge badge-light"># Employment</span> <span class="badge badge-light"># Economic Policy</span> <span class="badge badge-light"># Community Services</span></p>
+                  </div>
+                </div>
+              </div>
+              <div id="emptyTabContent" class="d-none">
+                <div class="card card-inactive">
+                  <div class="card-body text-muted text-center py-5" id="emptyTabText">Nothing here yet.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script>
+    document.addEventListener('click', function (e) {
+      var tab = e.target.closest('.js-profile-tab');
+      if (tab) {
+        e.preventDefault();
+        document.querySelectorAll('.js-profile-tab').forEach(function (t) { t.classList.toggle('active', t === tab); });
+        var isProfile = tab.textContent.trim() === 'Profile';
+        document.getElementById('profileTabContent').classList.toggle('d-none', !isProfile);
+        document.getElementById('emptyTabContent').classList.toggle('d-none', isProfile);
+        if (!isProfile) {
+          document.getElementById('emptyTabText').textContent = 'No ' + tab.textContent.trim().toLowerCase() + ' recorded yet.';
+        }
+      }
+    });
+  </script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>

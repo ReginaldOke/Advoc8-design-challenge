@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setup Custom Feed</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+  <style>
+    body { background: #f9fbfd; }
+    #main-standalone { padding-top: 1rem; grid-area: main; grid-column: 1 / -1; width: 100%; min-width: 0; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Feeds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agenda.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="people.html">Stakeholders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Maps</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i>
+            <span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="fabDropdownButton">
+            <a class="dropdown-item" href="#">
+              <i class="far fa-message-lines fa-fw mr-3"></i>
+              Log Activity
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-calendar-check fa-fw mr-3"></i>
+              Schedule Activity
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-user fa-fw mr-3"></i>
+              Person
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-sitemap fa-fw mr-3"></i>
+              Organisation
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-flag fa-fw mr-3"></i>
+              Campaign
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <a class="nav-link d-xl-none" href="#">
+            <i class="fas fa-fw fa-magnifying-glass"></i>
+          </a>
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="help_dropdown">
+              <a class="dropdown-item" href="#">
+                <i class="far fa-book fa-fw mr-1"></i> View the Help Centre
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topbar_user_dropdown">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item d-md-none" href="#">Help Centre</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="main-standalone">
+      <div class="container-fluid">
+        <div class="mx-auto" style="max-width: 1680px;">
+          <div class="row">
+            <!-- Left: wizard -->
+            <div class="col-lg-7 pr-lg-5">
+              <h1 class="font-weight-bold setup-title" style="font-size: 1.75rem;">Setup Custom Feed</h1>
+
+              <div class="setup-steps">
+                <div class="setup-step active">
+                  <p class="setup-step__title">Build</p>
+                  <p class="setup-step__desc">Keywords and Filters</p>
+                </div>
+                <div class="setup-step-sep"></div>
+                <a class="setup-step" href="alerts.html">
+                  <p class="setup-step__title">Schedule Alerts</p>
+                  <p class="setup-step__desc">Digest or ASAP</p>
+                </a>
+              </div>
+
+              <!-- Topic -->
+              <div class="setup-section">
+                <div class="setup-section__icon"><i class="far fa-message-lines"></i></div>
+                <div class="setup-section__rail"></div>
+                <div class="setup-section__content">
+                  <h2>Topic</h2>
+                  <p class="setup-section__desc">Narrow with some of Advoc8's curated topics</p>
+                  <div id="topicPicker">
+                    <p class="topic-selected-label d-none" id="topicSelectedLabel">Currently Selected:</p>
+                    <div class="topic-selected d-none" id="topicSelected"></div>
+                    <div class="form-control topic-select" id="topicSelect" role="button" style="width: 340px;">Select a topic...</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Keywords -->
+              <div class="setup-section">
+                <div class="setup-section__icon"><i class="fas fa-quote-left"></i></div>
+                <div class="setup-section__rail"></div>
+                <div class="setup-section__content">
+                  <h2>Keywords</h2>
+                  <p class="setup-section__desc">Specify keywords to include, such as your organisation name, the title of a bill, or a community issue</p>
+                  <div id="kwSimple">
+<p class="mb-3"><span class="font-weight-bold">ANY</span> of these</p>
+                  <div id="keywordRows">
+                    <div class="keyword-row">
+                      <div class="keyword-input">
+                        <input class="form-control" type="text" value="Solar panels">
+                        <span class="keyword-input__type">Phrase</span>
+                      </div>
+                      <button type="button" class="kw-remove"><i class="fal fa-times fa-lg"></i></button>
+                    </div>
+                    <div class="keyword-row">
+                      <div class="keyword-input">
+                        <input class="form-control" type="text" placeholder="Enter a single word, phrase or boolean query...">
+                        <span class="keyword-input__type"></span>
+                      </div>
+                      <button type="button" class="kw-remove"><i class="fal fa-times fa-lg"></i></button>
+                    </div>
+                  </div>
+                  <div class="keyword-tips">
+                    <p class="font-weight-bold mb-2">Keyword Tips</p>
+                    <p class="mb-0">Plurals and standard variations of single keywords are automatically included.</p>
+                    <p class="mb-2">e.g. <code>vote</code> will also match <code>votes</code>, <code>voting</code> and <code>voted</code></p>
+                    <p class="mb-0">Use quotes for exact matches.</p>
+                  </div>
+                  <p class="mb-0 kw-switch"><strong>Need more control?</strong><a href="#" id="kwToBoolean">Try an advanced boolean query</a></p>
+                  </div>
+                  <div id="kwBoolean" class="d-none">
+                    <p class="kw-bool-label">Boolean Query</p>
+                    <textarea class="kw-bool-textarea" id="kwBooleanQuery" spellcheck="false"></textarea>
+                    <div class="kw-bool-tips">
+                      <h6>Boolean Basics</h6>
+                      <p>Combine terms with <code>AND</code>, <code>OR</code>, <code>NOT</code> and <code>NEAR</code></p>
+                      <p>Use parentheses to group terms e.g <code>(cat OR dog) AND NOT mouse</code></p>
+                      <p>Use quotes to search for an exact phrase e.g <code>"Housing Affordability"</code></p>
+                      <p>Use <code>*</code> to search for partial words e.g <code>school*</code></p>
+                      <h6 class="mt-4">Proximity Searches</h6>
+                      <p>By default <code>NEAR</code> will match content where the terms are within 4 words of each other. You can change this by adding a number after <code>NEAR</code> e.g. <code>NEAR/10</code> will match content where the terms are within 10 words of each other.</p>
+                      <p class="mb-0">e.g <code>school NEAR/2 funding</code> will match "funding of schools", "school funding", "school sports funding" etc.</p>
+                    </div>
+                    <p class="mb-0 kw-switch"><strong>Too tricky?</strong><a href="#" id="kwToSimple">Back to simple keywords</a></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jurisdiction -->
+              <div class="setup-section">
+                <div class="setup-section__icon"><i class="far fa-landmark-dome"></i></div>
+                <div class="setup-section__rail"></div>
+                <div class="setup-section__content">
+                  <h2>Jurisdiction</h2>
+                  <p class="setup-section__desc">Only match content from these selected jurisdictions</p>
+                  <div class="d-table">
+                    <div class="d-table-row">
+                      <div class="d-table-cell py-1 pr-2">
+                        <input class="btn-check btn-check--with-icon" id="jurisdiction_1" type="checkbox" value="1" checked>
+                        <label class="btn btn-sm btn-white mb-0" for="jurisdiction_1">Federal</label>
+                      </div>
+                    </div>
+                    <div class="d-table-row">
+                      <div class="d-table-cell py-1 pr-2">
+                        <input type="checkbox" id="select_all_States" class="btn-check btn-check--with-icon" checked>
+                        <label class="btn btn-sm btn-white mb-0 text-nowrap" for="select_all_States">States</label>
+                      </div>
+                      <div class="d-table-cell py-1 px-2 border-left">
+                        <div class="d-flex flex-wrap flex-gap-2">
+                          <input class="btn-check" id="jurisdiction_5" type="checkbox" value="5">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_5">ACT</label>
+                          <input class="btn-check" id="jurisdiction_3" type="checkbox" value="3">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_3">NSW</label>
+                          <input class="btn-check" id="jurisdiction_8" type="checkbox" value="8">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_8">NT</label>
+                          <input class="btn-check" id="jurisdiction_4" type="checkbox" value="4">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_4">QLD</label>
+                          <input class="btn-check" id="jurisdiction_6" type="checkbox" value="6">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_6">SA</label>
+                          <input class="btn-check" id="jurisdiction_7" type="checkbox" value="7">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_7">TAS</label>
+                          <input class="btn-check" id="jurisdiction_2" type="checkbox" value="2">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_2">VIC</label>
+                          <input class="btn-check" id="jurisdiction_9" type="checkbox" value="9">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_9">WA</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-table-row">
+                      <div class="d-table-cell py-1 pr-2">
+                        <input type="checkbox" id="select_all_Councils" class="btn-check btn-check--with-icon">
+                        <label class="btn btn-sm btn-white mb-0 text-nowrap" for="select_all_Councils">Councils</label>
+                      </div>
+                      <div class="d-table-cell py-1 px-2 border-left">
+                        <div class="d-flex flex-wrap flex-gap-2">
+                          <input class="btn-check" id="jurisdiction_12" type="checkbox" value="12">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_12">NSW LGAs</label>
+                          <input class="btn-check" id="jurisdiction_13" type="checkbox" value="13">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_13">NT LGAs</label>
+                          <input class="btn-check" id="jurisdiction_14" type="checkbox" value="14">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_14">QLD LGAs</label>
+                          <input class="btn-check" id="jurisdiction_15" type="checkbox" value="15">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_15">SA LGAs</label>
+                          <input class="btn-check" id="jurisdiction_16" type="checkbox" value="16">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_16">TAS LGAs</label>
+                          <input class="btn-check" id="jurisdiction_17" type="checkbox" value="17">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_17">VIC LGAs</label>
+                          <input class="btn-check" id="jurisdiction_18" type="checkbox" value="18">
+                          <label class="btn btn-sm btn-white mb-0" for="jurisdiction_18">WA LGAs</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stakeholders -->
+              <div class="setup-section">
+                <div class="setup-section__icon"><i class="far fa-users"></i></div>
+                <div class="setup-section__rail"></div>
+                <div class="setup-section__content">
+                  <h2>Stakeholders</h2>
+                  <p class="setup-section__desc">Only match content for these specific stakeholders, lists or sources</p>
+                  <input class="form-control mb-2" type="search" placeholder="Search specific stakeholders, lists or sources...">
+                  <div id="stakeholderRows">
+                    <div class="stakeholder-row">
+                      <div class="avatar avatar-sm mr-3">
+                        <span class="avatar-title rounded" style="background-color: #6e84a3;">AA</span>
+                      </div>
+                      <div style="min-width: 0;">
+                        <div class="d-flex align-items-center flex-gap-2">
+                          <span class="font-weight-bold">Anthony Albanese</span>
+                          <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                          <span class="badge bg-secondary-soft text-dark">Federal</span>
+                        </div>
+                        <div class="text-muted small">Prime Minister</div>
+                      </div>
+                      <button type="button" class="sh-x"><i class="fal fa-times"></i></button>
+                    </div>
+                    <div class="stakeholder-row">
+                      <div class="avatar avatar-sm mr-3">
+                        <span class="avatar-title rounded" style="background-color: #b48a5a;">PH</span>
+                      </div>
+                      <div style="min-width: 0;">
+                        <div class="d-flex align-items-center flex-gap-2">
+                          <span class="font-weight-bold">Pauline Hanson</span>
+                          <span class="badge party" style="background-color: #f6773e; color: white;">ONP</span>
+                          <span class="badge bg-secondary-soft text-dark">Federal</span>
+                        </div>
+                        <div class="text-muted small">Leader of One Nation</div>
+                      </div>
+                      <button type="button" class="sh-x"><i class="fal fa-times"></i></button>
+                    </div>
+                    <div class="stakeholder-row">
+                      <div class="avatar avatar-sm mr-3">
+                        <span class="avatar-title rounded" style="background-color: #4a708c;">CM</span>
+                      </div>
+                      <div style="min-width: 0;">
+                        <div class="d-flex align-items-center flex-gap-2">
+                          <span class="font-weight-bold">Chris Minns</span>
+                          <span class="badge party" style="background-color: #eb1e1e; color: white;">ALP</span>
+                          <span class="badge bg-secondary-soft text-dark">NSW</span>
+                        </div>
+                        <div class="text-muted small">Premier</div>
+                      </div>
+                      <button type="button" class="sh-x"><i class="fal fa-times"></i></button>
+                    </div>
+                    <div class="stakeholder-row">
+                      <div class="avatar avatar-sm mr-3">
+                        <span class="avatar-title rounded" style="background-color: #8a6d5c;">BK</span>
+                      </div>
+                      <div style="min-width: 0;">
+                        <div class="d-flex align-items-center flex-gap-2">
+                          <span class="font-weight-bold">Bob Katter</span>
+                          <span class="badge party" style="background-color: #b50403; color: white;">KAP</span>
+                          <span class="badge bg-secondary-soft text-dark">Federal</span>
+                        </div>
+                        <div class="text-muted small">Member for Kennedy (QLD)</div>
+                      </div>
+                      <button type="button" class="sh-x"><i class="fal fa-times"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="setup-footer">
+                <a class="text-danger" href="index.html">Cancel Setup</a>
+                <a class="btn btn-primary ml-auto" href="alerts.html">Save and Continue</a>
+              </div>
+            </div>
+
+            <!-- Right: sample results -->
+            <div class="col-lg-5 d-none d-lg-block setup-right">
+              <div class="mt-5 pt-2">
+                <div class="expect-banner">
+                  <i class="far fa-wave-pulse mr-3"></i>
+                  Expect around <span class="font-weight-bold">0 to 5</span> results per day.
+                </div>
+                <p class="mb-3"><i class="far fa-magnifying-glass-plus mr-2"></i> <span class="font-weight-bold" style="font-size: 1.0625rem;">Sample Results</span></p>
+                <ul class="nav nav-pills nav-overflow filter-pills mb-3">
+                  <li class="nav-item mr-1">
+                    <a class="rounded-pill border text-reset nav-link" href="#" onclick="return false;">
+                      <i class="far fa-newspaper fa-fw"></i>
+                      <span class="mx-2">Media Releases</span>
+                      <span class="badge text-secondary bg-secondary-soft badge-pill">29</span>
+                    </a>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a class="rounded-pill border text-reset nav-link" href="#" onclick="return false;">
+                      <span class="ml-2">
+                        <i class="far fa-landmark-flag fa-fw mr-2"></i>Parliament
+                        <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">15</span>
+                      </span>
+                      <i class="fas fa-chevron-down ml-3"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <a class="rounded-pill border text-reset nav-link" href="#" onclick="return false;">
+                      <span class="ml-2">
+                        <i class="fas fa-hashtag fa-fw mr-2"></i>Social Media
+                        <span class="badge badge-pill ml-2 text-secondary bg-secondary-soft">15</span>
+                      </span>
+                      <i class="fas fa-chevron-down ml-3"></i>
+                    </a>
+                  </li>
+                </ul>
+                <div id="sample-results"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script>
+    window.SETUP_TOPICS = [
+      ['🐑', 'Agriculture', ['Agricultural Industry', 'Agricultural Science', 'Biosecurity', 'Crops', 'Fisheries', 'Forestry', 'Livestock', 'Sustainable Agriculture', 'Water Management']],
+      ['🎨', 'Arts and Culture', []],
+      ['🔍', 'Consumer Affairs', ['Consumer Rights', 'Pricing', 'Product Safety', 'Scams']],
+      ['👔', 'Corporate Affairs', ['Business Regulation', 'Small Business']],
+      ['🪖', 'Defence', ['Defence Contracting', 'Defence Forces', 'Defence Policy', 'Security Alliances']],
+      ['📈', 'Economics', ['Budget', 'Economy']],
+      ['🎓', 'Education', ['Early Education', 'Primary Education', 'Schools and Teaching', 'Secondary Education', 'Tertiary Education']],
+      ['🚨', 'Emergency Management', ['Emergency Services', 'Natural Disasters']],
+      ['⚡', 'Energy and Mining', ['Electricity Market', 'Energy Efficiency', 'Energy Emissions', 'Energy Industry', 'Gas', 'Mining', 'Nuclear', 'Petroleum', 'Renewables']],
+      ['🌳', 'Environment', ['Climate Change', 'Conservation', 'Landcare', 'Waste and Pollution', 'Water']],
+      ['💳', 'Finance', ['Banking', 'Financial Services Sector', 'Insurance', 'Investment', 'Payments', 'Superannuation']],
+      ['🥤', 'Food and Beverage', ['Beverages', 'Food Regulation', 'Food and Grocery']],
+      ['🤝', 'Foreign Affairs and Trade', ['Foreign Aid and Development', 'Free Trade Agreements', 'International Relations', 'Regional Architecture', 'Trade and Investment']],
+      ['💶', 'Government Grants', []],
+      ['⚕️', 'Health', ['Aged Care', 'Bioethics', 'Cancer', 'Communicable Diseases', 'Diabetes', 'Disability', 'Drug Addiction', 'Eye Disease', 'Health Funding', 'Health Sector', 'Heart Disease', 'Kidney Disease', 'Medical Devices', 'Medicines', 'Mental Health', 'Neurological Conditions', 'Obesity', 'Primary Healthcare', 'Secondary Healthcare', 'Tobacco']],
+      ['🛂', 'Home Affairs', ['Immigration and Citizenship', 'Multicultural Affairs', 'National Security']],
+      ['🌏', 'Indigenous Affairs', ['Indigenous Affairs - General', 'Indigenous Employment', 'Indigenous Health and Wellbeing', 'Native Title', 'Reconciliation and Recognition']],
+      ['🌐', 'Industry, Science and Innovation', ['Industry', 'Innovation', 'Science']],
+      ['⚖️', 'Legal Affairs', ['Consumer Data Right', 'Defamation', 'Freedom of Information', 'Intellectual Property', 'Privacy']],
+      ['📰', 'Media and Communications', ['Advertising', 'Broadcasting', 'Content Regulation', 'Telecommunications']],
+      ['📋', 'Planning and Development', ['Construction', 'Heritage', 'Infrastructure', 'Planning', 'Property', 'Regional Development']],
+      ['🏛️', 'Social Services', ['Child Care', 'Child Protection', 'Disability Services', 'Domestic Violence', 'Housing & Homelessness', 'LGBTQIIA+', 'Pensioners', 'Social Services Sector', 'Veterans Affairs', 'Young People']],
+      ['🏉', 'Sport and Recreation', []],
+      ['💸', 'Taxation', ['Charities and NFPs', 'Company Tax', 'Income Tax', 'Property Tax']],
+      ['🖥️', 'Technology', ['Cybersecurity', 'Data', 'Digital Technologies', 'Gaming']],
+      ['🏖️', 'Tourism and Hospitality', ['Accommodation', 'Cruise Industry', 'Events', 'Gambling', 'Hospitality', 'Liquor', 'Overseas Travel']],
+      ['🚘', 'Transport', ['Aviation', 'Freight and Logistics', 'Maritime', 'Private Transport - Bikes', 'Private Transport - Cars', 'Private Transport - Motorcycles', 'Private Transport - e-Bikes and PMDs', 'Public Transport - Buses', 'Public Transport - Rail', 'Public Transport - Taxis and Ridesharing', 'Roads - Infrastructure and Investment', 'Roads - Safety', 'Roads - Traffic Management']],
+      ['💼', 'Workplace Relations', ['Enterprise Bargaining', 'Fair Work', 'Industrial Activities', 'Labour Market']]
+    ];
+  </script>
+  <script src="/assets/setup.js?v=5"></script>
+
+  <!-- Topics modal (same categories UI as the search page filter) -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="topicModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-0">
+          <h4 class="modal-title">Filter</h4>
+          <button type="button" class="close js-topic-modal-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="accordion">
+            <div class="card rounded-0 mb-0">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div><i class="far fa-message-lines fa-fw mr-2"></i><span class="font-weight-bold">Topics</span></div>
+                <i class="far fa-chevron-down accordion-chevron"></i>
+              </div>
+              <div class="card-body" style="max-height: 60vh; overflow-y: auto;" id="topics-list-setup"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <a class="btn btn-white js-topic-clear" href="#">Clear All</a>
+          <button type="button" class="btn btn-primary js-topic-apply">Show Results</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  /* Topics modal (shared categories UI) + boolean query view */
+  (function () {
+    var list = document.getElementById('topics-list-setup'), modal = document.getElementById('topicModal');
+    var TOPICS = window.SETUP_TOPICS || window.SEARCH_TOPICS || [];
+    list.innerHTML = TOPICS.map(function (t, i) {
+      var subs = t[2].map(function (s, j) {
+        return '<div class="ml-3 form-check"><input id="setup_topic_' + i + '_' + j + '" type="checkbox" class="form-check-input js-topic-sub"><label class="form-check-label ml-2 d-block" for="setup_topic_' + i + '_' + j + '">' + s + '</label></div>';
+      }).join('');
+      return '<div class="card mb-0 topic-group" data-emoji="' + t[0] + '" data-name="' + t[1] + '">' +
+               '<div class="card-header topic-group-header"><div class="form-check d-flex align-items-center h4 mb-0">' +
+                 '<input id="setup_topic_group_' + i + '" type="checkbox" class="form-check-input z-2 js-topic-group-cb">' +
+                 '<label class="form-check-label ml-3 mt-1 d-block w-100" for="setup_topic_group_' + i + '">' + t[0] + ' &nbsp; ' + t[1] + '</label></div>' +
+                 (subs ? '<i class="far fa-chevron-right fa-xs topic-chevron"></i>' : '') + '</div>' +
+               (subs ? '<div class="js-topic-group-body collapse-anim"><div class="card-body">' + subs + '</div></div>' : '') + '</div>';
+    }).join('');
+    function setExpanded(group, open) {
+      var body = group.querySelector('.js-topic-group-body'); if (!body) return;
+      if (body.classList.contains('show') === open) return;
+      if (window.replicaSlide) window.replicaSlide(body, open); else body.classList.toggle('show', open);
+      var chev = group.querySelector('.topic-chevron'); if (chev) chev.classList.toggle('rot90', open);
+    }
+    list.addEventListener('click', function (e) {
+      var header = e.target.closest('.topic-group-header');
+      if (header && !e.target.closest('input, label')) { var g = header.closest('.topic-group'); var b = g.querySelector('.js-topic-group-body'); if (b) setExpanded(g, !b.classList.contains('show')); }
+    });
+    list.addEventListener('change', function (e) {
+      var group = e.target.closest('.topic-group'); if (!group) return;
+      if (e.target.classList.contains('js-topic-group-cb')) {
+        group.querySelectorAll('.js-topic-sub').forEach(function (c) { c.checked = e.target.checked; });
+        if (e.target.checked) setExpanded(group, true);
+      } else if (e.target.classList.contains('js-topic-sub')) {
+        var subs = [].slice.call(group.querySelectorAll('.js-topic-sub')), cb = group.querySelector('.js-topic-group-cb');
+        cb.checked = subs.every(function (c) { return c.checked; });
+        cb.indeterminate = !cb.checked && subs.some(function (c) { return c.checked; });
+      }
+    });
+    /* open / close (Bootstrap markup, driven without jQuery) */
+    var backdrop;
+    function openModal() {
+      modal.style.display = 'block'; modal.removeAttribute('aria-hidden');
+      backdrop = document.createElement('div'); backdrop.className = 'modal-backdrop fade'; document.body.appendChild(backdrop);
+      document.body.classList.add('modal-open');
+      requestAnimationFrame(function () { modal.classList.add('show'); backdrop.classList.add('show'); });
+    }
+    function closeModal() {
+      modal.classList.remove('show'); if (backdrop) backdrop.classList.remove('show');
+      setTimeout(function () { modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); if (backdrop) backdrop.remove(); document.body.classList.remove('modal-open'); }, 200);
+    }
+    document.getElementById('topicSelect').addEventListener('click', openModal);
+    document.getElementById('topicSelected').addEventListener('click', openModal);
+    modal.querySelector('.js-topic-modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('mousedown', function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('show')) closeModal(); });
+    modal.querySelector('.js-topic-clear').addEventListener('click', function (e) { e.preventDefault(); list.querySelectorAll('input').forEach(function (c) { c.checked = false; c.indeterminate = false; }); });
+    modal.querySelector('.js-topic-apply').addEventListener('click', function () {
+      var picks = [];
+      list.querySelectorAll('.topic-group').forEach(function (g) {
+        var cb = g.querySelector('.js-topic-group-cb'), subs = [].slice.call(g.querySelectorAll('.js-topic-sub')).filter(function (s) { return s.checked; });
+        if (cb.checked) picks.push({ e: g.dataset.emoji, n: g.dataset.name });
+        else subs.forEach(function (s) { picks.push({ e: g.dataset.emoji, n: g.dataset.name + ' › ' + s.nextElementSibling.textContent }); });
+      });
+      var sel = document.getElementById('topicSelected'), lbl = document.getElementById('topicSelectedLabel'), btn = document.getElementById('topicSelect');
+      sel.innerHTML = picks.map(function (p) { return '<div class="topic-pick"><span>' + p.e + '</span><span>' + p.n + '</span></div>'; }).join('');
+      sel.classList.toggle('d-none', !picks.length); lbl.classList.toggle('d-none', !picks.length); btn.classList.toggle('d-none', !!picks.length);
+      closeModal();
+    });
+
+    /* boolean query view */
+    var simple = document.getElementById('kwSimple'), bool = document.getElementById('kwBoolean'), ta = document.getElementById('kwBooleanQuery');
+    function compileRows() {
+      return [].slice.call(document.querySelectorAll('#keywordRows .keyword-row')).map(function (r) {
+        var v = r.querySelector('input').value.trim(), t = r.querySelector('.keyword-input__type').textContent.trim();
+        if (!v) return ''; return t === 'Phrase' ? '"' + v + '"' : v;
+      }).filter(Boolean).join(' OR ');
+    }
+    document.getElementById('kwToBoolean').addEventListener('click', function (e) { e.preventDefault(); ta.value = compileRows(); simple.classList.add('d-none'); bool.classList.remove('d-none'); ta.focus(); });
+    document.getElementById('kwToSimple').addEventListener('click', function (e) { e.preventDefault(); bool.classList.add('d-none'); simple.classList.remove('d-none'); });
+  })();
+  </script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>

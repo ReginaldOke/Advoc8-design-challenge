@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Feeds</title>
+  <link rel="stylesheet" href="/assets/fa/css/pro.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-shims.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v5-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/pro-v4-font-face.min.css">
+  <link rel="stylesheet" href="/assets/fa/css/custom-icons.css">
+  <link rel="stylesheet" href="/assets/application.css?v=3">
+  <link rel="stylesheet" href="/assets/overrides.css?v=207">
+</head>
+<body>
+  <div id="wrap">
+    <nav id="topbar" class="navbar navbar-dark">
+      <div class="topbar-left">
+        <a class="navbar-brand ml-3 mr-4" aria-label="Goto Homepage" href="index.html">
+          <img alt="Advoc8 Logo" src="/assets/logo-dark-bg.png">
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Feeds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agenda.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="people.html">Stakeholders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="posts.html">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Maps</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="topbar-center d-none d-xl-flex flex-gap-3">
+        <a class="nav-search-launcher" href="#">
+          <i class="far fa-search"></i>
+          <span class="flex-1">Search</span>
+          <kbd title="Press Command + K to search">⌘ K</kbd>
+        </a>
+        <div class="dropdown">
+          <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="fabDropdownButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus fa-fw"></i>
+            <span class="sr-only">New Item</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="fabDropdownButton">
+            <a class="dropdown-item" href="#">
+              <i class="far fa-message-lines fa-fw mr-3"></i>
+              Log Activity
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-calendar-check fa-fw mr-3"></i>
+              Schedule Activity
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-user fa-fw mr-3"></i>
+              Person
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-sitemap fa-fw mr-3"></i>
+              Organisation
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="far fa-flag fa-fw mr-3"></i>
+              Campaign
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <ul class="navbar-nav">
+          <a class="nav-link d-xl-none" href="#">
+            <i class="fas fa-fw fa-magnifying-glass"></i>
+          </a>
+          <div class="dropdown d-none d-md-inline">
+            <a id="help_dropdown" class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-fw fa-question-circle"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="help_dropdown">
+              <a class="dropdown-item" href="#">
+                <i class="far fa-book fa-fw mr-1"></i> View the Help Centre
+              </a>
+              <a class="dropdown-item" href="#">
+                <i class="far fa-comment-alt-lines fa-fw mr-1"></i> Chat with Advoc8 Support
+              </a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a id="topbar_user_dropdown" class="dropdown-toggle dropdown-toggle--no-caret" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-sm">
+                <span class="avatar-title rounded-circle border border-2 border-dark" style="background-color: #ae75f0;">RO</span>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topbar_user_dropdown">
+              <a class="dropdown-item" href="#">Files</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item d-md-none" href="#">Help Centre</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="navbar navbar-vertical">
+      <div class="m-3 d-flex flex-gap-3 align-items-center">
+        <h1 class="mb-0 mr-auto">Feeds</h1>
+        <a class="d-md-none h1 mb-0 text-reset" href="#">
+          <i class="fal fa-times"></i>
+        </a>
+      </div>
+      <div class="navbar-nav ">
+        <a class="nav-link" href="index.html">
+          <i class="fal fa-search fa-fw"></i> Search
+        </a>
+        <a class="nav-link active" href="feeds.html">
+          <i class="fal fa-layer-group fa-fw"></i> Your Feeds
+        </a>
+        <a class="nav-link" href="saved.html">
+          <i class="fal fa-bookmark fa-fw"></i> Saved Items
+        </a>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="navbar-nav">
+        <div class="nav-group-heading">
+          <a class="nav-link" role="button" aria-controls="feeds_sidebar_collapse" href="#feeds_sidebar_collapse" aria-expanded="true">
+            <i class="fas fa-caret-down fa-fw fa-xs"></i>
+            <i class="fas fa-caret-right fa-fw fa-xs"></i>
+            Feeds
+          </a>
+          <a class="nav-link nav-group-action" data-tooltip="New Feed" href="build.html">
+            <i class="fal fa-plus fa-fw"></i>
+          </a>
+        </div>
+        <div class="collapsible-nav-group navbar-nav" id="feeds_sidebar_collapse">
+          <a class="nav-link" href="#">
+            <span class="mx-2 flex-noshrink">🤖</span>
+            <span class="text-nowrap">data centers</span>
+          </a>
+          <a class="nav-link" href="feed.html">
+            <span class="mx-2 flex-noshrink">🌞</span>
+            <span class="text-nowrap">Solar panels</span>
+          </a>
+          <a class="nav-link" href="#">
+            <span class="mx-2 flex-noshrink">🐑</span>
+            <span class="text-nowrap">Agriculture</span>
+          </a>
+          <a class="nav-link text-primary mt-2" href="#">
+            <i class="far fa-fw"></i>
+            <small>View all Feeds &nbsp; →</small>
+          </a>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <div id="main">
+      <div id="flash-messages-container" class="">
+        <div id="toasts"></div>
+      </div>
+
+      <div class="mainopShadow"></div>
+      <div class="floating-action-button dropup">
+        <div class="mainop" role="button" data-toggle="dropdown" id="fabDropdownButtonMobile" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-fw far fa-plus"></i>
+          <span class="sr-only">New Item</span>
+        </div>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">
+            <i class="far fa-flag fa-fw mr-3"></i>
+            Campaign
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-sitemap fa-fw mr-3"></i>
+            Organisation
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-user fa-fw mr-3"></i>
+            Person
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <i class="far fa-message-lines fa-fw mr-3"></i>
+            Log Activity
+          </a>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="mt-2 mx-auto" style="max-width: 1024px;">
+          <div class="header mt-3">
+            <div class="header-body border-0 mb-n4">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="header-pretitle"></h6>
+                  <h1 class="header-title font-weight-bold">Your Feeds</h1>
+                </div>
+                <div class="col-auto mt-lg-0 align-self-top">
+                  <div class="d-flex flex-gap-2">
+                    <a class="btn btn-white" href="build.html">
+                      <i class="far fa-plus fa-fw mr-2"></i>New Feed
+                    </a>
+                    <div class="dropdown">
+                      <button class="btn btn-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-ellipsis fa-fw"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">
+                          <i class="far fa-folder-plus fa-fw mr-2"></i> New Group
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="nav nav-tabs mb-4 mt-5">
+            <li class="nav-item">
+              <a class="nav-link active feeds-tab" href="#">All Feeds</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link feeds-tab" href="#">Your Subscriptions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link feeds-tab" href="#">Created by You</a>
+            </li>
+          </ul>
+
+          <div class="card card-inactive" id="inProgressCard">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item list-group-item-action px-3 py-3 px-md-4">
+                <div class="row align-items-center align-items-top">
+                  <div class="col-12 col-md">
+                    <h3 class="card-text">
+                      <span class="feed-emoji mx-2">🛠️</span>
+                      <a class="stretched-link text-reset" href="build.html">Skate park</a>
+                      <span class="badge badge-warning ml-3">In Progress</span>
+                    </h3>
+                  </div>
+                  <div class="col-12 col-md-auto mt-3 mt-md-0">
+                    <div class="d-flex flex-gap-2 justify-content-end">
+                      <a class="btn btn-primary z-2 position-relative" href="build.html">Continue Setup</a>
+                      <button class="btn btn-link text-danger z-2 position-relative" type="button" id="discardSetup">Discard</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="list-group list-group-flush" id="feedList">
+
+              <div class="list-group-item list-group-item-action px-3 py-4 px-md-4">
+                <div class="row align-items-top align-items-top">
+                  <div class="col-12 col-md">
+                    <h3 class="card-text">
+                      <span class="feed-emoji mx-2">🐑</span>
+                      <a class="stretched-link text-reset" href="#">Agriculture</a>
+                    </h3>
+                    <div class="text-muted">
+                      <div class="d-flex align-items-baseline flex-gap-2">
+                        <div class="flex-0"><i class="far fa-message-lines fa-fw mx-2"></i></div>
+                        <div class="flex-1"><a class="text-reset" href="#">Agriculture</a></div>
+                      </div>
+                      <div class="d-flex align-items-baseline flex-gap-2 mb-1">
+                        <i class="fas fa-bell-on text-warning fa-fw mx-2"></i>
+                        <a class="text-reset" href="#">Notifications are <span class="font-weight-bold">ON</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-auto mt-3 mt-md-0">
+                    <div class="d-flex flex-gap-2 justify-content-end">
+                      <a class="btn btn-white z-2 position-relative" href="#">
+                        <i class="fa-kit fa-regular-bell-gear fa-fw mr-2"></i>Notification Settings
+                      </a>
+                      <div class="dropdown z-2 position-relative">
+                        <button class="btn btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="far fa-ellipsis fa-fw"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i> Rename</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-cog fa-fw mr-2"></i> Edit Filters</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-folder-plus fa-fw mr-2"></i> Add to Group</a>
+                          <a class="dropdown-item text-danger" href="#"><i class="far fa-bell-slash fa-fw mr-2"></i> Unsubscribe</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item text-danger" href="#"><i class="far fa-trash-alt fa-fw mr-2"></i> Delete Feed</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-group-item list-group-item-action px-3 py-4 px-md-4">
+                <div class="row align-items-top align-items-top">
+                  <div class="col-12 col-md">
+                    <h3 class="card-text">
+                      <span class="feed-emoji mx-2">🤖</span>
+                      <a class="stretched-link text-reset" href="#">data centers</a>
+                    </h3>
+                    <div class="text-muted">
+                      <div class="d-flex align-items-baseline flex-gap-2">
+                        <div class="flex-0"><i class="fas fa-quote-left fa-fw mx-2"></i></div>
+                        <div class="flex-1"><a class="text-reset" href="#">Mentions of data centers, AI</a></div>
+                      </div>
+                      <div class="d-flex align-items-baseline flex-gap-2">
+                        <div class="flex-0"><i class="far fa-landmark-dome fa-fw mx-2"></i></div>
+                        <div class="flex-1 text-nowrap">Federal, NSW, NT, SA, VIC, and WA</div>
+                      </div>
+                      <div class="d-flex align-items-baseline flex-gap-2 mb-1">
+                        <i class="fas fa-bell-on text-warning fa-fw mx-2"></i>
+                        <a class="text-reset" href="#">Notifications are <span class="font-weight-bold">ON</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-auto mt-3 mt-md-0">
+                    <div class="d-flex flex-gap-2 justify-content-end">
+                      <a class="btn btn-white z-2 position-relative" href="#">
+                        <i class="fa-kit fa-regular-bell-gear fa-fw mr-2"></i>Notification Settings
+                      </a>
+                      <div class="dropdown z-2 position-relative">
+                        <button class="btn btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="far fa-ellipsis fa-fw"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i> Rename</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-cog fa-fw mr-2"></i> Edit Filters</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-folder-plus fa-fw mr-2"></i> Add to Group</a>
+                          <a class="dropdown-item text-danger" href="#"><i class="far fa-bell-slash fa-fw mr-2"></i> Unsubscribe</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item text-danger" href="#"><i class="far fa-trash-alt fa-fw mr-2"></i> Delete Feed</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-group-item list-group-item-action px-3 py-4 px-md-4">
+                <div class="row align-items-top align-items-top">
+                  <div class="col-12 col-md">
+                    <h3 class="card-text">
+                      <span class="feed-emoji mx-2">🌞</span>
+                      <a class="stretched-link text-reset" href="feed.html">Solar panels</a>
+                    </h3>
+                    <div class="text-muted">
+                      <div class="d-flex align-items-baseline flex-gap-2">
+                        <div class="flex-0"><i class="far fa-message-lines fa-fw mx-2"></i></div>
+                        <div class="flex-1"><a class="text-reset" href="#">Environment</a></div>
+                      </div>
+                      <div class="d-flex align-items-baseline flex-gap-2">
+                        <div class="flex-0"><i class="fas fa-quote-left fa-fw mx-2"></i></div>
+                        <div class="flex-1"><a class="text-reset" href="#">Mentions of Solar panels, Renewable Energy Scheme</a></div>
+                      </div>
+                      <div class="d-flex align-items-baseline flex-gap-2">
+                        <div class="flex-0"><i class="fas fa-user fa-fw mx-2"></i></div>
+                        <div class="flex-1">Following Anthony Albanese, Pauline Hanson, Chris Minns and 1 other</div>
+                      </div>
+                      <div class="d-flex align-items-baseline flex-gap-2 mb-1">
+                        <i class="fas fa-bell-on text-warning fa-fw mx-2"></i>
+                        <a class="text-reset" href="#">Notifications are <span class="font-weight-bold">ON</span></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-auto mt-3 mt-md-0">
+                    <div class="d-flex flex-gap-2 justify-content-end">
+                      <a class="btn btn-white z-2 position-relative" href="#">
+                        <i class="fa-kit fa-regular-bell-gear fa-fw mr-2"></i>Notification Settings
+                      </a>
+                      <div class="dropdown z-2 position-relative">
+                        <button class="btn btn-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="far fa-ellipsis fa-fw"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#"><i class="far fa-pen-to-square fa-fw mr-2"></i> Rename</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-cog fa-fw mr-2"></i> Edit Filters</a>
+                          <a class="dropdown-item" href="#"><i class="far fa-folder-plus fa-fw mr-2"></i> Add to Group</a>
+                          <a class="dropdown-item text-danger" href="#"><i class="far fa-bell-slash fa-fw mr-2"></i> Unsubscribe</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item text-danger" href="#"><i class="far fa-trash-alt fa-fw mr-2"></i> Delete Feed</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/replica.js?v=7"></script>
+  <script>
+    /* Your Feeds page interactions */
+    document.addEventListener('click', function (e) {
+      var tab = e.target.closest('.feeds-tab');
+      if (tab) {
+        e.preventDefault();
+        document.querySelectorAll('.feeds-tab').forEach(function (t) { t.classList.toggle('active', t === tab); });
+        var label = tab.textContent.trim();
+        var inProg = document.getElementById('inProgressCard');
+        if (inProg && !inProg.dataset.discarded) {
+          inProg.classList.toggle('d-none', label === 'Your Subscriptions');
+        }
+        return;
+      }
+      if (e.target.closest('#discardSetup')) {
+        var card = document.getElementById('inProgressCard');
+        card.dataset.discarded = '1';
+        card.style.transition = 'opacity 0.2s';
+        card.style.opacity = '0';
+        setTimeout(function () { card.remove(); }, 200);
+      }
+    });
+  </script>
+  <script src="/assets/layout-switch.js?v=42"></script>
+  <script src="/assets/proto-panel.js?v=46"></script>
+</body>
+</html>
