@@ -86,7 +86,7 @@
   function syncRailLook() {
     var t = themePref(), navy = (t === 'navy' && !root.classList.contains('panel-collapsed')) || t === 'dark';
     root.classList.toggle('rail-navy', navy);
-    var logo = document.querySelector('.l3rail__logo img'); if (logo) logo.src = navy ? '/assets/logo-mark-light.svg?v=2' : '/assets/logo-circle-navy.svg?v=1';
+    var logo = document.querySelector('.l3rail__logo img'); if (logo) logo.src = navy ? '/assets/logo-mark-light.svg?v=2' : '/assets/logo-circle-dark.svg?v=2';
     var b = document.querySelector('.l2nav__brand img'); if (b) b.src = t === 'dark' ? '/assets/logo-mark-light.svg?v=2' : '/assets/logo-circle-dark.svg?v=2'; /* side nav logo follows the theme */
   }
   function setTheme(t, persist) {
@@ -131,7 +131,7 @@
     var nav = document.getElementById('l2nav'); if (!nav) return;
     var rail = document.createElement('nav'); rail.className = 'l3rail'; rail.setAttribute('aria-label', 'Main');
     var brand = nav.querySelector('.l2nav__brand');
-    var html = '<a class="l3rail__logo" href="' + (brand ? brand.getAttribute('href') : 'search2.html') + '" aria-label="Advoc8 Home"><img src="/assets/logo-circle-navy.svg?v=1" alt=""></a><div class="l3rail__nav">';
+    var html = '<a class="l3rail__logo" href="' + (brand ? brand.getAttribute('href') : 'search2.html') + '" aria-label="Advoc8 Home"><img src="/assets/logo-circle-dark.svg?v=2" alt=""></a><div class="l3rail__nav">';
     nav.querySelectorAll('.l2nav__group').forEach(function (g) {
       var a = g.querySelector('.l2nav__item'), ico = a.querySelector('i.ico'), label = a.querySelector('span').textContent;
       html += '<a class="l3rail__item' + (g.classList.contains('active') ? ' active' : '') + '" href="' + a.getAttribute('href') + '"><i class="' + (ico ? ico.className.replace('ico', '').replace(/\bfar\b/, 'fal').trim() : '') + '"></i><span>' + label + '</span></a>';

@@ -2872,3 +2872,8 @@ html.l3 .l2-wrap #sidebar .stake-links .nav-link .stake-ico { margin-left: 0; }
 html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding-left: 4px; }
 html.l3 .l2-wrap #sidebar .navbar-nav .nav-link, html.l3 .l2-wrap #sidebar .stake-links .nav-link, html.l3 .l2-wrap #sidebar .saved-labels .nav-link { padding-left: 4px !important; padding-right: 6px !important; }
 html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding-left: 4px !important; }
+
+/* option C panel: a little more room on the right, and the Saved Items chevron sits at the right edge in every state */
+html.l3 .l2-wrap #sidebar { padding-right: 10px; }
+html.l3.panel-collapsed .l2-wrap #sidebar { padding-right: 0; }
+html.l3 .l2-wrap #sidebar .nav-link .saved-caret { margin-left: auto; }
