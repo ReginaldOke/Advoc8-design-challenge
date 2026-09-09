@@ -37,6 +37,12 @@
     });
     syncCollapseTooltips();
   }
+  /* collapsed rail: picking a section opens the panel for it. The new page reads the stored state, so the panel is open on arrival */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('.l3rail__item'); if (!a || !root.classList.contains('panel-collapsed')) return;
+    store('advoc8-panel-collapsed', false);
+    if (a.getAttribute('href') === (location.pathname.split('/').pop() || '')) { e.preventDefault(); setPanelCollapsed(false); } /* same section: just open it */
+  });
   function setPanelCollapsed(v) { root.classList.toggle('panel-collapsed', v); store('advoc8-panel-collapsed', v); syncCollapseTooltips(); if (typeof syncRailLook === 'function') syncRailLook(); }
   var PANEL_SVG = '<svg class="panel-ico" viewBox="0 0 20 16" width="18" height="14" aria-hidden="true"><rect x="1" y="1" width="18" height="14" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.7"/><line x1="7.5" y1="1.5" x2="7.5" y2="14.5" stroke="currentColor" stroke-width="1.7"/></svg>';
   function mkBtn(cls, icon, label) { var b = document.createElement('button'); b.type = 'button'; b.className = cls; b.setAttribute('aria-label', label); b.setAttribute('data-tooltip', label); b.innerHTML = '<i class="fas ' + icon + '"></i>'; return b; }
