@@ -20,14 +20,11 @@
     ['3', 'Navigation moved from the dark top bar to a side panel.'],
     ['4', 'Navigation moved from the dark top bar to a slim icon rail, with a panel for each section.'],
     ['3', 'The side panel can be collapsed to icons, and the choice is remembered.'],
-    ['4', 'The rail and panel can be collapsed, and the choice is remembered.'],
+    ['4', 'The panel can be collapsed, and tabs can be dragged to customise.'],
     ['234', 'Every page has the same search bar and filter chips in the same place.'],
     ['234', 'A result count sits next to the page title and updates with the search and filters.'],
     ['34', 'One visual style across the app: rounded cards, light grey background, one icon set.'],
-    ['34', 'Theme toggle: Light, Navy or Dark.'],
     ['234', 'Charts animate in and respond to hover.'],
-    ['234', 'Topic lists use the same topic images as sign-up.'],
-    ['234', 'Sign in and onboarding (press R): pick a topic, then research it or build a feed.'],
     ['234', 'Feeds and saved labels in the sidebar, and the feed cards on Your Feeds, can be dragged into a new order.'],
     ['34', 'The Maps tab was removed.']
   ];
@@ -40,7 +37,6 @@
       'The empty search box suggests a phrase for the topic you chose at sign-up.',
       'Save as feed turns your search into a feed and opens it.',
       'A Sentiment chart shows how each search term is being talked about, week by week. Click a term in the key to hide or show it.',
-      'The expand button on an item opens it in a full-screen reading view.',
       'A short tour introduces search, filters and saving a feed.'
     ]},
     'feeds': { name: 'Your Feeds', items: [
