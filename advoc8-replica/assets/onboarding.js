@@ -83,8 +83,9 @@
         s.querySelector('#obResearch').disabled = false; s.querySelector('#obBuild').disabled = false;
       };
     });
-    s.querySelector('#obResearch').onclick = function () { if (picked) { remember(); location.href = 'search2.html?topic=' + encodeURIComponent(picked[1]); } };
-    s.querySelector('#obBuild').onclick = function () { if (picked) { remember(); location.href = 'build2.html?topic=' + encodeURIComponent(picked[1]); } };
+    function fresh() { try { sessionStorage.removeItem('advoc8-toured-search2'); sessionStorage.removeItem('advoc8-toured-build2'); } catch (e) {} } /* a new hand-off: the tour may show once more */
+    s.querySelector('#obResearch').onclick = function () { if (picked) { remember(); fresh(); location.href = 'search2.html?topic=' + encodeURIComponent(picked[1]); } };
+    s.querySelector('#obBuild').onclick = function () { if (picked) { remember(); fresh(); location.href = 'build2.html?topic=' + encodeURIComponent(picked[1]); } };
   }
   function remember() { try { localStorage.setItem('advoc8-onboard', JSON.stringify({ topic: picked[1], subs: picked[2] || [], at: Date.now() })); } catch (e) {} }
 
@@ -125,6 +126,9 @@
   var topic = topicParam ? findTopic(decodeURIComponent(topicParam.replace(/\+/g, ' '))) : null;
   if (!topic) return;
   var page = (location.pathname.match(/([^/]*)\.html$/) || [0, ''])[1];
+  /* the tour runs once per hand-off from onboarding: not again on a reload, a prototype swap or a return to the page */
+  var toured = false; try { toured = sessionStorage.getItem('advoc8-toured-' + page) === '1'; sessionStorage.setItem('advoc8-toured-' + page, '1'); } catch (e) {}
+  try { history.replaceState(null, '', location.pathname); } catch (e) {}
 
   if (page === 'search2') {
     window.addEventListener('load', function () {
@@ -137,7 +141,7 @@
       }
       var fchip = document.querySelector('.l2-fchip--filters'), fcount = document.getElementById('l2FiltersCount');
       if (fchip) fchip.classList.add('active'); if (fcount) fcount.textContent = '1';
-      setTimeout(showTip, 500);
+      if (!toured) setTimeout(showTip, 500);
     });
   }
   /* A short tour: one card at a time, pointing at the thing it talks about */
@@ -205,6 +209,7 @@
       setTimeout(function () {
         if (sec) { if (window.l2Glide) window.l2Glide(sec, 'start', 1300); else sec.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
         setTimeout(function () {
+          if (toured) { if (kw) kw.focus({ preventScroll: true }); return; }
           showTip([
             { target: function () { return document.querySelector('#keywordRows .keyword-row .keyword-input'); }, title: 'Add your search terms', text: 'Add the words and phrases you want to track, one per line.' },
             { target: '.build-feed__head', title: 'Your feed updates as you go', text: 'Results re-order and narrow as you refine your terms and filters. Create the feed when it looks right.' }
