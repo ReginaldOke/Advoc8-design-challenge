@@ -14,12 +14,14 @@
   var right = host.closest('.setup-right'); var wrap = document.createElement('div'); wrap.className = 'build-feed'; wrap.id = 'buildFeed';
   var SUBS = { parliament: [['Chamber Hansard', .6], ['Committee Documents', .3], ['Daily Programs', .1]], social: [['Facebook', .5], ['X (Twitter)', .3], ['LinkedIn', .2]] };
   var subOn = { parliament: { 'Chamber Hansard': true, 'Committee Documents': true, 'Daily Programs': true }, social: { 'Facebook': true, 'X (Twitter)': true, 'LinkedIn': true } };
-  function pillFor(s) {
-    var subs = SUBS[s[0]];
-    return '<div class="l2-fchip build-src' + (subs ? ' build-src--sub' : '') + '" data-k="' + s[0] + '"><button type="button" class="l2-fbtn" aria-pressed="true"' + (subs ? ' aria-haspopup="true" aria-expanded="false"' : '') + '><i class="far ' + s[2] + '"></i><span class="val"><span>' + s[1] + '</span></span><span class="badge text-secondary bg-secondary-soft badge-pill n">0</span>' + (subs ? '<i class="fas fa-chevron-down caret"></i>' : '') + '</button>' +
-      (subs ? '<div class="l2-pop" role="menu" style="min-width:250px">' + subs.map(function (x) { return '<label class="opt"><input type="checkbox" value="' + x[0] + '" checked>' + x[0] + '<span class="n" data-sub="' + x[0] + '"></span></label>'; }).join('') + '<div class="rule"></div><div class="pfoot"><span class="build-src__sel"></span><button type="button" class="build-src__all">Select all</button></div></div>' : '') + '</div>';
+  /* one "All sources" chip with a flyout, the same as the search page: parents with their sub-sources, counts, x of n selected and Select all */
+  function srcChipHtml() {
+    function sub(k) { return '<div class="sub">' + SUBS[k].map(function (x) { return '<label class="opt"><input type="checkbox" value="' + x[0] + '" data-parent="' + k + '" checked>' + x[0] + '<span class="n" data-sub="' + x[0] + '"></span></label>'; }).join('') + '</div>'; }
+    return '<div class="l2-fchip build-srcchip" id="buildSrcChip" data-default="All sources"><button type="button" class="l2-fbtn" aria-haspopup="true" aria-expanded="false"><i class="far fa-layer-group"></i><span class="val"><span>All sources</span></span><span class="badge text-secondary bg-secondary-soft badge-pill n" id="buildSrcTotal"></span><i class="fas fa-chevron-down caret"></i></button><button type="button" class="clear" aria-label="Select all sources">&#215;</button><div class="l2-pop" role="menu" style="min-width: 300px;">' +
+      SRC.map(function (s) { return '<label class="opt"><input type="checkbox" value="' + s[0] + '" checked><i class="far ' + s[2] + '"></i>' + s[1] + '<span class="n" data-k="' + s[0] + '"></span></label>' + (SUBS[s[0]] ? sub(s[0]) : ''); }).join('') +
+      '<div class="rule"></div><div class="pfoot"><span id="buildSrcSel">' + SRC.length + ' of ' + SRC.length + ' selected</span><button type="button" id="buildSrcAll">Select all</button></div></div></div>';
   }
-  wrap.innerHTML = '<div class="build-feed__head"><div class="build-feed__title"><i class="far fa-wave-pulse"></i><span>Your feed</span><span class="l2-count" id="buildCount"></span></div><div class="build-feed__expect"><i class="far fa-wave-pulse"></i><span id="buildExpect"></span></div><div class="build-feed__pills" id="buildPills">' + SRC.map(pillFor).join('') + '</div></div><div class="build-feed__list" id="buildList"></div>';
+  wrap.innerHTML = '<div class="build-feed__head"><div class="build-feed__title"><i class="far fa-wave-pulse"></i><span>Your feed</span><span class="l2-count" id="buildCount"></span></div><div class="build-feed__expect"><i class="far fa-wave-pulse"></i><span id="buildExpect"></span></div><div class="build-feed__pills" id="buildPills">' + srcChipHtml() + '</div></div><div class="build-feed__list" id="buildList"></div>';
   var old = right.firstElementChild; right.insertBefore(wrap, old); wrap.querySelector('#buildList').appendChild(host); old.remove();
   var list = wrap.querySelector('#buildList'), count = wrap.querySelector('#buildCount'), expect = wrap.querySelector('#buildExpect');
 
@@ -64,14 +66,20 @@
       count.innerHTML = '<b>' + n + '</b> ' + (n === 1 ? 'item' : 'items');
       var lo = Math.round(n / 8), hi = Math.max(lo + 1, Math.round(n / 3));
       expect.innerHTML = 'Expect around <b>' + lo + ' to ' + hi + '</b> results per day.';
-      wrap.querySelectorAll('.build-src').forEach(function (c) {
-        var k = c.dataset.k, subs = SUBS[k], frac = 1;
-        if (subs) { var all = 0, on = 0; subs.forEach(function (x) { all += x[1]; if (subOn[k][x[0]]) on += x[1]; }); frac = all ? on / all : 1; }
-        c.querySelector(':scope > .l2-fbtn > .n').textContent = Math.round(r.counts[k] * frac);
-        c.classList.toggle('is-off', !sources[k]); c.classList.toggle('is-part', sources[k] && frac < 1);
-        c.querySelector('.l2-fbtn').setAttribute('aria-pressed', sources[k]);
-        if (subs) { c.querySelectorAll('.n[data-sub]').forEach(function (b) { var w = subs.filter(function (x) { return x[0] === b.dataset.sub; })[0][1]; b.textContent = Math.round(r.counts[k] * w); }); var sel = subs.filter(function (x) { return subOn[k][x[0]]; }).length; c.querySelector('.build-src__sel').textContent = sel + ' of ' + subs.length + ' selected'; }
+      var chip = wrap.querySelector('#buildSrcChip'), total = 0, onN = 0, names = [], partial = false;
+      SRC.forEach(function (s) {
+        var k = s[0], subs = SUBS[k], frac = 1;
+        if (subs) { var all = 0, on = 0; subs.forEach(function (x) { all += x[1]; if (subOn[k][x[0]]) on += x[1]; chip.querySelector('.n[data-sub="' + x[0] + '"]').textContent = Math.round(r.counts[k] * x[1]); }); frac = all ? on / all : 1; }
+        chip.querySelector('.n[data-k="' + k + '"]').textContent = Math.round(r.counts[k] * (sources[k] ? frac : 1));
+        var p = chip.querySelector('.l2-pop > .opt input[value="' + k + '"]'); p.checked = !!sources[k]; p.indeterminate = !!(subs && sources[k] && frac < 1);
+        if (subs) subs.forEach(function (x) { chip.querySelector('input[data-parent="' + k + '"][value="' + x[0] + '"]').checked = !!subOn[k][x[0]]; });
+        if (sources[k]) { total += Math.round(r.counts[k] * frac); onN++; names.push(s[1]); if (frac < 1) partial = true; }
       });
+      var label = 'All sources', active = false;
+      if (!onN) { label = 'No sources'; active = true; }
+      else if (onN < SRC.length || partial) { active = true; label = onN === 1 ? names[0] : onN + ' sources'; }
+      chip.querySelector('.val > span').textContent = label; chip.classList.toggle('active', active);
+      chip.querySelector('#buildSrcTotal').textContent = total; chip.querySelector('#buildSrcSel').textContent = onN + ' of ' + SRC.length + ' selected';
       list.classList.remove('is-updating'); list.scrollTop = 0;
     }, 120);
   }
@@ -79,24 +87,21 @@
   window.buildFeedUpdate = update;
 
   (function () {
-    wrap.querySelectorAll('.build-src').forEach(function (c) {
-      var k = c.dataset.k, btn = c.querySelector('.l2-fbtn');
-      btn.onclick = function (e) {
-        if (SUBS[k] && e.target.closest('.caret')) { var o = c.classList.toggle('open'); btn.setAttribute('aria-expanded', o); wrap.querySelectorAll('.build-src.open').forEach(function (x) { if (x !== c) x.classList.remove('open'); }); return; }
-        sources[k] = !sources[k];
-        if (SUBS[k] && sources[k]) { SUBS[k].forEach(function (x) { subOn[k][x[0]] = true; }); c.querySelectorAll('input').forEach(function (i) { i.checked = true; }); }
-        update();
-      };
-      c.addEventListener('change', function (e) {
-        if (e.target.type !== 'checkbox') return;
-        subOn[k][e.target.value] = e.target.checked;
-        sources[k] = SUBS[k].some(function (x) { return subOn[k][x[0]]; });
-        update();
-      });
-      var all = c.querySelector('.build-src__all'); if (all) all.onclick = function () { SUBS[k].forEach(function (x) { subOn[k][x[0]] = true; }); c.querySelectorAll('input').forEach(function (i) { i.checked = true; }); sources[k] = true; update(); };
+    var chip = wrap.querySelector('#buildSrcChip'), btn = chip.querySelector(':scope > .l2-fbtn');
+    function close() { chip.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    btn.onclick = function () { var o = chip.classList.toggle('open'); btn.setAttribute('aria-expanded', o); };
+    chip.addEventListener('change', function (e) {
+      var i = e.target; if (i.type !== 'checkbox') return;
+      var k = i.dataset.parent;
+      if (k) { subOn[k][i.value] = i.checked; sources[k] = SUBS[k].some(function (x) { return subOn[k][x[0]]; }); } /* a sub-source: its parent is on while any sub is */
+      else { k = i.value; sources[k] = i.checked; if (SUBS[k]) SUBS[k].forEach(function (x) { subOn[k][x[0]] = i.checked; }); } /* a source: takes its subs with it */
+      update();
     });
-    document.addEventListener('mousedown', function (e) { if (!e.target.closest('.build-src')) wrap.querySelectorAll('.build-src.open').forEach(function (x) { x.classList.remove('open'); }); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') wrap.querySelectorAll('.build-src.open').forEach(function (x) { x.classList.remove('open'); }); });
+    function allOn() { SRC.forEach(function (s) { sources[s[0]] = true; if (SUBS[s[0]]) SUBS[s[0]].forEach(function (x) { subOn[s[0]][x[0]] = true; }); }); update(); }
+    chip.querySelector('#buildSrcAll').onclick = allOn;
+    chip.querySelector('.clear').onclick = function (e) { e.stopPropagation(); allOn(); };
+    document.addEventListener('mousedown', function (e) { if (!e.target.closest('#buildSrcChip')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   })();
   document.addEventListener('input', function (e) { if (e.target.closest('#keywordRows, #kwBoolean')) schedule(); });
   document.addEventListener('change', function (e) { if (/^jurisdiction_|^select_all_/.test(e.target.id || '')) schedule(); });
@@ -139,7 +144,7 @@
   window.buildLiveUpdate = schedule;
   window.buildSources = {
     get: function () { return { media: !!sources.media, parliament: !!sources.parliament, social: !!sources.social }; },
-    set: function (o) { Object.keys(o).forEach(function (k) { if (!(k in sources)) return; sources[k] = !!o[k]; if (SUBS[k]) { SUBS[k].forEach(function (x) { subOn[k][x[0]] = !!o[k]; }); var c = wrap.querySelector('.build-src[data-k="' + k + '"]'); if (c) c.querySelectorAll('input').forEach(function (i) { i.checked = !!o[k]; }); } }); update(); }
+    set: function (o) { Object.keys(o).forEach(function (k) { if (!(k in sources)) return; sources[k] = !!o[k]; if (SUBS[k]) SUBS[k].forEach(function (x) { subOn[k][x[0]] = !!o[k]; }); }); update(); }
   };
   /* keyword placeholders like the search page: the first empty row suggests a phrase for the chosen topic */
   function currentTopic() { var t = document.querySelector('#topicSelected .topic-pick span:last-child'); return (t && t.textContent.trim().split(' › ')[0]) || (window.l2TopicHint ? window.l2TopicHint() : null); }
