@@ -2844,3 +2844,12 @@ html.l3.panel-collapsed .l3rail__logo img { display: block !important; }
 html.l3.panel-collapsed .l3rail__logo-expand { display: none !important; }
 html.l3.panel-collapsed .l3rail__logo:hover img, html.l3.panel-collapsed .l3rail__logo:focus-visible img { display: none !important; }
 html.l3.panel-collapsed .l3rail__logo:hover .l3rail__logo-expand, html.l3.panel-collapsed .l3rail__logo:focus-visible .l3rail__logo-expand { display: grid !important; }
+
+/* rail and panel (option C): tighter, quieter shadows on the nav and cards */
+html.l3:not(.theme-dark) .l3rail, html.l3:not(.theme-dark) .l2-wrap #sidebar { box-shadow: 0 1px 2px rgba(27,46,94,.05), 0 4px 12px rgba(27,46,94,.05); }
+html.l3.rail-navy:not(.theme-dark) .l3rail { box-shadow: none; }
+html.l3.panel-collapsed:not(.theme-dark) .l2-wrap #sidebar { box-shadow: none; }
+html.l3:not(.theme-dark) .l2-wrap .card { box-shadow: 0 1px 2px rgba(27,46,94,.04), 0 2px 8px rgba(27,46,94,.04); }
+html.l3:not(.theme-dark) .l2-wrap .card.hover-gray-bg:hover { box-shadow: 0 2px 4px rgba(27,46,94,.05), 0 6px 16px rgba(27,46,94,.07); }
+html.l3:not(.theme-dark) .l2-wrap .card-inactive { box-shadow: none; }
+html.l3:not(.theme-dark) .l2-wrap #inProgressCard, html.l3:not(.theme-dark) .l2-wrap #analysis-results .card { box-shadow: 0 1px 2px rgba(27,46,94,.04), 0 2px 8px rgba(27,46,94,.04); }
