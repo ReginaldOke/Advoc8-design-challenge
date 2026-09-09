@@ -2959,3 +2959,7 @@ body:not(.l2-body) .proto__list li::before { display: none; }
 
 /* option B: the top bar stays above page content that scrolls under it */
 html.lc #topbar { z-index: 1060; }
+
+/* sentiment card: the header grows to fit its two lines, so the divider and chart start below them */
+.sent-card .card-header { height: auto !important; min-height: 0; padding: 18px 24px 16px !important; }
+.sent-card .sent-chart { padding-top: 20px; }

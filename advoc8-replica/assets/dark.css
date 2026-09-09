@@ -350,3 +350,13 @@ html.theme-dark .rd__acts .btn { background: var(--d-surface-2); border-color: v
 html.theme-dark .proto__more summary.proto__label:hover, html.theme-dark .proto__more summary.proto__label:hover .proto__more-chev { color: var(--d-text) !important; }
 html.theme-dark .l2-back--quiet { color: var(--d-muted); }
 html.theme-dark .l2-back--quiet:hover, html.theme-dark .l2-back--quiet:focus-visible { background: var(--d-surface-3); color: var(--d-text); }
+
+/* topic window on the feed builder */
+html.theme-dark #topicModal .modal-content { background: var(--d-surface); border-color: var(--d-border); color: var(--d-text); box-shadow: 0 18px 50px rgba(0,0,0,.5); }
+html.theme-dark #topicModal .modal-header, html.theme-dark #topicModal .modal-footer { border-color: var(--d-border-2); background: transparent; }
+html.theme-dark #topicModal .modal-title, html.theme-dark #topicModal .card-header-title, html.theme-dark #topicModal label, html.theme-dark #topicModal .h4, html.theme-dark #topicModal .form-check { color: var(--d-text); }
+html.theme-dark #topicModal .close { color: var(--d-muted); text-shadow: none; opacity: 1; }
+html.theme-dark #topicModal .card, html.theme-dark #topicModal .card-header, html.theme-dark #topicModal .card-body { background: var(--d-surface); border-color: var(--d-border); color: var(--d-text); }
+html.theme-dark #topicModal .topic-group-header:hover { background: var(--d-surface-2); }
+html.theme-dark #topicModal .btn-white { background: var(--d-surface-2); border-color: var(--d-border); color: var(--d-text); }
+html.theme-dark #topicModal .form-check-input { accent-color: var(--l2-accent); }

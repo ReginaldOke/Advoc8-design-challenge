@@ -123,6 +123,7 @@
     root.classList.toggle('no-navy', !v3); /* the side nav offers White and Dark only */
     document.documentElement.classList.toggle('l3', v3);
     if (v3 && !document.querySelector('.l3rail')) buildRail();
+    if (v3) document.querySelectorAll('#sidebar a').forEach(function (a) { if (/View all Feeds/i.test(a.textContent)) a.remove(); }); /* the panel lists the feeds; no View all link */
     injectToggles();
     injectRailThemeToggle(); /* side nav and rail and panel both take the theme toggle */
     if (root.classList.contains('nav-collapsed')) setNavCollapsed(true);

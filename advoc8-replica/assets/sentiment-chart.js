@@ -35,7 +35,9 @@
   if (!charts) return;
   var card = document.createElement('div'); card.className = 'card card-sm sent-card';
   card.innerHTML = '<div class="card-header"><div><h4 class="card-header-title"><i class="far fa-sparkles sent-spark"></i>Sentiment</h4><div class="sent-sub">Net sentiment by week for each search term</div></div><div class="sent-key" role="group" aria-label="Search terms"></div></div><div class="card-body"><div class="sent-chart" id="sentChart"></div></div>';
-  charts.appendChild(card);
+  /* the sentiment card sits above the stakeholders card */
+  var stakeEl = document.getElementById('stakeChart'), stakeCard = stakeEl && stakeEl.closest('.card');
+  if (stakeCard && stakeCard.parentNode === charts) charts.insertBefore(card, stakeCard); else charts.appendChild(card);
   var keyEl = card.querySelector('.sent-key'), host = card.querySelector('#sentChart');
   var off = {}, tip = null, terms = [], uid = 'sent' + Math.floor(Math.random() * 1e6);
 
