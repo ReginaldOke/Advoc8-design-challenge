@@ -2877,3 +2877,7 @@ html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding-left: 4px !impo
 html.l3 .l2-wrap #sidebar { padding-right: 10px; }
 html.l3.panel-collapsed .l2-wrap #sidebar { padding-right: 0; }
 html.l3 .l2-wrap #sidebar .nav-link .saved-caret { margin-left: auto; }
+
+/* option C rail: the logo keeps one 36px box and 32px mark whether the panel is open or collapsed, so nothing shifts */
+html.l3 .l3rail__logo { width: 36px; height: 36px; padding: 0; margin: 0 0 14px; display: grid; place-items: center; border-radius: 10px; }
+html.l3 .l3rail__logo img, html.rail-navy.l3 .l3rail__logo img { width: 32px; height: 32px; }
