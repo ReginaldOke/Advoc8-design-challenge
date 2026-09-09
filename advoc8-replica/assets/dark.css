@@ -345,3 +345,6 @@ html.theme-dark .rd__meta, html.theme-dark .rd__whorole, html.theme-dark .rd__ai
 html.theme-dark .rd__ai { background: var(--d-surface-2); }
 html.theme-dark .rd__ai li { color: var(--d-text); }
 html.theme-dark .rd__acts .btn { background: var(--d-surface-2); border-color: var(--d-border); color: var(--d-text); }
+
+/* prototype controls: the change-log headings lighten on hover instead of darkening */
+html.theme-dark .proto__more summary.proto__label:hover, html.theme-dark .proto__more summary.proto__label:hover .proto__more-chev { color: var(--d-text) !important; }

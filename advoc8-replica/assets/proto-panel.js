@@ -99,6 +99,8 @@
   function opt(letter, name, sub, href, layout, on) {
     return '<a class="proto__opt' + (on ? ' is-on' : '') + '"' + (layout ? ' data-layout="' + layout + '"' : ' data-allow-l1') + ' href="' + href + '"><span class="proto__letter">' + letter + '</span><span class="proto__name">' + name + '</span><span class="proto__sub">' + sub + '</span></a>';
   }
+  /* the change logs stay open or closed as the user left them, across pages and prototype swaps */
+  function openLog(k) { try { return localStorage.getItem('advoc8-log-open-' + k) === '1'; } catch (e) { return false; } }
   var el = document.createElement('aside');
   el.className = 'proto' + (collapsed ? ' is-collapsed' : '');
   el.setAttribute('aria-label', 'Prototype controls');
@@ -112,11 +114,12 @@
         (SINGLE_NAV ? opt('C', 'Side nav', 'Single panel', l2 + '.html' + location.search, '3', V === '3') : '') +
         opt(SINGLE_NAV ? 'D' : 'C', 'Double nav', 'Partitioned panel', l2 + '.html' + location.search, '4', V === '4') +
       '</div></div>' +
-      '<div class="proto__section proto__section--log"><details class="proto__more proto__more--page"><summary class="proto__label">Changes to this page <span class="proto__page">' + log.name + '</span><i class="far fa-chevron-down proto__more-chev"></i></summary>' +
+      '<div class="proto__section proto__section--log"><details class="proto__more proto__more--page"' + (openLog('page') ? ' open' : '') + '><summary class="proto__label">Changes to this page <span class="proto__page">' + log.name + '</span><i class="far fa-chevron-down proto__more-chev"></i></summary>' +
         '<ol class="proto__list">' + log.items.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ol></details>' +
-        '<details class="proto__more"><summary class="proto__label">Changes across all pages<i class="far fa-chevron-down proto__more-chev"></i></summary><ol class="proto__list">' + GLOBAL.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ol></details>' +
+        '<details class="proto__more"' + (openLog('all') ? ' open' : '') + '><summary class="proto__label">Changes across all pages<i class="far fa-chevron-down proto__more-chev"></i></summary><ol class="proto__list">' + GLOBAL.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ol></details>' +
       '</div>' +
     '</div>';
+  el.querySelectorAll('.proto__more').forEach(function (d) { d.addEventListener('toggle', function () { try { localStorage.setItem('advoc8-log-open-' + (d.classList.contains('proto__more--page') ? 'page' : 'all'), d.open ? '1' : '0'); } catch (e) {} }); });
   el.classList.add('proto--init');
   document.body.appendChild(el);
   requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.remove('proto--init'); }); });
@@ -143,7 +146,7 @@
     else if (!t && slot) slot.style.display = 'none';
   }
   adoptTheme(); setTimeout(adoptTheme, 50);
-  el.addEventListener('click', function (e) { var a = e.target.closest('.proto__opt[data-layout]'); if (a) { try { localStorage.setItem('advoc8-layout', a.dataset.layout); } catch (err) {} } });
+  el.addEventListener('click', function (e) { var a = e.target.closest('.proto__opt[data-layout]'); if (a) { try { localStorage.setItem('advoc8-layout', a.dataset.layout); localStorage.removeItem('advoc8-original'); } catch (err) {} } var o = e.target.closest('.proto__opt[data-allow-l1]'); if (o) { try { localStorage.setItem('advoc8-original', '1'); } catch (err) {} } });
   var onb = el.querySelector('.proto__onb');
   onb.addEventListener('click', function () { if (window.obShowSignIn) window.obShowSignIn(); else document.dispatchEvent(new KeyboardEvent('keydown', { key: 'r', bubbles: true })); });
 })();

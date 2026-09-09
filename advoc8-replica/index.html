@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>/* first visit: open the redesign (option D, Navy, controls open). After that the original is a key press away. */try{if(!localStorage.getItem("advoc8-seen")){localStorage.setItem("advoc8-seen","1");location.replace("search2.html")}}catch(e){}</script>
+  <script>/* first visit: open the redesign (option D, Navy, controls open). After that the original is a key press away. */try{if(localStorage.getItem("advoc8-original")!=="1"&&!/[?&]original\b/.test(location.search)){location.replace("search2.html")}}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Search</title>
@@ -797,7 +797,7 @@
   <script src="assets/topbar-search.js?v=2"></script>
   <script src="assets/search-data.js?v=3"></script>
   <script src="assets/search-flow.js?v=20"></script>
-  <script src="assets/layout-switch.js?v=61"></script>
-  <script src="assets/proto-panel.js?v=58"></script>
+  <script src="assets/layout-switch.js?v=70"></script>
+  <script src="assets/proto-panel.js?v=59"></script>
 </body>
 </html>

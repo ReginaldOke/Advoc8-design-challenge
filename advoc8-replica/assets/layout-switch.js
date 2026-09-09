@@ -16,10 +16,10 @@
     if (!digit && t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
     if (digit) e.preventDefault();
     var p = page();
-    if (e.key === '1') { var l1 = BACK[p] || (MAP[p] ? p : null); if (l1 && l1 !== p) location.href = l1 + '.html' + location.search; }
+    if (e.key === '1') { try { localStorage.setItem('advoc8-original', '1'); } catch (err) {} var l1 = BACK[p] || (MAP[p] ? p : null); if (l1 && l1 !== p) location.href = l1 + '.html' + location.search; }
     else if (e.key === '2' || e.key === '3' || e.key === '4') { /* 2 = least change, 3 = single nav, 4 = rail and panel */
       var L = e.key; if (!SINGLE_NAV_ENABLED && L === '3') L = '4'; /* with the side nav hidden, 3 is the rail and panel */
-      try { localStorage.setItem('advoc8-layout', L); } catch (err) {}
+      try { localStorage.setItem('advoc8-layout', L); localStorage.removeItem('advoc8-original'); } catch (err) {}
       var l2 = MAP[p] || (BACK[p] || isL2 ? p : null);
       if (l2 && l2 !== p) { location.href = l2 + '.html' + location.search; return; }
       if (isL2) location.reload(); /* the chrome is built at load, so switching re-opens the page */
