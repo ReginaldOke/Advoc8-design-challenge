@@ -182,7 +182,11 @@
     bar.querySelector('.l2-mbar__menu').addEventListener('click', function () { root.classList.toggle('l2-drawer'); });
     scrim.addEventListener('click', function () { root.classList.remove('l2-drawer'); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') root.classList.remove('l2-drawer'); });
-    document.addEventListener('click', function (e) { if (mobile() && e.target.closest('.l2nav a[href]:not([href="#"])')) root.classList.remove('l2-drawer'); });
+    document.addEventListener('click', function (e) {
+      if (!mobile() || !e.target.closest('.l2nav a[href]:not([href="#"])')) return;
+      if (e.target.closest('.l2nav__chev, .l2nav__subchev')) return; /* a chevron opens or closes its section */
+      setTimeout(function () { if (!e.defaultPrevented) root.classList.remove('l2-drawer'); }, 0); /* a section that folds instead of navigating keeps the drawer open */
+    });
   })();
   /* saved item labels: a folder icon in place of the dot */
   (function () {
