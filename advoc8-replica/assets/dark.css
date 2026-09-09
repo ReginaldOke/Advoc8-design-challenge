@@ -360,3 +360,8 @@ html.theme-dark #topicModal .card, html.theme-dark #topicModal .card-header, htm
 html.theme-dark #topicModal .topic-group-header:hover { background: var(--d-surface-2); }
 html.theme-dark #topicModal .btn-white { background: var(--d-surface-2); border-color: var(--d-border); color: var(--d-text); }
 html.theme-dark #topicModal .form-check-input { accent-color: var(--l2-accent); }
+
+/* toggle buttons (jurisdictions, select all): a checked one reads as selected */
+html.theme-dark body.l2-body .btn-check:checked + .btn-white, html.theme-dark .l2-wrap .btn-check:checked + .btn-white, html.theme-dark #topicModal .btn-check:checked + .btn-white, html.theme-dark #filterModal .btn-check:checked + .btn-white { background: rgba(var(--l2-accent-rgb), .22) !important; border-color: var(--l2-accent) !important; color: var(--d-text) !important; }
+html.theme-dark body.l2-body .btn-check:checked + .btn-white:hover, html.theme-dark .l2-wrap .btn-check:checked + .btn-white:hover { background: rgba(var(--l2-accent-rgb), .3) !important; border-color: var(--l2-accent) !important; }
+html.theme-dark body.l2-body .btn-check:indeterminate + .btn-white { border-color: var(--l2-accent) !important; }
