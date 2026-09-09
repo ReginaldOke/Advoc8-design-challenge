@@ -328,12 +328,24 @@ document.addEventListener('click', function (e) {
   var root = document.documentElement; if (root.classList.contains('lc')) return;
   if (!root.classList.contains('l3')) { /* side nav (option C): fold the nav to its icon rail, then go */
     if (root.classList.contains('nav-collapsed')) return;
-    e.preventDefault(); root.classList.add('nav-collapsed');
+    e.preventDefault(); root.classList.add('nav-collapsed', 'l2-leaving'); leaveMark();
     try { localStorage.setItem('advoc8-nav-collapsed', '1'); } catch (err) {}
-    var h2 = a.getAttribute('href'); setTimeout(function () { location.href = h2; }, 340); return;
+    var h2 = a.getAttribute('href'); setTimeout(function () { location.href = h2; }, 300); return;
   }
   if (root.classList.contains('panel-collapsed')) return;
   e.preventDefault();
-  root.classList.add('panel-collapsed'); if (typeof syncRailLook === 'function') syncRailLook();
-  var href = a.getAttribute('href'); setTimeout(function () { location.href = href; }, 340);
+  root.classList.add('panel-collapsed', 'l2-leaving'); leaveMark(); if (typeof syncRailLook === 'function') syncRailLook();
+  var href = a.getAttribute('href'); setTimeout(function () { location.href = href; }, 300);
+  /* the page content fades while the nav folds, so the reflow is not seen; the profile then fades in (see l2-enter) */
+  function leaveMark() { try { sessionStorage.setItem('advoc8-enter', '1'); } catch (err) {} }
 }, true);
+
+/* arriving from a folded nav: the head snippet added l2-enter (content hidden); swap it for a short fade-in */
+(function () {
+  var root = document.documentElement; if (!root.classList.contains('l2-enter')) return;
+  try { sessionStorage.removeItem('advoc8-enter'); } catch (err) {}
+  requestAnimationFrame(function () { requestAnimationFrame(function () {
+    root.classList.add('l2-entering'); root.classList.remove('l2-enter');
+    setTimeout(function () { root.classList.remove('l2-entering'); }, 450);
+  }); });
+})();

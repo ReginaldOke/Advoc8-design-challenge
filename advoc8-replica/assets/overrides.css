@@ -2893,3 +2893,10 @@ html.l3 .l2-wrap #sidebar .collapsible-nav-group .nav-link .mx-2 { display: inli
 /* option B: the Saved Items chevron is a square box with the glyph centred, so it sits level with the text */
 html.lc #sidebar .saved-caret { width: 16px !important; height: 16px !important; justify-content: center; line-height: 1; }
 html.l3 .l2-wrap #sidebar .collapsible-nav-group .nav-link .mx-2 { margin-right: 4px !important; }
+
+/* opening a profile from option C or D: the content fades out while the nav folds, and the profile page fades in */
+html.l2-leaving .l2-wrap #main, html.l2-leaving .l2-wrap #main-standalone { opacity: 0; transition: opacity .2s ease; }
+html.l2-enter .l2-wrap #main, html.l2-enter .l2-wrap #main-standalone { opacity: 0; }
+html.l2-entering .l2-wrap #main, html.l2-entering .l2-wrap #main-standalone { opacity: 1; transition: opacity .3s ease; }
+html.l2-enter .l3rail, html.l2-enter .l2nav, html.l2-enter .l2-wrap #sidebar { transition: none !important; }
+@media (prefers-reduced-motion: reduce) { html.l2-leaving .l2-wrap #main, html.l2-leaving .l2-wrap #main-standalone, html.l2-entering .l2-wrap #main, html.l2-entering .l2-wrap #main-standalone { transition: none; } }
