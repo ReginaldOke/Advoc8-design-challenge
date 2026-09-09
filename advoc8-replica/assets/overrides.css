@@ -2885,3 +2885,11 @@ html.l3 .l3rail__logo img, html.rail-navy.l3 .l3rail__logo img { width: 32px; he
 /* option C, Navy and Dark: the rail has a hard edge here, so the panel content gets a little more breathing room on the left */
 html.l3.rail-navy .l2-wrap #sidebar { padding-left: 12px; }
 html.l3.rail-navy.panel-collapsed .l2-wrap #sidebar { padding-left: 0; }
+
+/* option C panel: every row has the same 8px between icon and label, with the emoji feeds lined up on the same text edge */
+html.l3 .l2-wrap #sidebar .stake-links .nav-link .stake-ico, html.l3 .l2-wrap #sidebar .saved-labels .nav-link .label-ico, html.l3 .l2-wrap #sidebar .saved-labels .nav-link i.fa-fw { margin-right: 4px !important; }
+html.l3 .l2-wrap #sidebar .collapsible-nav-group .nav-link .mx-2 { display: inline-flex; justify-content: center; width: 26px; margin: 0 8px 0 0 !important; flex: none; }
+
+/* option B: the Saved Items chevron is a square box with the glyph centred, so it sits level with the text */
+html.lc #sidebar .saved-caret { width: 16px !important; height: 16px !important; justify-content: center; line-height: 1; }
+html.l3 .l2-wrap #sidebar .collapsible-nav-group .nav-link .mx-2 { margin-right: 4px !important; }
