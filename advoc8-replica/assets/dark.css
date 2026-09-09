@@ -348,3 +348,5 @@ html.theme-dark .rd__acts .btn { background: var(--d-surface-2); border-color: v
 
 /* prototype controls: the change-log headings lighten on hover instead of darkening */
 html.theme-dark .proto__more summary.proto__label:hover, html.theme-dark .proto__more summary.proto__label:hover .proto__more-chev { color: var(--d-text) !important; }
+html.theme-dark .l2-back--quiet { color: var(--d-muted); }
+html.theme-dark .l2-back--quiet:hover, html.theme-dark .l2-back--quiet:focus-visible { background: var(--d-surface-3); color: var(--d-text); }

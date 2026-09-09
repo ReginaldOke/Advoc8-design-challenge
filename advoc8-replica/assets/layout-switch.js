@@ -192,12 +192,13 @@
     });
   })();
   applyVariant();
-  /* a stakeholder profile (option B only): a back button beside the name returns to the list it was opened from */
-  if (page() === 'person2' && root.classList.contains('lc')) {
-    var prow = document.querySelector('#main .header .row');
+  /* a stakeholder profile: a back control beside the name returns to the list it was opened from. Option B uses a button; C and D a quiet chevron */
+  if (page() === 'person2' && isL2) {
+    var prow = document.querySelector('#main .header .row, #main-standalone .header .row');
     if (prow && !prow.querySelector('.l2-back')) {
+      var quiet = !root.classList.contains('lc');
       var pcol = document.createElement('div'); pcol.className = 'col-auto pr-0 l2-backcol';
-      pcol.innerHTML = '<a class="btn btn-white l2-back" href="people2.html" aria-label="Back" data-tooltip="Back"><i class="far fa-arrow-left"></i></a>';
+      pcol.innerHTML = quiet ? '<a class="l2-back l2-back--quiet" href="people2.html" aria-label="Back"><i class="far fa-chevron-left"></i></a>' : '<a class="btn btn-white l2-back" href="people2.html" aria-label="Back" data-tooltip="Back"><i class="far fa-arrow-left"></i></a>';
       prow.insertBefore(pcol, prow.firstChild);
       pcol.querySelector('.l2-back').addEventListener('click', function (e) {
         try { localStorage.setItem('advoc8-nav-collapsed', '0'); localStorage.setItem('advoc8-panel-collapsed', '0'); } catch (err) {} /* the nav folded to open the profile; unfold it on the way back */

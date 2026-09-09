@@ -2948,3 +2948,11 @@ body:not(.l2-body) .proto__list li::before { display: none; }
 .rd__whoname .badge.party { color: #fff; background: #6e84a3; }
 .rd__whorole { font-size: 16px; color: #3b4a5e; line-height: 1.35; }
 @media (max-width: 991.98px) { .rd__panel { top: 8px; right: 8px; bottom: 8px; left: 8px; } .rd__grid { grid-template-columns: 1fr; padding: 16px; gap: 16px; } .rd__side { position: static; order: -1; } .rd__dochead, .rd__docbody { padding-left: 20px; padding-right: 20px; } .rd__title { font-size: 24px; } }
+
+/* profile back control in options C and D: a quiet chevron on the avatar's centre line */
+.l2-wrap .header-body > .row > .col-auto.l2-backcol { align-self: center !important; }
+.l2-backcol { margin-right: 4px; }
+.l2-back--quiet { width: 36px; height: 36px; border: 0; background: transparent; box-shadow: none; border-radius: 50%; color: #8a9bb5; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
+.l2-back--quiet:hover, .l2-back--quiet:focus-visible { background: #e9eef5; color: #12263f; text-decoration: none; }
+.l2-back--quiet:active { transform: translateX(-1px); }
+.l2-back--quiet svg { width: 16px; height: 16px; stroke-width: 2; }
