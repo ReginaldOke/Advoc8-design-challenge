@@ -2900,3 +2900,7 @@ html.l2-enter .l2-wrap #main, html.l2-enter .l2-wrap #main-standalone { opacity:
 html.l2-entering .l2-wrap #main, html.l2-entering .l2-wrap #main-standalone { opacity: 1; transition: opacity .3s ease; }
 html.l2-enter .l3rail, html.l2-enter .l2nav, html.l2-enter .l2-wrap #sidebar { transition: none !important; }
 @media (prefers-reduced-motion: reduce) { html.l2-leaving .l2-wrap #main, html.l2-leaving .l2-wrap #main-standalone, html.l2-entering .l2-wrap #main, html.l2-entering .l2-wrap #main-standalone { transition: none; } }
+
+/* option B profile: the back button sits on the avatar's centre line */
+html.lc .l2-backcol { align-self: center !important; }
+html.lc .l2-wrap .header-body > .row > .col-auto.l2-backcol { align-self: center !important; }

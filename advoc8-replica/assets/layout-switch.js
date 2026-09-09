@@ -201,7 +201,8 @@
       prow.insertBefore(pcol, prow.firstChild);
       pcol.querySelector('.l2-back').addEventListener('click', function (e) {
         try { localStorage.setItem('advoc8-nav-collapsed', '0'); localStorage.setItem('advoc8-panel-collapsed', '0'); } catch (err) {} /* the nav folded to open the profile; unfold it on the way back */
-        if (document.referrer && history.length > 1) { e.preventDefault(); history.back(); }
+        var from = null; try { from = sessionStorage.getItem('advoc8-profile-from'); } catch (err) {}
+        if (from) this.setAttribute('href', from); /* back to the list the profile was opened from; the Members of Parliament list otherwise */
       });
     }
   }
@@ -285,6 +286,15 @@
     }
   })();
   document.addEventListener('click', function (e) {
+    /* collapsed side nav: any nav item opens it. The current page opens in place; another page opens with the nav already open */
+    var navLink = e.target.closest('.l2nav__item, .l2nav__subitem');
+    if (navLink && root.classList.contains('nav-collapsed')) {
+      store('advoc8-nav-collapsed', false);
+      var here = location.pathname.split('/').pop() || '', to = navLink.getAttribute('href') || '';
+      var g = navLink.closest('.l2nav__group');
+      if (to === here || to === '#' || to === '' || (navLink.classList.contains('l2nav__item') && g && g.classList.contains('active'))) { e.preventDefault(); setNavCollapsed(false); } /* the current section opens in place */
+      return;
+    }
     var chev = e.target.closest('.l2nav__chev');
     if (chev) { e.preventDefault(); e.stopPropagation(); chev.closest('.l2nav__group').classList.toggle('open'); return; }
     var item = e.target.closest('.l2nav__item');
@@ -325,6 +335,7 @@ document.addEventListener('click', function (e) {
 /* Opening a stakeholder profile: fold the panel first, then go, so the profile page opens already folded (no snap) */
 document.addEventListener('click', function (e) {
   var a = e.target.closest('a[href^="person2.html"]'); if (!a || e.metaKey || e.ctrlKey || e.button !== 0) return;
+  if (!/person2\.html$/.test(location.pathname)) { try { sessionStorage.setItem('advoc8-profile-from', location.pathname.split('/').pop() + location.search); } catch (err) {} } /* where the profile was opened from, for the back button */
   var root = document.documentElement; if (root.classList.contains('lc')) return;
   if (!root.classList.contains('l3')) { /* side nav (option C): fold the nav to its icon rail, then go */
     if (root.classList.contains('nav-collapsed')) return;
