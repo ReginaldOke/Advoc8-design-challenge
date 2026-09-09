@@ -1,7 +1,7 @@
 /* Layout A/B switch ("1" = Layout 1, "2" = Layout 2, same page) + Layout-2 link guard */
 (function () {
   /* SINGLE_NAV_ENABLED=false: the single side nav (stored layout "3") is hidden and key 3 opens the rail and panel instead. Set true here, in proto-panel.js and in the head snippet of every *2.html to bring it back. */
-  var SINGLE_NAV_ENABLED = false;
+  var SINGLE_NAV_ENABLED = true;
   window.ADVOC8_SINGLE_NAV = SINGLE_NAV_ENABLED;
   var MAP = { 'index': 'search2', 'people': 'people2', 'feeds': 'feeds2', 'saved': 'saved2', 'feed': 'feed2',
               'agenda': 'agenda2', 'posts': 'posts2', 'orgs': 'orgs2', 'person': 'person2', 'build': 'build2', 'alerts': 'alerts2' };

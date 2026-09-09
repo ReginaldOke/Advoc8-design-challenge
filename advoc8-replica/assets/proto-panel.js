@@ -11,7 +11,7 @@
   var base = isB ? BACK[page] : page;
   var l1 = MAP[base] ? base : 'index', l2 = MAP[base] || 'search2';
 
-  var SINGLE_NAV = false; /* false hides the single side nav option (layout "3"); the rail and panel is then shown as C */
+  var SINGLE_NAV = true; /* false hides the single side nav option (layout "3"); the rail and panel is then shown as C */
   var L = '4'; try { L = localStorage.getItem('advoc8-layout') || '4'; } catch (e) {}
   if (!SINGLE_NAV && L === '3') L = '4';
   var V = isB ? L : '1'; /* which prototype this page is showing: 1 original, 2 light touch, 3 side nav, 4 rail and panel */
