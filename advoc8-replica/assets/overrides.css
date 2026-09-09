@@ -2981,3 +2981,17 @@ html.lc #topbar { z-index: 1060; }
 .rd__kwlist { display: flex; flex-wrap: wrap; gap: 8px; }
 .rd__kwchip { display: inline-flex; align-items: center; padding: 6px 11px; border-radius: 8px; background: var(--l2-accent-soft); color: var(--l2-accent); font-size: 14px; font-weight: 500; line-height: 1.2; }
 .rd__avimg--logo { object-fit: contain; padding: 6px; background: #fff; }
+
+/* reader: wider article, tighter side column, more air under the title, smaller body text */
+.rd__grid { grid-template-columns: minmax(0, 1fr) 316px; gap: 24px; }
+.rd__docbody { padding-top: 36px; }
+.rd__content { font-size: 14.5px; line-height: 1.65; }
+.rd__ai li { font-size: 14.5px; }
+.rd__acts { gap: 10px; }
+.rd__acts .btn { height: 38px; padding: 0 13px; font-size: 13.5px; border-radius: 9px; }
+.rd__who { padding: 16px 16px; gap: 12px; }
+.rd__av { width: 52px; height: 52px; }
+.rd__whoname { font-size: 16px; }
+.rd__whorole { font-size: 14px; }
+.rd__kwlbl { font-size: 15px; }
+.rd__kwchip { font-size: 13px; padding: 5px 10px; }
