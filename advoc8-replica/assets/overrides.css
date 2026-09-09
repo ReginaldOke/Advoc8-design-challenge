@@ -2838,3 +2838,9 @@ html.l3 .l2-wrap #sidebar .nav-group-heading { margin: 12px 0 2px !important; }
 html.l3 .l2-wrap #sidebar .nav-group-heading .nav-link { padding: 2px 6px; }
 html.l3 .l2-wrap #sidebar .nav-group-heading .nav-group-action { width: 30px; height: 28px; }
 html.l3 .l2-wrap #sidebar .nav-divider { margin: 8px 2px; }
+
+/* collapsed rail (rail and panel): the logo shows; hovering it swaps in the expand control, as in the side nav */
+html.l3.panel-collapsed .l3rail__logo img { display: block !important; }
+html.l3.panel-collapsed .l3rail__logo-expand { display: none !important; }
+html.l3.panel-collapsed .l3rail__logo:hover img, html.l3.panel-collapsed .l3rail__logo:focus-visible img { display: none !important; }
+html.l3.panel-collapsed .l3rail__logo:hover .l3rail__logo-expand, html.l3.panel-collapsed .l3rail__logo:focus-visible .l3rail__logo-expand { display: grid !important; }

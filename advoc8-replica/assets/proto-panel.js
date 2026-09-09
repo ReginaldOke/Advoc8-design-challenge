@@ -11,7 +11,9 @@
   var base = isB ? BACK[page] : page;
   var l1 = MAP[base] ? base : 'index', l2 = MAP[base] || 'search2';
 
+  var SINGLE_NAV = false; /* false hides the single side nav option (layout "3"); the rail and panel is then shown as C */
   var L = '4'; try { L = localStorage.getItem('advoc8-layout') || '4'; } catch (e) {}
+  if (!SINGLE_NAV && L === '3') L = '4';
   var V = isB ? L : '1'; /* which prototype this page is showing: 1 original, 2 light touch, 3 side nav, 4 rail and panel */
   var GLOBAL_ALL = [
     ['2', 'The top bar and sidebar are unchanged. Only the page content is new.'],
@@ -106,8 +108,8 @@
       '<div class="proto__section"><button type="button" class="proto__onb"' + (V === '1' ? ' hidden' : '') + '><i class="far fa-play"></i>See onboarding flow</button><div class="proto__theme"></div><div class="proto__switch">' +
         opt('A', 'Original', 'As the app is today', l1 + '.html' + location.search, null, V === '1') +
         opt('B', 'Light touch', 'Existing UI, improved UX', l2 + '.html' + location.search, '2', V === '2') +
-        opt('C', 'Side nav', 'Single panel', l2 + '.html' + location.search, '3', V === '3') +
-        opt('D', 'Double nav', 'Partitioned panel', l2 + '.html' + location.search, '4', V === '4') +
+        (SINGLE_NAV ? opt('C', 'Side nav', 'Single panel', l2 + '.html' + location.search, '3', V === '3') : '') +
+        opt(SINGLE_NAV ? 'D' : 'C', 'Double nav', 'Partitioned panel', l2 + '.html' + location.search, '4', V === '4') +
       '</div></div>' +
       '<div class="proto__section proto__section--log"><details class="proto__more proto__more--page"><summary class="proto__label">Changes to this page <span class="proto__page">' + log.name + '</span><i class="far fa-chevron-down proto__more-chev"></i></summary>' +
         '<ol class="proto__list">' + log.items.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ol></details>' +

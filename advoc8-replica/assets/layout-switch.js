@@ -1,7 +1,8 @@
 /* Layout A/B switch ("1" = Layout 1, "2" = Layout 2, same page) + Layout-2 link guard */
 (function () {
-  /* SINGLE_NAV_ENABLED=false: only option 1 and option 3 are shown; set true to restore option 2 (single nav, key 2). */
-  var SINGLE_NAV_ENABLED = true;
+  /* SINGLE_NAV_ENABLED=false: the single side nav (stored layout "3") is hidden and key 3 opens the rail and panel instead. Set true here, in proto-panel.js and in the head snippet of every *2.html to bring it back. */
+  var SINGLE_NAV_ENABLED = false;
+  window.ADVOC8_SINGLE_NAV = SINGLE_NAV_ENABLED;
   var MAP = { 'index': 'search2', 'people': 'people2', 'feeds': 'feeds2', 'saved': 'saved2', 'feed': 'feed2',
               'agenda': 'agenda2', 'posts': 'posts2', 'orgs': 'orgs2', 'person': 'person2', 'build': 'build2', 'alerts': 'alerts2' };
   var BACK = {}; Object.keys(MAP).forEach(function (k) { BACK[MAP[k]] = k; });
@@ -17,7 +18,8 @@
     var p = page();
     if (e.key === '1') { var l1 = BACK[p] || (MAP[p] ? p : null); if (l1 && l1 !== p) location.href = l1 + '.html' + location.search; }
     else if (e.key === '2' || e.key === '3' || e.key === '4') { /* 2 = least change, 3 = single nav, 4 = rail and panel */
-      try { localStorage.setItem('advoc8-layout', e.key); } catch (err) {}
+      var L = e.key; if (!SINGLE_NAV_ENABLED && L === '3') L = '4'; /* with the side nav hidden, 3 is the rail and panel */
+      try { localStorage.setItem('advoc8-layout', L); } catch (err) {}
       var l2 = MAP[p] || (BACK[p] || isL2 ? p : null);
       if (l2 && l2 !== p) { location.href = l2 + '.html' + location.search; return; }
       if (isL2) location.reload(); /* the chrome is built at load, so switching re-opens the page */
@@ -71,7 +73,7 @@
   });
 
   /* Option 3 rail theme: navy gradient or white (toggle top right, remembered) */
-  function singleNav() { try { return localStorage.getItem('advoc8-layout') === '3'; } catch (err) { return false; } }
+  function singleNav() { if (!SINGLE_NAV_ENABLED) return false; try { return localStorage.getItem('advoc8-layout') === '3'; } catch (err) { return false; } }
   function themePref() { var t = 'navy'; try { t = localStorage.getItem('advoc8-theme') || (localStorage.getItem('advoc8-rail-navy') === '0' ? 'white' : 'navy'); } catch (err) {} return (t === 'navy' && singleNav()) ? 'white' : t; /* the side nav has no navy option */ }
   function navyPref() { return themePref() !== 'white'; }
   /* the rail is dark only when a dark theme is on AND the panel beside it is open; with the panel collapsed it goes light so it fades into the background (dark mode keeps it dark) */
