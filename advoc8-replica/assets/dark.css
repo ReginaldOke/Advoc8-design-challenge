@@ -300,7 +300,7 @@ html.theme-dark .btn.ob-tour-target { box-shadow: 0 0 0 3px rgba(106,164,245,.35
 /* ---- single side nav (option C) ---- */
 html.theme-dark .l2nav { background: var(--d-surface); box-shadow: 0 10px 30px rgba(0,0,0,.35); border: 1px solid var(--d-border); }
 html.theme-dark .l2nav__brand, html.theme-dark .l2nav__brand:hover { color: var(--d-text); }
-html.theme-dark .l2nav__brand img { content: url('/assets/logo-mark-light.svg?v=2'); }
+html.theme-dark .l2nav__brand img { content: url('logo-mark-light.svg?v=2'); }
 html.theme-dark .l2nav__caption, html.theme-dark .l2nav__subcaption, html.theme-dark .l2nav__subcaption a { color: var(--d-faint); }
 html.theme-dark .l2nav__item, html.theme-dark .l2nav__item i.ico, html.theme-dark .l2nav__item .l2nav__chev { color: var(--d-muted); }
 html.theme-dark .l2nav__item:hover, html.theme-dark .l2nav__item:hover i.ico { background: var(--d-surface-3); color: var(--d-text); }
