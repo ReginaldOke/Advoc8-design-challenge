@@ -3,7 +3,7 @@
 var TABLER_ICONS = true;
 (function () {
   if (!TABLER_ICONS || !document.body.classList.contains('l2-body')) return;
-  if (document.documentElement.classList.contains('lc')) return; /* option B keeps the original Font Awesome icons */
+  var LC = document.documentElement.classList.contains('lc'); /* option B keeps the original Font Awesome icons, except inside the prototype panel */
   var SPRITE = '/assets/tabler-sprite-nostroke.svg#tabler-';
   var MAP = {
     'plus': 'plus', 'sitemap': 'sitemap', 'pen-to-square': 'edit', 'regular-list-circle-plus': 'list-details', 'user-plus': 'user-plus',
@@ -15,7 +15,7 @@ var TABLER_ICONS = true;
     'gear': 'settings', 'cog': 'settings', 'calendar-check': 'calendar-check', 'book': 'book', 'user-tie': 'user-star', 'people-group': 'users-group',
     'city': 'building-community', 'building-columns': 'building-bank', 'building': 'building', 'times': 'x', 'share-from-square': 'share', 'paper-plane': 'send',
     'sliders-v': 'adjustments', 'sliders-h': 'adjustments-horizontal', 'tag': 'tag', 'file-export': 'file-export', 'file-import': 'file-import',
-    'caret-down': 'chevron-down', 'caret-right': 'chevron-right', 'bell-slash': 'bell-off', 'bell': 'bell', 'user': 'user', 'map-location-dot': 'map-2', 'sort': 'arrows-sort',
+    'caret-down': 'chevron-down', 'caret-right': 'chevron-right', 'bell-slash': 'bell-off', 'bell': 'bell', 'play': 'player-play', 'folder': 'folder', 'user': 'user', 'map-location-dot': 'map-2', 'sort': 'arrows-sort',
     'quote-left': 'quote', 'hashtag': 'hash', 'folder-plus': 'folder-plus', 'chart-simple': 'chart-bar', 'trash-alt': 'trash', 'regular-bell-gear': 'bell-cog',
     'bell-on': 'bell-ringing', 'linkedin': 'brand-linkedin', 'circle': 'circle', 'envelope': 'mail', 'rectangle-list': 'list-details', 'clock': 'clock',
     'circle-info': 'info-circle', 'circle-check': 'circle-check', 'ban': 'ban', 'x-twitter': 'brand-x', 'twitter': 'brand-x', 'wave-pulse': 'activity',
@@ -29,6 +29,7 @@ var TABLER_ICONS = true;
   var SKIP = /^(fw|xs|sm|lg|xl|2x|3x|kit|regular|solid|light|thin|duotone|brands|advoc8)$/;
   function convert(i) {
     if (i.dataset.fa !== undefined) return;
+    if (LC && !i.closest('.proto')) return;
     var m = i.className.match(/\bfa-([a-z0-9-]+)\b/g); if (!m) return;
     var names = m.map(function (x) { return x.slice(3); }).filter(function (n) { return !SKIP.test(n); });
     var name = names[0], t = name && MAP[name]; if (!t) return;

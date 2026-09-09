@@ -925,12 +925,19 @@ window.replicaSlide = function (el, show, duration) {
       tip.textContent = el.getAttribute('data-tooltip');
       document.body.appendChild(tip);
       var r = el.getBoundingClientRect();
-      tip.style.left = (r.left + r.width / 2) + 'px';
-      var below = r.top < 44; tip.classList.toggle('replica-tooltip--below', below);
-      tip.style.top = (below ? r.bottom : r.top) + 'px';
+      var rail = document.documentElement.classList.contains('nav-collapsed') && el.closest('.l2nav');
+      if (rail) { /* collapsed side nav: the tip sits to the right of the icon */
+        tip.classList.add('replica-tooltip--right');
+        tip.style.left = (r.right + 10) + 'px'; tip.style.top = (r.top + r.height / 2) + 'px';
+      } else {
+        tip.style.left = (r.left + r.width / 2) + 'px';
+        var below = r.top < 44; tip.classList.toggle('replica-tooltip--below', below);
+        tip.style.top = (below ? r.bottom : r.top) + 'px';
+      }
+      requestAnimationFrame(function () { requestAnimationFrame(function () { tip && tip.classList.add('is-in'); }); });
     } else if (!el && tip) {
-      tip.remove();
-      tip = null;
+      var gone = tip; tip = null; gone.classList.remove('is-in'); gone.classList.add('is-out');
+      setTimeout(function () { gone.remove(); }, 160);
     }
   });
 })();

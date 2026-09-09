@@ -22,7 +22,7 @@
     ['234', 'Every page has the same search bar and filter chips in the same place.'],
     ['234', 'A result count sits next to the page title and updates with the search and filters.'],
     ['34', 'One visual style across the app: rounded cards, light grey background, one icon set.'],
-    ['34', 'Theme toggle: White, Navy or Dark.'],
+    ['34', 'Theme toggle: Light, Navy or Dark.'],
     ['234', 'Charts animate in and respond to hover.'],
     ['234', 'Topic lists use the same topic images as sign-up.'],
     ['234', 'Sign in and onboarding (press R): pick a topic, then research it or build a feed.'],
@@ -73,7 +73,7 @@
       'Photos for people, logos for organisations.',
       ['34', 'Each stakeholder group has its own page in the side panel.']
     ]},
-    'person': { name: 'Stakeholder profile', items: [
+    'person': { name: 'Stakeholders', items: [
       ['4', 'Opening a profile folds the side panel away so the page has the full width.'],
       'Profile photo in the header.'
     ]},
@@ -103,11 +103,11 @@
     '<button type="button" class="proto__pill" aria-expanded="' + (!collapsed) + '"><span class="proto__pill-dot"></span>Prototype controls<i class="far fa-chevron-up"></i></button>' +
     '<div class="proto__inner">' +
       '<div class="proto__head"><span class="proto__title">Prototype controls</span><button type="button" class="proto__collapse" aria-label="Collapse"><i class="far fa-chevron-down"></i></button></div>' +
-      '<div class="proto__section"><div class="proto__theme"></div><button type="button" class="proto__onb"' + (V === '1' ? ' hidden' : '') + '><i class="far fa-sparkles"></i>See onboarding flow</button><div class="proto__switch">' +
+      '<div class="proto__section"><button type="button" class="proto__onb"' + (V === '1' ? ' hidden' : '') + '><i class="far fa-play"></i>See onboarding flow</button><div class="proto__theme"></div><div class="proto__switch">' +
         opt('A', 'Original', 'As the app is today', l1 + '.html' + location.search, null, V === '1') +
-        opt('B', 'Light touch', 'Same layout, new search and fixes', l2 + '.html' + location.search, '2', V === '2') +
-        opt('C', 'Side nav', 'One navigation panel', l2 + '.html' + location.search, '3', V === '3') +
-        opt('D', 'Rail and panel', 'Icon rail with a panel per section', l2 + '.html' + location.search, '4', V === '4') +
+        opt('B', 'Light touch', 'Existing UI, improved UX', l2 + '.html' + location.search, '2', V === '2') +
+        opt('C', 'Side nav', 'Single panel', l2 + '.html' + location.search, '3', V === '3') +
+        opt('D', 'Double nav', 'Partitioned panel', l2 + '.html' + location.search, '4', V === '4') +
       '</div></div>' +
       '<div class="proto__section proto__section--log"><details class="proto__more proto__more--page"><summary class="proto__label">Changes to this page <span class="proto__page">' + log.name + '</span><i class="far fa-chevron-down proto__more-chev"></i></summary>' +
         '<ol class="proto__list">' + log.items.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ol></details>' +

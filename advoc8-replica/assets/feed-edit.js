@@ -180,6 +180,7 @@
   /* side panel: show the new feed as the active item instead of Solar panels */
   function markNav() {
     var items = [].slice.call(document.querySelectorAll('.l2nav__subitem')).filter(function (a) { return /^feed2\.html/.test(a.getAttribute('href') || ''); });
+    if (window.l2FeedsNest) { var yfl = document.querySelector('.l2nav__subitem[href="feeds2.html"]'); if (yfl) yfl.classList.add('is-open'); }
     if (items.length) {
       items.forEach(function (a) { a.classList.remove('active'); });
       var a = document.createElement('a'); a.className = 'l2nav__subitem active'; a.href = 'feed2.html?new=1'; a.innerHTML = '<span class="emoji">✨</span>' + esc(s.name);
@@ -227,13 +228,12 @@
             '<form class="np__addrow" novalidate><input type="email" placeholder="Add another email" aria-label="Add another email" autocomplete="off"><button type="submit" class="btn btn-white btn-sm">Add</button></form>' +
             '</div>' : '') +
         '</div>' +
-        '<p class="np__label">How often, by content type</p>' +
         '<div class="np__rows">' + TYPES.map(function (t) { return '<div class="np__row"><i class="far ' + t[2] + ' fa-fw"></i><span class="np__rowname">' + t[1] + '</span>' + chipFor(t) + '</div>'; }).join('') + '</div>';
     }
     np.innerHTML = '<div class="np__scrim"></div><aside class="np__panel" role="dialog" aria-modal="true" aria-labelledby="npTitle">' +
       '<header class="np__head"><h2 id="npTitle">Schedule alerts</h2><div class="np__head-acts"><label class="np__switch" data-tooltip="All alerts on or off"><input type="checkbox" class="np__switch-in" aria-label="All alerts"><span class="np__track"></span><span class="np__switch-lbl">On</span></label><button type="button" class="np__close" aria-label="Close">&#215;</button></div></header>' +
       '<div class="np__body"></div>' +
-      '<footer class="np__foot"><button type="button" class="btn btn-white np__cancel">Cancel</button><button type="button" class="btn btn-primary np__save">Save changes</button></footer></aside>';
+      '<footer class="np__foot np__foot--one"><button type="button" class="btn btn-primary np__save">Save changes</button></footer></aside>';
     document.body.appendChild(np); document.body.classList.add('np-lock');
     var bodyEl = np.querySelector('.np__body');
     function render() {
@@ -270,7 +270,7 @@
     function onKey(e) { if (e.key === 'Escape') { if (bodyEl.querySelector('.np__chip.open')) bodyEl.querySelectorAll('.np__chip.open').forEach(function (x) { x.classList.remove('open'); }); else close(false); } }
     document.addEventListener('keydown', onKey);
     np.querySelector('.np__close').onclick = function () { close(false); };
-    np.querySelector('.np__cancel').onclick = function () { close(false); };
+    var npc = np.querySelector('.np__cancel'); if (npc) npc.onclick = function () { close(false); };
     np.querySelector('.np__scrim').onclick = function () { close(false); };
     np.querySelector('.np__save').onclick = function () { close(true); };
     setTimeout(function () { np.querySelector('.np__close').focus(); }, 250);

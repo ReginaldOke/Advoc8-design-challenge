@@ -90,7 +90,7 @@
   function injectRailThemeToggle() {
     if (document.querySelector('.rail-theme-toggle')) return;
     var t = document.createElement('div'); t.className = 'rail-theme-toggle'; t.setAttribute('role', 'group'); t.setAttribute('aria-label', 'Theme');
-    t.innerHTML = '<button type="button" data-theme="white"><i class="far fa-sun"></i>White</button><button type="button" data-theme="navy"><i class="far fa-droplet"></i>Navy</button><button type="button" data-theme="dark"><i class="far fa-moon"></i>Dark</button>';
+    t.innerHTML = '<button type="button" data-theme="white"><i class="far fa-sun"></i>Light</button><button type="button" data-theme="navy"><i class="far fa-droplet"></i>Navy</button><button type="button" data-theme="dark"><i class="far fa-moon"></i>Dark</button>';
     t.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) setTheme(b.dataset.theme); });
     document.body.appendChild(t);
     setTheme(themePref(), false); /* apply the remembered theme without rewriting it */
@@ -104,6 +104,9 @@
     if (wrap) wrap.classList.remove('l2-wrap');
     if (main) main.classList.add('l2-wrap');
     window.l2Classic = true;
+    if (page() === 'person2') root.classList.add('lc-profile'); /* the profile takes the full width: no sidebar */
+    /* the feeds group stays as in the original, without the View all Feeds link */
+    document.querySelectorAll('#sidebar a').forEach(function (a) { if (/View all Feeds/i.test(a.textContent)) a.remove(); });
   }
   function applyVariant() {
     var L = '4'; try { L = localStorage.getItem('advoc8-layout') || '4'; } catch (err) {}
@@ -157,7 +160,43 @@
   }
 
   if (!isL2) return;
+  /* phones and tablets: a slim top bar with a menu button; the side nav slides in as a drawer (options C and D) */
+  (function () {
+    if (root.classList.contains('lc')) return;
+    var bar = document.createElement('div'); bar.className = 'l2-mbar';
+    bar.innerHTML = '<button type="button" class="l2-mbar__menu" aria-label="Menu"><i class="far fa-bars"></i></button><a class="l2-mbar__logo" href="search2.html"><img src="/assets/logo-circle-dark.svg?v=2" alt="">Advoc8</a><div class="avatar avatar-sm l2-mbar__avatar"><span class="avatar-title rounded-circle ob-initials">RO</span></div>';
+    var scrim = document.createElement('div'); scrim.className = 'l2-mscrim';
+    document.body.appendChild(bar); document.body.appendChild(scrim);
+    function mobile() { return window.matchMedia('(max-width: 991.98px)').matches; }
+    function sync() { bar.style.display = mobile() ? '' : 'none'; scrim.style.display = mobile() ? '' : 'none'; if (!mobile()) root.classList.remove('l2-drawer'); }
+    sync(); window.addEventListener('resize', sync);
+    bar.querySelector('.l2-mbar__menu').addEventListener('click', function () { root.classList.toggle('l2-drawer'); });
+    scrim.addEventListener('click', function () { root.classList.remove('l2-drawer'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') root.classList.remove('l2-drawer'); });
+    document.addEventListener('click', function (e) { if (mobile() && e.target.closest('.l2nav a[href]:not([href="#"])')) root.classList.remove('l2-drawer'); });
+  })();
+  /* saved item labels: a folder icon in place of the dot */
+  (function () {
+    document.querySelectorAll('#sidebar .saved-labels .nav-link').forEach(function (a) {
+      if (a.querySelector('i')) return;
+      var i = document.createElement('i'); i.className = 'fal fa-folder label-ico';
+      a.insertBefore(i, a.firstChild); a.classList.add('has-ico');
+    });
+  })();
   applyVariant();
+  /* a stakeholder profile (option B only): a back button beside the name returns to the list it was opened from */
+  if (page() === 'person2' && root.classList.contains('lc')) {
+    var prow = document.querySelector('#main .header .row');
+    if (prow && !prow.querySelector('.l2-back')) {
+      var pcol = document.createElement('div'); pcol.className = 'col-auto pr-0 l2-backcol';
+      pcol.innerHTML = '<a class="btn btn-white l2-back" href="people2.html" aria-label="Back" data-tooltip="Back"><i class="far fa-arrow-left"></i></a>';
+      prow.insertBefore(pcol, prow.firstChild);
+      pcol.querySelector('.l2-back').addEventListener('click', function (e) {
+        try { localStorage.setItem('advoc8-nav-collapsed', '0'); localStorage.setItem('advoc8-panel-collapsed', '0'); } catch (err) {} /* the nav folded to open the profile; unfold it on the way back */
+        if (document.referrer && history.length > 1) { e.preventDefault(); history.back(); }
+      });
+    }
+  }
   /* rail and panel: the stakeholder links in the panel carry the same icons as the side nav's sub-items */
   (function () {
     if (!root.classList.contains('l3')) return;
@@ -193,6 +232,50 @@
     var h = a.getAttribute('href'); if (h === '#') return;
     var parts = h.split('?'); if (key(parts[0], parts[1] ? '?' + parts[1] : '') === here) a.classList.add('active');
   });
+  /* side nav (option C): feeds nest under Your Feeds and labels under Saved Items, each with a count and a chevron that folds them in place */
+  (function () {
+    if (root.classList.contains('lc')) return;
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function nestUnder(link, items, count, key, label) {
+      if (!link || link.querySelector('.l2nav__subchev') || !items.length) return null;
+      var nest = document.createElement('div'); nest.className = 'l2nav__nest';
+      items.forEach(function (a) { nest.appendChild(a); });
+      link.insertAdjacentHTML('beforeend', '<span class="l2nav__count">' + count + '</span><i class="fas fa-chevron-down l2nav__subchev" role="button" aria-label="' + label + '" tabindex="0"></i>');
+      link.insertAdjacentElement('afterend', nest);
+      var chev = link.querySelector('.l2nav__subchev');
+      var pref = null; try { pref = localStorage.getItem(key); } catch (err) {}
+      var auto = link.classList.contains('active') || !!nest.querySelector('.active');
+      function setOpen(o) { link.classList.toggle('is-open', o); chev.setAttribute('aria-expanded', o); }
+      setOpen(pref === null ? auto : pref === '1' || auto);
+      function toggle(e) { e.preventDefault(); e.stopPropagation(); var o = !link.classList.contains('is-open'); setOpen(o); try { localStorage.setItem(key, o ? '1' : '0'); } catch (err) {} }
+      chev.addEventListener('click', toggle);
+      chev.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') toggle(e); });
+      link.addEventListener('click', function (e) { if (e.target.closest('.l2nav__subchev')) return; if (link.classList.contains('active')) toggle(e); });
+      return nest;
+    }
+    /* feeds */
+    var yf = document.querySelector('.l2nav__subitem[href="feeds2.html"]:not(.l2nav__subitem--link)');
+    if (yf) {
+      var sub = yf.parentNode, feeds = [].slice.call(sub.querySelectorAll('.l2nav__subitem[href^="feed"]')).filter(function (a) { return a !== yf && !/^feeds2/.test(a.getAttribute('href')); });
+      sub.querySelectorAll('.l2nav__subcaption, .l2nav__subitem--link').forEach(function (x) { x.remove(); });
+      window.l2FeedsNest = nestUnder(yf, feeds, feeds.length, 'advoc8-yourfeeds-open', 'Show or hide feeds');
+    }
+    /* saved item labels, mirrored from the page's own label list */
+    var sv = document.querySelector('.l2nav__subitem[href="saved2.html"]');
+    var labels = [].slice.call(document.querySelectorAll('#sidebar .saved-labels .nav-link'));
+    if (sv && labels.length) {
+      var cur = location.pathname.split('/').pop() + location.search;
+      var items = labels.map(function (l) {
+        var a = document.createElement('a'); a.className = 'l2nav__subitem' + (l.getAttribute('href') === cur ? ' active' : ''); a.href = l.getAttribute('href');
+        var badge = l.querySelector('.badge'), name = [].slice.call(l.childNodes).filter(function (n) { return n.nodeType === 3; }).map(function (n) { return n.textContent; }).join('').trim();
+        a.innerHTML = '<i class="fal fa-folder sub-ico"></i>' + esc(name) + (badge ? '<span class="l2nav__count">' + esc(badge.textContent.trim()) + '</span>' : '');
+        return a;
+      });
+      var total = document.querySelector('#sidebar .saved-total'); total = total ? total.textContent.trim() : labels.length;
+      if (items.some(function (a) { return a.classList.contains('active'); })) sv.classList.remove('active');
+      nestUnder(sv, items, total, 'advoc8-saved-open', 'Show or hide labels');
+    }
+  })();
   document.addEventListener('click', function (e) {
     var chev = e.target.closest('.l2nav__chev');
     if (chev) { e.preventDefault(); e.stopPropagation(); chev.closest('.l2nav__group').classList.toggle('open'); return; }

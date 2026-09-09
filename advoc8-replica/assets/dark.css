@@ -329,3 +329,10 @@ html.theme-dark.l3 .l2-wrap #sidebar .stake-links .nav-link .stake-ico { color: 
 html.theme-dark.l3 .l2-wrap #sidebar .stake-links .nav-link.active .stake-ico { color: var(--l2-accent); }
 html.theme-dark .l2-wrap .l2nav .l2nav__group.active:has(.l2nav__subitem.active) > a.l2nav__item, html.theme-dark .l2nav__group.active:has(.l2nav__subitem.active) > .l2nav__item i.ico, html.theme-dark .l2nav__group.active:has(.l2nav__subitem.active) > .l2nav__item .l2nav__chev { background: transparent; color: var(--d-muted) !important; }
 html.theme-dark .l2-wrap .l2nav .l2nav__group.active:has(.l2nav__subitem.active) > a.l2nav__item:hover { background: var(--d-surface-3); color: var(--d-text) !important; }
+html.theme-dark .l2-back { color: var(--d-text); }
+html.theme-dark .l2-wrap #sidebar .saved-labels .nav-link .label-ico { color: var(--d-muted); }
+html.theme-dark .l2-wrap #sidebar .saved-labels .nav-link.active .label-ico { color: var(--l2-accent); }
+html.theme-dark .l2nav__count { background: var(--d-surface-3); color: var(--d-muted); }
+html.theme-dark .l2nav__subitem.active .l2nav__count { background: rgba(106,164,245,.2); color: var(--l2-accent); }
+html.theme-dark .l2nav__subchev { color: var(--d-muted); }
+html.theme-dark .l2nav__subchev:hover { background: rgba(255,255,255,.1); color: var(--d-text); }
