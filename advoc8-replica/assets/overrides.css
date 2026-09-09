@@ -2956,3 +2956,6 @@ body:not(.l2-body) .proto__list li::before { display: none; }
 .l2-back--quiet:hover, .l2-back--quiet:focus-visible { background: #e9eef5; color: #12263f; text-decoration: none; }
 .l2-back--quiet:active { transform: translateX(-1px); }
 .l2-back--quiet svg { width: 16px; height: 16px; stroke-width: 2; }
+
+/* option B: the top bar stays above page content that scrolls under it */
+html.lc #topbar { z-index: 1060; }
