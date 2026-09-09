@@ -209,7 +209,7 @@
   var FREQ_META = { 'Off': ['fa-ban', 'Disable alerts for this content'], 'ASAP': ['fa-bolt', 'You’ll know when we know'], 'Daily digest': ['fa-clock', 'Each day at 8:00 AM'], 'Twice daily digest': ['fa-clock', '8:00 AM and 4:00 PM'], 'Weekly digest': ['fa-calendar', 'Each Monday at 8:00 AM'] };
   s.notify = s.notify || { media: 'Weekly digest', parliament: 'Weekly digest', social: 'Daily digest', other: 'Off' };
   function notifyOn() { return Object.keys(s.notify).some(function (k) { return s.notify[k] !== 'Off'; }); }
-  function syncNotifyLine() { var b = document.querySelector('.header-subtitle .fa-bell-on, .header-subtitle .fa-bell-slash'); var line = b && b.closest('.d-flex'); if (!line) return; var on = notifyOn(); line.innerHTML = '<div class="flex-0"><i class="fas ' + (on ? 'fa-bell-on text-warning' : 'fa-bell-slash text-muted') + ' fa-fw mx-2"></i></div><div class="flex-1"><a class="text-reset np-open" href="#">Alerts are <span class="font-weight-bold">' + (on ? 'ON' : 'OFF') + '</span></a></div>'; line.className = 'd-flex align-items-baseline flex-gap-2'; }
+  function syncNotifyLine(force) { var b = document.querySelector('.header-subtitle .fa-bell-on, .header-subtitle .fa-bell-slash'); var line = b && b.closest('.d-flex'); if (!line) return; var on = typeof force === 'boolean' ? force : notifyOn(); /* force: preview the panel's draft while it is open */ line.innerHTML = '<div class="flex-0"><i class="fas ' + (on ? 'fa-bell-on text-warning' : 'fa-bell-slash text-muted') + ' fa-fw mx-2"></i></div><div class="flex-1"><a class="text-reset np-open" href="#">Alerts are <span class="font-weight-bold">' + (on ? 'ON' : 'OFF') + '</span></a></div>'; line.className = 'd-flex align-items-baseline flex-gap-2'; }
   var np = null;
   s.recipients = s.recipients || ['reg.oke@example.com'];
   function openNotify(onClose) {
@@ -251,7 +251,7 @@
     /* master switch: off sets every content type to Off; on brings back what was set, or the usual defaults */
     var sw = np.querySelector('.np__switch-in'), swLbl = np.querySelector('.np__switch-lbl'), remembered = null;
     function anyOn() { return TYPES.some(function (t) { return draft[t[0]] !== 'Off'; }); }
-    function syncSwitch() { var on = anyOn(); sw.checked = on; swLbl.textContent = on ? 'On' : 'Off'; np.classList.toggle('np--off', !on); }
+    function syncSwitch() { var on = anyOn(); sw.checked = on; swLbl.textContent = on ? 'On' : 'Off'; np.classList.toggle('np--off', !on); syncNotifyLine(on); /* the bell line in the header follows the switch straight away */ }
     sw.onchange = function () {
       if (!sw.checked) { remembered = JSON.parse(JSON.stringify(draft)); TYPES.forEach(function (t) { draft[t[0]] = 'Off'; }); }
       else { var src = (remembered && TYPES.some(function (t) { return remembered[t[0]] !== 'Off'; })) ? remembered : { media: 'Weekly digest', parliament: 'Weekly digest', social: 'Daily digest', other: 'Off' }; TYPES.forEach(function (t) { draft[t[0]] = src[t[0]]; }); }
@@ -264,6 +264,7 @@
     function close(saved) {
       np.classList.remove('show'); document.body.classList.remove('np-lock'); document.removeEventListener('keydown', onKey);
       var n = np; setTimeout(function () { n.remove(); }, 220); np = null;
+      if (!saved) syncNotifyLine(); /* closed without saving: the bell line goes back to what is saved */
       if (saved) { s.notify = draft; s.recipients = emails; localStorage.setItem(KEY, JSON.stringify(s)); syncNotifyLine(); note('<b>Alerts scheduled.</b> ' + (notifyOn() ? 'Updates go to ' + (emails.length === 1 ? esc(emails[0]) : emails.length + ' addresses') + '.' : 'Notifications are off for this feed.')); }
       if (onClose) onClose();
     }
