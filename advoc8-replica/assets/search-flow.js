@@ -459,7 +459,7 @@
       var chips = [];
       modal.querySelectorAll('#topics-list input[id^="feeds_v2_topic_group_"]:checked, #topics-list input[id^="feeds_v2_topic_group_"]:indeterminate').forEach(function (c) {
         var lbl = modal.querySelector('label[for="' + c.id + '"]');
-        if (lbl) chips.push(lbl.textContent.replace(/\s+/g, ' ').trim().replace(/^\S+\s+/, ''));
+        if (lbl) chips.push(lbl.textContent.replace(/\s+/g, ' ').replace(/^[^A-Za-z0-9]+/, '').trim()); /* drop the leading emoji; when it is an image there is nothing to drop */
       });
       var jur = [];
       modal.querySelectorAll('#jurisdictions input.btn-check:not([id^=select_all]):checked, #jurisdictions input#jurisdiction_1:checked').forEach(function (c) {

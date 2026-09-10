@@ -135,9 +135,10 @@
       /* nothing typed for them: the search bar stays empty and the tour suggests what to do; their topic is already ticked in Filters */
       var modal = document.getElementById('filterModal');
       if (modal) {
-        var lab = [].slice.call(modal.querySelectorAll('#topics-list label')).filter(function (l) { return l.textContent.replace(/\s+/g, ' ').trim().replace(/^\S+\s+/, '') === topic[1]; })[0];
+        var norm = function (t) { return t.replace(/\s+/g, ' ').replace(/^[^A-Za-z0-9]+/, '').trim().toLowerCase().replace(/&/g, 'and'); }; /* drops a leading emoji, or nothing when the emoji is an image */
+        var lab = [].slice.call(modal.querySelectorAll('#topics-list label')).filter(function (l) { return norm(l.textContent) === norm(topic[1]); })[0];
         var cb = lab && modal.querySelector('#' + (lab.getAttribute('for') || '').replace(/([^\w-])/g, '\\$1'));
-        if (cb) cb.checked = true;
+        if (cb) { cb.checked = true; cb.dispatchEvent(new Event('change', { bubbles: true })); }
       }
       var fchip = document.querySelector('.l2-fchip--filters'), fcount = document.getElementById('l2FiltersCount');
       if (fchip) fchip.classList.add('active'); if (fcount) fcount.textContent = '1';

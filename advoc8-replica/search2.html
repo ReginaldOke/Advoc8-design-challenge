@@ -896,7 +896,7 @@
   <script src="assets/try-phrase.js?v=1"></script>
   <script src="assets/search-data.js?v=3"></script>
   <script src="assets/feed-data.js?v=1"></script>
-  <script src="assets/search-flow.js?v=20"></script>
+  <script src="assets/search-flow.js?v=21"></script>
 
   <script>
   /* Layout 2: one-line search + Advanced panel + filter chips (drives the existing search-flow hooks) */
@@ -1163,6 +1163,7 @@
       var rc = (document.getElementById('results-count').textContent.match(/[\d,]+/) || [''])[0];
       document.getElementById('l2DateCount').textContent = rc ? fmtCount(parseCount(rc)) : '';
       var fcRow = document.getElementById('filterChips'); var nFilters = fcRow.classList.contains('d-none') ? 0 : fcRow.querySelectorAll('.chip').length;
+      if (!nFilters) { var fm = document.getElementById('filterModal'); if (fm) nFilters = fm.querySelectorAll('#topics-list input[id^="feeds_v2_topic_group_"]:checked, #topics-list input[id^="feeds_v2_topic_group_"]:indeterminate, #parties .select2-selection__choice, #stakeholders .select2-selection__choice').length; } /* filters ticked in the window count too, such as the topic chosen at sign-up */
       document.getElementById('l2FiltersCount').textContent = nFilters ? String(nFilters) : '';
       document.querySelector('.l2-fchip--filters').classList.toggle('active', nFilters > 0);
     }
@@ -1321,7 +1322,7 @@
   })();
   </script>
   <script>window.addEventListener('load', function () { var i = document.getElementById('feeds_v2-search_keyword_input'); if (i && !document.querySelector('.ob-shell, .ob-card')) i.focus({ preventScroll: true }); });</script>
-  <script src="assets/onboarding.js?v=23"></script>
+  <script src="assets/onboarding.js?v=25"></script>
   <script src="assets/row-collapse.js?v=5"></script>
   <script src="assets/party-select.js?v=5"></script>
   <script src="assets/drag-order.js?v=4"></script>
