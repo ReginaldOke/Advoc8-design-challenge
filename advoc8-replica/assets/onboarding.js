@@ -83,7 +83,7 @@
         s.querySelector('#obResearch').disabled = false; s.querySelector('#obBuild').disabled = false;
       };
     });
-    function fresh() { try { sessionStorage.removeItem('advoc8-toured-search2'); sessionStorage.removeItem('advoc8-toured-build2'); } catch (e) {} } /* a new hand-off: the tour may show once more */
+    function fresh() { try { sessionStorage.removeItem('advoc8-toured-search2'); sessionStorage.removeItem('advoc8-toured-build2'); localStorage.setItem('advoc8-proto-collapsed', '1'); } catch (e) {} } /* a new hand-off: the tour may show once more, and the controls panel starts minimised so it stays out of the way */ /* a new hand-off: the tour may show once more */
     s.querySelector('#obResearch').onclick = function () { if (picked) { remember(); fresh(); location.href = 'search2.html?topic=' + encodeURIComponent(picked[1]); } };
     s.querySelector('#obBuild').onclick = function () { if (picked) { remember(); fresh(); location.href = 'build2.html?topic=' + encodeURIComponent(picked[1]); } };
   }
