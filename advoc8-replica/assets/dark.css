@@ -372,3 +372,5 @@ html.theme-dark .rd__avimg--logo { background: #fff; }
   html.theme-dark .l2-mbar__avatar { background: var(--d-surface-2); box-shadow: 0 0 0 1px var(--d-border), 0 2px 6px rgba(0,0,0,.4); }
   html.theme-dark .l2-mbar__avatar .avatar-title.ob-initials { background: rgba(var(--l2-accent-rgb), .22); color: #9cc0f5; }
 }
+html.theme-dark .l2-wrap .kw-switch a, html.theme-dark .l2-wrap #kwToBoolean, html.theme-dark .l2-wrap #kwToSimple { color: #9cc0f5; text-decoration-color: rgba(156,192,245,.45); }
+html.theme-dark .l2-wrap .kw-switch a:hover, html.theme-dark .l2-wrap #kwToBoolean:hover, html.theme-dark .l2-wrap #kwToSimple:hover { color: #bcd6fa; text-decoration-color: #bcd6fa; }

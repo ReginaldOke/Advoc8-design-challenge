@@ -3008,3 +3008,8 @@ html.lc #topbar { z-index: 1060; }
   .l2-mbar__avatar .avatar-title.ob-initials { width: 30px; height: 30px; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; background: var(--l2-accent-soft); color: var(--l2-accent); display: grid; place-items: center; border-radius: 50%; }
 }
 @media (max-width: 991.98px) { .l2-mbar__avatar .avatar-title.ob-initials { background: #e6effc; color: #2c7be5; } }
+
+/* feed builder: the switch between simple terms and a boolean query reads as a link */
+.l2-wrap .kw-switch a, .l2-wrap #kwToBoolean, .l2-wrap #kwToSimple { color: var(--l2-accent); font-weight: 500; text-decoration: underline; text-decoration-color: rgba(var(--l2-accent-rgb), .35); text-underline-offset: 3px; transition: text-decoration-color .15s ease, color .15s ease; }
+.l2-wrap .kw-switch a:hover, .l2-wrap #kwToBoolean:hover, .l2-wrap #kwToSimple:hover { color: var(--l2-accent); text-decoration-color: var(--l2-accent); }
+.l2-wrap .kw-switch a::after, .l2-wrap #kwToBoolean::after, .l2-wrap #kwToSimple::after { content: " \2192"; font-weight: 400; }
