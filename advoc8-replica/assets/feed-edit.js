@@ -97,7 +97,7 @@
   var saveBtn = el('a', 'btn btn-primary fe-save', 'Save changes'); saveBtn.href = '#'; saveBtn.hidden = true;
   (function () { var acts = document.querySelector('.header .col-auto .d-flex'); if (acts) { acts.insertBefore(saveBtn, acts.firstChild); acts.insertBefore(reset, acts.firstChild); } })();
   function syncReset() { var d = dirty(); reset.hidden = !d; saveBtn.hidden = !d; }
-  saveBtn.onclick = function (e) { e.preventDefault(); s.savedByUser = true; s.saved = snap(); s.saved.facets = window.l2FacetCount ? window.l2FacetCount() : 0; save(); renderChips(); syncReset(); input.blur(); setQuiet(true);  toast('Changes to feed saved'); };
+  saveBtn.onclick = function (e) { e.preventDefault(); s.savedByUser = true; s.saved = snap(); s.saved.facets = window.l2FacetCount ? window.l2FacetCount() : 0; save(); renderChips(); syncReset(); input.blur(); toast('Changes to feed saved'); }; /* the terms stay in the bar after saving */
   window.addEventListener('l2-facets', syncReset);
   /* if the chips need more than one line, the bar takes the whole row and the filter chips drop underneath */
   function fit() {
