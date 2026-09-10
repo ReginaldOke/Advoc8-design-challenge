@@ -3027,3 +3027,7 @@ html.lc #topbar { z-index: 1060; }
 .l2-wrap .js-expand-btn { display: none !important; }
 .l2-wrap .card.hover-reveal:has(.js-expand-btn) { cursor: pointer; }
 .l2-wrap .card.hover-reveal .stretched-link::after { display: none; }
+
+/* rail drag on Navy and Dark: the item being dragged carries the rail colour, so it covers the one beneath it */
+html.rail-navy .l3rail__nav.l2-sortable .l3rail__item.is-dragging { background: #152E4D !important; }
+html.theme-dark .l3rail__nav.l2-sortable .l3rail__item.is-dragging { background: var(--d-surface) !important; }
