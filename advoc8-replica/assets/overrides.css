@@ -3013,3 +3013,7 @@ html.lc #topbar { z-index: 1060; }
 .l2-wrap .kw-switch a, .l2-wrap #kwToBoolean, .l2-wrap #kwToSimple { color: var(--l2-accent); font-weight: 500; text-decoration: underline; text-decoration-color: rgba(var(--l2-accent-rgb), .35); text-underline-offset: 3px; transition: text-decoration-color .15s ease, color .15s ease; }
 .l2-wrap .kw-switch a:hover, .l2-wrap #kwToBoolean:hover, .l2-wrap #kwToSimple:hover { color: var(--l2-accent); text-decoration-color: var(--l2-accent); }
 .l2-wrap .kw-switch a::after, .l2-wrap #kwToBoolean::after, .l2-wrap #kwToSimple::after { content: " \2192"; font-weight: 400; }
+
+/* feed builder: the boolean query box shows a single 1px accent border when focused */
+.l2-wrap .kw-bool-textarea, .kw-bool-textarea { border: 1px solid #d2ddec; border-radius: 10px; box-shadow: none; outline: 0; }
+.l2-wrap .kw-bool-textarea:focus, .l2-wrap .kw-bool-textarea:focus-visible, .kw-bool-textarea:focus, .kw-bool-textarea:focus-visible { border: 1px solid var(--l2-accent) !important; box-shadow: none !important; outline: 0 !important; }

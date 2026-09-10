@@ -374,3 +374,5 @@ html.theme-dark .rd__avimg--logo { background: #fff; }
 }
 html.theme-dark .l2-wrap .kw-switch a, html.theme-dark .l2-wrap #kwToBoolean, html.theme-dark .l2-wrap #kwToSimple { color: #9cc0f5; text-decoration-color: rgba(156,192,245,.45); }
 html.theme-dark .l2-wrap .kw-switch a:hover, html.theme-dark .l2-wrap #kwToBoolean:hover, html.theme-dark .l2-wrap #kwToSimple:hover { color: #bcd6fa; text-decoration-color: #bcd6fa; }
+html.theme-dark .kw-bool-textarea { border-color: var(--d-border); }
+html.theme-dark .kw-bool-textarea:focus, html.theme-dark .kw-bool-textarea:focus-visible { border-color: #6aa4f5 !important; }
