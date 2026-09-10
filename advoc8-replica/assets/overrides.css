@@ -3017,3 +3017,8 @@ html.lc #topbar { z-index: 1060; }
 /* feed builder: the boolean query box shows a single 1px accent border when focused */
 .l2-wrap .kw-bool-textarea, .kw-bool-textarea { border: 1px solid #d2ddec; border-radius: 10px; box-shadow: none; outline: 0; }
 .l2-wrap .kw-bool-textarea:focus, .l2-wrap .kw-bool-textarea:focus-visible, .kw-bool-textarea:focus, .kw-bool-textarea:focus-visible { border: 1px solid var(--l2-accent) !important; box-shadow: none !important; outline: 0 !important; }
+
+/* analysis charts: Sentiment sits beside Party Breakdown; Top Stakeholders takes the full row below */
+.l2-charts .sent-card { grid-column: auto; }
+.l2-charts > .card:has(#stakeChart) { grid-column: 1 / -1; }
+@media (max-width: 991.98px) { .l2-charts .sent-card, .l2-charts > .card:has(#stakeChart) { grid-column: auto; } }
