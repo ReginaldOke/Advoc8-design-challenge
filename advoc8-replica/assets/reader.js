@@ -120,10 +120,17 @@
   }
   function onKey(e) { if (e.key === 'Escape') { e.stopPropagation(); close(); } }
   function close() { if (!view) return; var v = view; view = null; v.classList.remove('show'); document.body.classList.remove('rd-open'); document.removeEventListener('keydown', onKey); setTimeout(function () { v.remove(); }, 240); if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} } }
+  /* clicking anywhere on an item opens it, except on its own controls, links to people, or a text selection */
   document.addEventListener('click', function (e) {
-    var b = e.target.closest('.js-expand-btn'); if (!b) return;
+    if (e.metaKey || e.ctrlKey || e.button !== 0) return;
+    var card = e.target.closest('.card'); if (!card || !card.querySelector('.js-expand-btn')) return;
+    if (e.target.closest('.rd')) return;
+    if (!e.target.closest('.js-expand-btn')) {
+      if (e.target.closest('.btn, button, .dropdown, .dropdown-menu, input, select, textarea, label, .badge-soft-primary, .l2-chip, .avatar, a[href]:not([href="#"]), .l2-labels, .l2-pop')) return;
+      var sel = window.getSelection && window.getSelection(); if (sel && String(sel).trim()) return;
+    }
     e.preventDefault(); e.stopPropagation();
-    var card = b.closest('.card'); if (card) open(card);
+    open(card);
   }, true);
   /* the reader's own title/expand clicks shouldn't re-open */
 })();

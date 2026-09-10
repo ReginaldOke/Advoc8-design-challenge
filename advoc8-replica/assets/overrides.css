@@ -3022,3 +3022,8 @@ html.lc #topbar { z-index: 1060; }
 .l2-charts .sent-card { grid-column: auto; }
 .l2-charts > .card:has(#stakeChart) { grid-column: 1 / -1; }
 @media (max-width: 991.98px) { .l2-charts .sent-card, .l2-charts > .card:has(#stakeChart) { grid-column: auto; } }
+
+/* items open on click, so the expand control goes and the card reads as clickable */
+.l2-wrap .js-expand-btn { display: none !important; }
+.l2-wrap .card.hover-reveal:has(.js-expand-btn) { cursor: pointer; }
+.l2-wrap .card.hover-reveal .stretched-link::after { display: none; }
