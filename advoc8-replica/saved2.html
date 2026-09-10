@@ -236,7 +236,21 @@
                   <h6 class="header-pretitle"></h6>
                   <h1 class="header-title font-weight-bold">Saved Items</h1>
                 </div>
-                <div class="col-auto mt-lg-0 align-self-top"></div>
+                <div class="col-auto mt-lg-0 align-self-top">
+                  <div class="d-flex flex-gap-2">
+                    <div class="dropdown">
+                      <button class="btn btn-white" type="button" id="labelledItemsShareDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-share-from-square fa-fw mr-2"></i>Share All
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" style="min-width: 280px;">
+                        <a class="dropdown-item" href="#">
+                          <i class="fa-regular fa-paper-plane fa-fw mr-2"></i> Create Email Report
+                          <div class="text-muted small ml-4">Email all items to one or more contacts with custom commentary.</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -299,17 +313,6 @@
               <div class="mx-auto" style="max-width: 760px;">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                   <div class="small text-muted" id="savedCount">13 items</div>
-                  <div class="dropdown">
-                    <button class="btn btn-sm btn-white dropdown-toggle" type="button" id="labelledItemsShareDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="far fa-share-from-square fa-fw mr-1"></i> Share All
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" style="min-width: 280px;">
-                      <a class="dropdown-item" href="#">
-                        <i class="fa-regular fa-paper-plane fa-fw mr-2"></i> Create Email Report
-                        <div class="text-muted small ml-4">Email all items to one or more contacts with custom commentary.</div>
-                      </a>
-                    </div>
-                  </div>
                 </div>
 
                 <div class="mb-3 saved-item" data-labels="solar panels" id="savedItem">
