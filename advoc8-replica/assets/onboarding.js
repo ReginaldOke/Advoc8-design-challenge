@@ -192,6 +192,19 @@
     var inp = opts.enterEl = opts.enterEl || document.getElementById('feeds_v2-search_keyword_input');
     function onEnter(e) { if (e.key === 'Enter' && i === 0 && document.body.contains(card)) { setTimeout(function () { if (i === 0) { i = 1; render(); } }, 350); } }
     if (inp) inp.addEventListener('keydown', onEnter);
+    /* adding a filter in the Filters window and closing it completes step two */
+    var fm = document.getElementById('filterModal'), fmWasOpen = false, fmObs = null;
+    if (fm && STEPS.length > 2) {
+      fmObs = new MutationObserver(function () {
+        var open = fm.classList.contains('show');
+        if (open) { fmWasOpen = true; return; }
+        if (!fmWasOpen) return; fmWasOpen = false;
+        if (!document.body.contains(card) || i !== 1) return;
+        var n = document.getElementById('l2FiltersCount'); if (n && n.textContent.trim()) setTimeout(function () { if (i === 1 && document.body.contains(card)) { i = 2; render(); } }, 250);
+      });
+      fmObs.observe(fm, { attributes: true, attributeFilter: ['class'] });
+      var closeOrig = close; close = function () { if (fmObs) fmObs.disconnect(); closeOrig(); };
+    }
     render();
   }
 
